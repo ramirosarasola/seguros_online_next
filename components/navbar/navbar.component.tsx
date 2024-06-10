@@ -15,7 +15,7 @@ export const Navbar = () => {
   return (
     <nav className="h-24 w-full px-16 bg-secondary flex items-center justify-between">
       <Link href="/">
-        <Image src={logo} alt="logo" width={100} height={100} />
+        <Image src={logo} alt="logo" width={100} className="h-auto" />
       </Link>
       <div className="flex gap-8">
         {navItems.map((item) => (

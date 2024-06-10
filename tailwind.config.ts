@@ -38,6 +38,17 @@ const config: Config = {
         'paragraph-md': ['0.875rem', '1.25rem'], // 14px font size with 20px line height
         'paragraph-sm': ['0.75rem', '1rem'], // 12px font size with 16px line height
       },
+      fontWeight: {
+        'w-title-xl': '700',
+        'w-title-lg': '700',
+        'w-title-md': '700',
+        'subtitle-xl': '600',
+        'subtitle-lg': '600',
+        'subtitle-md': '600',
+        'paragraph-lg': '400',
+        'paragraph-md': '400',
+        'paragraph-sm': '400',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
