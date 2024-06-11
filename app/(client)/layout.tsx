@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import '../globals.css';
-import { Navbar } from "@/components";
 import { Footer } from "@/components/footer/footer.component";
+import ServerNavbar from "@/components/navbar/server-navbar.component";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,9 +18,9 @@ export default function ClientLayout({
   return (
     <>
       <header>
-        <Navbar/>
+        <ServerNavbar/>
       </header>
-      <main className={`flex flex-col justify-between min-h-[calc(100vh-18rem)] ${inter.className} px-16 mx-auto`}>
+      <main className={`flex flex-col justify-between min-h-[calc(100vh-18rem)] ${inter.className} px-4 md:px-16 mx-auto`}>
         <h1>Seguros Online</h1>
         {children}
       </main>

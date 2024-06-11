@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/logo-op.webp";
 import { ActiveLink } from "../active-link/activeLink.component";
+import ClientNavbar from "./client-navbar.component";
 
 const navItems = [
   { path: "/", text: "Autos" },
@@ -11,24 +12,25 @@ const navItems = [
   { path: "/contacto", text: "Contacto" },
 ];
 
-export const Navbar = () => {
+export default function ServerNavbar() {
   return (
-    <nav className="h-24 w-full px-16 bg-secondary flex items-center justify-between">
+    <nav className="h-24 w-full px-4 md:px-16 md:bg-secondary  md:text-black flex items-center justify-between">
       <Link href="/">
         <Image src={logo} alt="logo" width={100} className="h-auto" />
       </Link>
-      <div className="flex gap-8">
+      <div className="hidden md:flex gap-8">
         {navItems.map((item) => (
           <ActiveLink key={item.path} {...item} />
         ))}
       </div>
-      <div className="flex items-center gap-8">
+      <div className="hidden md:flex items-center gap-8">
         <i>📞</i>
         <div>
           <p>11 2222 3333</p>
           <p>11 2222 4444</p>
         </div>
       </div>
+      <ClientNavbar navItems={navItems} />
     </nav>
   );
-};
+}
