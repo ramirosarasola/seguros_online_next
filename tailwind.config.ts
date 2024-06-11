@@ -12,7 +12,7 @@ const config: Config = {
         primary: '#1570B1',
         secondary: '#FFFFFF',
         accent: '#e7e7e7',
-        danger: '#E53E3E',
+        light_primary: '#92dcf1',
         success: '#38A169',
         warning: '#DD6B20',
         info: '#3182CE',

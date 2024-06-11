@@ -8,3 +8,10 @@
   box-sizing: border-box;
 }
 
+/* styles/global.css */
+.bg-home-img {
+  background-image: url('/home_bg_tinified.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

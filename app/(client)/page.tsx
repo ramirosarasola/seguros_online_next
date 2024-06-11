@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CarQuoterForm from "./components/car-quoter-form/car-quoter-form.component";
+import { useRouter } from "next/router";
 
 
 
@@ -8,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <h1>Home Page</h1>;
+  return (
+    <section className="flex flex-1 px-4 md:px-16 bg-home-img bg-light_primary">
+      <CarQuoterForm/>
+    </section>
+  );
 }

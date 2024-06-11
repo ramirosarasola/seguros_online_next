@@ -20,8 +20,7 @@ export default function ClientLayout({
       <header>
         <ServerNavbar/>
       </header>
-      <main className={`flex flex-col justify-between min-h-[calc(100vh-18rem)] ${inter.className} px-4 md:px-16 mx-auto`}>
-        <h1>Seguros Online</h1>
+      <main className={`bg-light_primary flex flex-col justify-between min-h-[calc(100vh-18rem)] ${inter.className} mx-auto`}>
         {children}
       </main>
       <Footer/>
