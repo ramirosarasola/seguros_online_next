@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import '../globals.css';
+import { Poppins, Varela_Round } from "next/font/google";
+import "../globals.css";
 import { Footer } from "@/components/footer/footer.component";
 import ServerNavbar from "@/components/navbar/server-navbar.component";
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const varelaRound = Varela_Round({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   title: "Ramiro's Home Page",
@@ -18,12 +26,14 @@ export default function ClientLayout({
   return (
     <>
       <header>
-        <ServerNavbar/>
+        <ServerNavbar />
       </header>
-      <main className={`bg-light_primary flex flex-col justify-between min-h-[calc(100vh-18rem)] ${inter.className} mx-auto`}>
+      <main
+        className={`bg-light_primary flex flex-col justify-between min-h-[calc(100vh-18rem)] ${varelaRound.className} mx-auto`}
+      >
         {children}
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

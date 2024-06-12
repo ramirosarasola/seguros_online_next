@@ -3,6 +3,7 @@ import Link from "next/link";
 import logo from "../../public/logo-op.webp";
 import { ActiveLink } from "../active-link/activeLink.component";
 import ClientNavbar from "./client-navbar.component";
+import phone from '../../assets/contact_phone.svg'
 
 const navItems = [
   { path: "/", text: "Autos" },
@@ -24,7 +25,7 @@ export default function ServerNavbar() {
         ))}
       </div>
       <div className="hidden md:flex items-center gap-8">
-        <i>📞</i>
+        <Image height={35} width={35} src={phone} alt="phone" className="h-auto" loading="lazy"/>
         <div>
           <p>11 2222 3333</p>
           <p>11 2222 4444</p>

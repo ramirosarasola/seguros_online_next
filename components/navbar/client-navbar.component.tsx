@@ -13,7 +13,7 @@ interface ClientNavbarProps {
 
 export default function ClientNavbar({ navItems }: ClientNavbarProps) {
   return (
-    <Disclosure as="div" className="md:hidden bg-primary absolute top-[6rem] left-0 w-full">
+    <Disclosure as="div" className="md:hidden bg-primary absolute top-[6rem] left-0 w-full z-50">
       {({ open }) => (
         <>
           <DisclosureButton className="text-seconday hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white absolute top-[-4rem] right-[1rem] text-primary ">
