@@ -3,7 +3,8 @@ import Link from "next/link";
 import logo from "../../public/logo-op.webp";
 import { ActiveLink } from "../active-link/activeLink.component";
 import ClientNavbar from "./client-navbar.component";
-import phone from '../../assets/contact_phone.svg'
+import phone from '../../assets/contact_phone.svg';
+import Dropdown from "./dropdown-navbar.component";
 
 const navItems = [
   { path: "/", text: "Autos" },
@@ -13,15 +14,27 @@ const navItems = [
   { path: "/contacto", text: "Contacto" },
 ];
 
+const otrosDropdownItems = [
+  { path: "/bici", text: "Bici" },
+  { path: "/caucion", text: "Caucion" },
+  { path: "/art", text: "ART" },
+  { path: "/comercio", text: "Comercio" },
+  { path: "/garantias", text: "Garantia de Alquiler" },
+];
+
 export default function ServerNavbar() {
   return (
-    <nav className="h-24 w-full px-4 md:px-16 md:bg-secondary  md:text-black flex items-center justify-between">
+    <nav className="h-24 w-full px-4 md:px-16 md:bg-secondary md:text-black flex items-center justify-between">
       <Link href="/">
         <Image src={logo} alt="logo" width={100} className="h-auto" />
       </Link>
       <div className="hidden md:flex gap-8">
         {navItems.map((item) => (
-          <ActiveLink key={item.path} {...item} />
+          item.text === "Otros" ? (
+            <Dropdown key={item.path} text={item.text} options={otrosDropdownItems} />
+          ) : (
+            <ActiveLink key={item.path} {...item} />
+          )
         ))}
       </div>
       <div className="hidden md:flex items-center gap-8">

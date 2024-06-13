@@ -23,7 +23,62 @@
   background-repeat: no-repeat;
 }
 
+.bg-bici-img{
+  background-image: url('/bici_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-art-img{
+  background-image: url('/art_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-caucion-img{
+  background-image: url('/caucion_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-comercio-img{
+  background-image: url('/comercio_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-garantia-img{
+  background-image: url('/garantia_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .active_tab{
   color: #1570B1;
   border-bottom: 3px solid #1570B1;
+}
+
+/* Dropdown Navbar */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

@@ -1,15 +1,8 @@
-"use client";
-import { houseSchema } from "@/app/schema/form-schema";
+'use client';
+import { biciSchema } from "@/app/schema/form-schema";
 import { Button } from "@/components/ui/button.component";
 import { FormTitle } from "@/components/ui/form-title.component";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form.component";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form.component";
 import { Input } from "@/components/ui/input.component";
 import { onSubmitAction } from "@/lib/form-submit";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,12 +11,13 @@ import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-export const HouseFormQuoter = () => {
+export const BiciFormQuoter = () => {
+
   const [state, formAction] = useFormState(onSubmitAction, {
     message: "",
   });
-  const form = useForm<z.output<typeof houseSchema>>({
-    resolver: zodResolver(houseSchema),
+  const form = useForm<z.output<typeof biciSchema>>({
+    resolver: zodResolver(biciSchema),
     defaultValues: {
       name: "",
       lastname: "",
@@ -32,7 +26,7 @@ export const HouseFormQuoter = () => {
       phone: "",
       contactHour: "",
       address: "",
-      houseType: "",
+      value: "",
       ...(state?.fields ?? {}),
     },
   });
@@ -53,7 +47,7 @@ export const HouseFormQuoter = () => {
         }}
       >
         <FormTitle
-          title="Seguros para Casas"
+          title="Seguros para Bici"
           subtitle="Contactate y te asesoramos!"
         />
         <div className="flex gap-2">
@@ -162,10 +156,10 @@ export const HouseFormQuoter = () => {
           />
           <FormField
             control={form.control}
-            name="houseType"
+            name="value"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>Tipo de Casa</FormLabel>
+                <FormLabel>Valor</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
@@ -180,5 +174,5 @@ export const HouseFormQuoter = () => {
         </Button>
       </form>
     </Form>
-  );
-};
+  )
+}
