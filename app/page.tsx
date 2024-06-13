@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import CarQuoterForm from "./(client)/components/car-quoter-form/car-quoter-form.component";
+import CarQuoterForm from "./(client)/components/quoter-form/car-quoter-form.component";
 import { NuestrosSeguros } from "./(client)/components/nuestros-seguros/nuestros-seguros.component";
 import { NuestrosAliados } from "./(client)/components/nuestros-aliados/nuestros-aliados.component";
-// import { FeedbackComponent } from "./components/feedback/feedback.component";
 import { InformationComponent } from "./(client)/components/information/information.component";
 
 export const metadata: Metadata = {
