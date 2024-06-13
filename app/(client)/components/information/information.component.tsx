@@ -35,7 +35,7 @@ export const InformationComponent = () => {
           </ul>
 
           <div className="tabs-container">
-            <div className="tab-content" id="tab1" style={{ display: activeTab === "tab1" ? "block" : "none" }}>
+            <div className="" id="tab1" style={{ display: activeTab === "tab1" ? "block" : "none" }}>
               <strong>Robo total:</strong>
               Robo o hurto de la unidad asegurada. Se considera robo total pasado los 30 días desde la fecha de desaparición del vehículo para que la Compañía responda por la suma asegurada{'\n'}
               <strong>Robo parcial:</strong>
@@ -49,7 +49,7 @@ export const InformationComponent = () => {
               <strong>Daños Parciales al amparo de robo aparecido:</strong> 
               Cubre Los daños que resultaran como consecuencia del robo o hurto del vehículo tras la recuperación del mismo. 
             </div>
-            <div className="tab-content" id="tab2" style={{ display: activeTab === "tab2" ? "block" : "none" }}>
+            <div className="" id="tab2" style={{ display: activeTab === "tab2" ? "block" : "none" }}>
               <strong>Rotura de Cristales:</strong>
               Cobertura de Luneta y Parabrisas por cualquier tipo de daño o rajadura, según cláusulas específicas de cada Compañía{'\n'}
               <strong>Vidrios laterales:</strong>
@@ -79,16 +79,16 @@ export const InformationComponent = () => {
               <strong>Extensión de cobertura a Mercosur: </strong>
               Cobertura obligatoria de Responsabilidad Civil hacia terceros en cualquier país adherido a este acuerdo de Mercosur.				
             </div>
-            <div className="tab-content" id="tab3" style={{ display: activeTab === "tab3" ? "block" : "none" }}>
+            <div className="" id="tab3" style={{ display: activeTab === "tab3" ? "block" : "none" }}>
               En caso de siniestro de un vehículo asegurado a través de <strong>SegurosOnline.com.ar</strong> el asegurado deberá comunicarse con nosotros para radicar la denuncia al 0810 345 9000 / 011 5199-8100, ó por mail a:  denuncias@segurosonline.com.ar{'\n'}
               En caso que solo hay daños materiales, no haría falta hacer la denuncia en la policía. De todos modos una vez informada la denuncia en <strong>segurosOnline.com.ar</strong> nuestros ejecutivos de siniestros enviarán toda la información requerida para cada caso{'\n'}
               <strong>SegurosOnline.com.ar</strong> se encarga de hacer el reclamo en las compañías del tercero, para que nuestro cliente no tenga que perder tiempo y dinero en estos trámites{'\n'}
               La compañía aseguradora asignará un gestor para reclamos y gestiones diversas.
             </div>
-            <div className="tab-content" id="tab4" style={{ display: activeTab === "tab4" ? "block" : "none" }}>
+            <div className="" id="tab4" style={{ display: activeTab === "tab4" ? "block" : "none" }}>
               Algunas de las compañías con las que trabajamos son <strong>Allianz, Answer, Mapfre, Integrity, Mercantil Andina, Victoria y Meridional Seguros, Caledonia, Sura, SMG Seguros, Nación Seguros, Seguros Rivadavia, QBE Seguros</strong>
             </div>
-            <div className="tab-content" id="tab5" style={{ display: activeTab === "tab5" ? "block" : "none" }}>
+            <div className="" id="tab5" style={{ display: activeTab === "tab5" ? "block" : "none" }}>
               <p><strong>Seguros de autos</strong></p>
               <p>Si estas buscando seguros de auto confiables, llegaste al lugar indicado. En esta sección de <strong>Seguros Online</strong> te ofrecemos todas las alternativas para que encuentres las opciones que existen en el mercado argentino para seguros para automóviles. Además, te damos consejos y tips para ayudarte a elegir tu próximo.</p>
               <p><strong>¿Cuál es el mejor seguro de automotor?</strong></p>

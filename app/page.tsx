@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import CarQuoterForm from "./components/car-quoter-form/car-quoter-form.component";
-import { NuestrosSeguros } from "./components/nuestros-seguros/nuestros-seguros.component";
-import { NuestrosAliados } from "./components/nuestros-aliados/nuestros-aliados.component";
-import { FeedbackComponent } from "./components/feedback/feedback.component";
-import { InformationComponent } from "./components/information/information.component";
+import CarQuoterForm from "./(client)/components/car-quoter-form/car-quoter-form.component";
+import { NuestrosSeguros } from "./(client)/components/nuestros-seguros/nuestros-seguros.component";
+import { NuestrosAliados } from "./(client)/components/nuestros-aliados/nuestros-aliados.component";
+// import { FeedbackComponent } from "./components/feedback/feedback.component";
+import { InformationComponent } from "./(client)/components/information/information.component";
 
 export const metadata: Metadata = {
   title: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
@@ -22,7 +22,7 @@ export default function HomePage() {
         <NuestrosSeguros />
       </section>
 
-      <section className="px-4 md:px-16 bg-tertiary h-fit py-10">
+      <section className="px-4 md:px-16 bg-tertiary h-fit pt-10">
         <NuestrosAliados />
       </section>
 
@@ -30,7 +30,7 @@ export default function HomePage() {
         <FeedbackComponent/>
       </section> */}
 
-      <section className="px-4 md:px-16 bg-tertiary h-fit py-10 flex flex-col items-center justify-between">
+      <section className="px-4 md:px-16 bg-tertiary h-fit pb-10 flex flex-col items-center justify-between">
         <InformationComponent />
       </section>
     </>
