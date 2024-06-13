@@ -15,3 +15,8 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.active_tab{
+  color: #1570B1;
+  border-bottom: 3px solid #1570B1;
+}
