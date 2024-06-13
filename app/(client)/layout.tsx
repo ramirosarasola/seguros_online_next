@@ -29,7 +29,7 @@ export default function ClientLayout({
         <ServerNavbar />
       </header>
       <main
-        className={`bg-light_primary flex flex-col justify-between min-h-[calc(100vh-18rem)] ${varelaRound.className} mx-auto`}
+        className={` flex flex-col justify-between min-h-[calc(100vh-18rem)] ${varelaRound.className} mx-auto`}
       >
         {children}
       </main>

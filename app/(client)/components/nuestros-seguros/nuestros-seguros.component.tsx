@@ -42,7 +42,7 @@ const services = [
 
 export const NuestrosSeguros = () => {
   return (
-    <section className="pb-10 bg-tertiary px-4 md:px-16 flex flex-col items-center justify-between">
+    <div className="pb-10 bg-tertiary flex flex-col items-center justify-between">
       <CardTitleComponent title="Nuestros Seguros" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {services.map((item, i) => {
@@ -58,6 +58,6 @@ export const NuestrosSeguros = () => {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 };

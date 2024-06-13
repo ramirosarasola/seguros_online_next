@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CarQuoterForm from "./components/car-quoter-form/car-quoter-form.component";
 import { NuestrosSeguros } from "./components/nuestros-seguros/nuestros-seguros.component";
+import { NuestrosAliados } from "./components/nuestros-aliados/nuestros-aliados.component";
 
 export const metadata: Metadata = {
   title: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
@@ -14,7 +15,15 @@ export default function HomePage() {
       <section className="px-4 md:px-16 flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-home-img bg-light_primary">
         <CarQuoterForm />
       </section>
+      <section className="px-4 md:px-16 bg-tertiary">
       <NuestrosSeguros />
+
+      </section>
+
+      <section className="px-4 md:px-16 bg-tertiary h-fit py-10">
+      <NuestrosAliados/>
+
+      </section>
     </>
   );
 }
