@@ -44,7 +44,7 @@ const CarFormQuoter = () => {
         Seguros para Autos - Mejoramos cualquier presupuesto. La mejor cobertura por el mejor precio!
         </h1>
 
-        <div className="flex space-y-4 flex-col lg:flex-row lg:gap-4 lg:items-end">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <input
             type="hidden"
             data-wokan-auto="contratarUrl"

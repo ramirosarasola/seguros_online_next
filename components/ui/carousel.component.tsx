@@ -3,23 +3,28 @@ import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 
 type CarouseProps = {
-  data: { img: StaticImageData; nombre: string; }[];
+  data: { img: StaticImageData; nombre: string }[];
   cantItems: number;
-  title: string
+  title: string;
 };
 
 const Carousel = ({ data, cantItems, title }: CarouseProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Funciones para cambiar de slide cada 4 segundos
-  
-  // Funciones para cambiar de slide
-  
   const nextSlide = () => {
     setCurrentSlide((prevSlide) =>
       prevSlide === Math.ceil(data.length / cantItems) - 1 ? 0 : prevSlide + 1
     );
-    };
+  };
+
+
+  // Funciones para cambiar de slide cada 4 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [currentSlide]);
 
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
@@ -44,9 +49,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                 <div
                   key={index}
                   className={`absolute top-0 left-0 z-[40] bg-tertiary w-full h-full flex items-center transition-transform ease-in-out duration-300 ${
-                    index === currentSlide
-                      ? "translate-x-0"
-                      : "translate-x-0"
+                    index === currentSlide ? "translate-x-0" : "translate-x-0"
                   }`}
                 >
                   {slideGroup.map((slide, idx) => (
@@ -58,7 +61,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                         src={slide.img}
                         alt={`Seguros para ${slide.nombre}`}
                         width={130}
-                        className="h-auto hover:shadow-md hover:scale-105 p-2 hover:rounded-lg hover:rotate-3 transition-transform duration-300 hover:cursor-pointer"
+                        className="w-[90px] md:w-[130px] h-auto hover:shadow-md hover:scale-105 p-2 hover:rounded-lg hover:rotate-3 transition-transform duration-300 hover:cursor-pointer"
                       />
                     </div>
                   ))}
@@ -66,7 +69,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
               )
           )}
         </div>
-        <button
+        {/* <button
           className="absolute z-50 top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-primary text-white rounded-l focus:outline-none"
           onClick={prevSlide}
         >
@@ -77,7 +80,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
           onClick={nextSlide}
         >
           Next
-        </button>
+        </button> */}
       </div>
     </article>
   );

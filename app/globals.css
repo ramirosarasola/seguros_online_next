@@ -9,6 +9,11 @@
   color: #444444;
 }
 
+.nav_shadow{
+  box-shadow: 0px 4px 4px 1px rgba(21, 112, 177, 0.5)
+}
+
+
 /* styles/global.css */
 .bg-home-img {
   background-image: url('/home_bg_tinified.svg');

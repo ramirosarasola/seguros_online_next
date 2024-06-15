@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import  s  from './activeLink.module.css';
+import './activeLink.css';
 import { usePathname } from "next/navigation";
 
 
@@ -14,7 +14,7 @@ export const ActiveLink = ({ path, text }: ActiveLinkProps) => {
   const pathname = usePathname();
 
   return (
-    <Link href={path} className={` ${(pathname == path) ? s.active_link : s.link} ${s.main_links}`}>
+    <Link href={path} className={` ${(pathname == path) ? 'active_link' : 'link'} ${'main_links'}`}>
       {text}
     </Link>
   );

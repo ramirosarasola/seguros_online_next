@@ -29,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.className} min-h-screen bg-secondary`}>
-      <header>
+      <header className="bg-secondary">
         <ServerNavbar />
       </header>
       <main
-        className={` flex flex-col justify-between min-h-[calc(100vh-18rem)] ${poppins.className} mx-auto`}
+        className={`pt-[96px] flex flex-col justify-between min-h-[calc(100vh-18rem)] ${poppins.className} mx-auto`}
       >
         {children}
       </main>

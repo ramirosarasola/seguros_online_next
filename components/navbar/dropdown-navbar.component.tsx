@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import s from "../active-link/activeLink.module.css";
+import "../active-link/activeLink.css";
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
 
@@ -39,7 +39,7 @@ const Dropdown = ({ text, options }: DropdownProps) => {
 
   return (
     <div
-      className={`relative ${s.link} h-[46px] ${isActive ? s.active_otros : ''} overflow-hidden hover:overflow-visible hover:text-white`}
+      className={`relative ${"link"} h-[46px] ${isActive ? "active_otros" : ''} overflow-hidden hover:overflow-visible hover:text-white`}
     >
       <button className="mt-[2px]">{text}</button>
       <div className="flex w-full h-6"></div>
