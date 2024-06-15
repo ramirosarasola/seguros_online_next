@@ -1,5 +1,8 @@
+'use client';
 import Link from "next/link";
 import s from "../active-link/activeLink.module.css";
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from "react";
 
 interface DropdownProps {
   text: string;
@@ -7,11 +10,38 @@ interface DropdownProps {
 }
 
 const Dropdown = ({ text, options }: DropdownProps) => {
+
+  const path = usePathname();
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    switch(path) {
+      case '/bici':
+        setIsActive(true);
+        break;
+      case '/caucion':
+        setIsActive(true);
+        break;
+      case '/art':
+        setIsActive(true);
+        break;
+      case '/comercio':
+        setIsActive(true);
+        break;
+      case '/garantias':
+        setIsActive(true);
+        break;
+      default:
+        setIsActive(false);
+        break;
+    }
+  }, [path])
+
   return (
     <div
-      className={`relative ${s.link} h-[46px] overflow-hidden hover:overflow-visible`}
+      className={`relative ${s.link} h-[46px] ${isActive ? s.active_otros : ''} overflow-hidden hover:overflow-visible hover:text-white`}
     >
-      <button className="text-black">{text}</button>
+      <button className="mt-[2px]">{text}</button>
       <div className="flex w-full h-6"></div>
       <div
         className={`absolute z-30 left-0 w-48 bg-white border border-gray-200 rounded shadow-lg`}
@@ -20,7 +50,7 @@ const Dropdown = ({ text, options }: DropdownProps) => {
           <Link
             key={option.path}
             href={option.path}
-            className="block px-4 py-2 hover:bg-gray-100"
+            className="block px-4 py-2 hover:bg-gray-100 text-black"
           >
             {option.text}
           </Link>

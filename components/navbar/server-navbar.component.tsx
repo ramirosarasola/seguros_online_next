@@ -26,9 +26,9 @@ export default function ServerNavbar() {
   return (
     <nav className="h-24 w-full px-4 md:px-16 md:bg-secondary md:text-black flex items-center justify-between">
       <Link href="/">
-        <Image src={logo} alt="logo" width={100} className="h-auto" />
+        <Image src={logo} alt="logo" width={120} className="h-auto" />
       </Link>
-      <div className="hidden md:flex gap-8">
+      <div className="hidden w-[60%] md:flex gap-8">
         {navItems.map((item) => (
           item.text === "Otros" ? (
             <Dropdown key={item.path} text={item.text} options={otrosDropdownItems} />
@@ -40,8 +40,8 @@ export default function ServerNavbar() {
       <div className="hidden md:flex items-center gap-8">
         <Image height={35} width={35} src={phone} alt="phone" className="h-auto" loading="lazy"/>
         <div>
-          <p>11 2222 3333</p>
-          <p>11 2222 4444</p>
+          <p>0810 345 9000</p>
+          <p>(011) 5199-8100</p>
         </div>
       </div>
       <ClientNavbar navItems={navItems} />

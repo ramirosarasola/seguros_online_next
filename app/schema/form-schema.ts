@@ -152,3 +152,27 @@ export const alquilerSchema = z.object({
     message: "Value is required.",
   }),
 })
+
+export const contactSchema = z.object({
+  name: z.string().trim().min(1, {
+    message: "Name is required.",
+  }),
+  lastname: z.string().trim().min(1, {
+    message: "Last name is required.",
+  }),
+  email: z.string().trim().email({
+    message: "Invalid email address.",
+  }),
+  codArea: z.string().trim().min(1, {
+    message: "Code area is required.",
+  }),
+  phone: z.string().trim().min(1, {
+    message: "Phone is required.",
+  }),
+  contactHour: z.string().trim().min(1, {
+    message: "Contact hour is required.",
+  }),
+  consulta: z.string().trim().min(10, {
+    message: "Value is required.",
+  }),
+})

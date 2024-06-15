@@ -2,14 +2,32 @@
   padding: 0.5rem 1rem;
   border: solid .5px transparent;
   border-radius: 5px;
+  height: 46px;
 }
 
-.link:hover{
+.main_links{
+  display: flex;
+  align-items: center;
+}
+
+.active_otros{
+  background: #fff;
+  color: #1570B1;
   border: solid .5px #1570B1;
+}
+
+.active_link{
+  padding: 0.5rem 1rem;
+  border: solid .5px #1570B1;
+  color: #1570B1;
+  display: flex;
+  align-items: center;
   border-radius: 5px;
 }
 
-.active-link{
+.link:hover{
+  padding: 0.5rem 1rem;
+  border: solid .5px #1570B1;
   background: #1570B1;
   color: #fff;
 }

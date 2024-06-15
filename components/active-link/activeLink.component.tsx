@@ -14,7 +14,7 @@ export const ActiveLink = ({ path, text }: ActiveLinkProps) => {
   const pathname = usePathname();
 
   return (
-    <Link href={path} className={`${s.link} ${(pathname == path) && s['active-link']}`}>
+    <Link href={path} className={` ${(pathname == path) ? s.active_link : s.link} ${s.main_links}`}>
       {text}
     </Link>
   );
