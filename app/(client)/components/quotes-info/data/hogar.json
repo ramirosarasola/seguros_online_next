@@ -1,0 +1,99 @@
+[
+  {
+    "title": "Incendio de Edificio",
+    "description": "Existen dos formas de cubrir este riesgo. El que recomendamos es la cobertura a (Primer Riesgo) Cobertura a prorrata: La aseguradora indemnizará al asegurado de manera proporcional a la relación que exista entre el valor de reposición del bien siniestrado y el valor declarado en la póliza. Incluye daños por granizo y HVCT (Huracán, Vendaval, Ciclón y Tornado). Cobertura a Primer Riesgo Absoluto: La medida de la prestación es 'a primer riesgo absoluto', la compañía indemnizará al asegurado por el valor del daño, pero nunca superando la suma asegurada. Incluye daños por granizo y HVCT (Huracán, Vendaval, Ciclón y Tornado)."
+  },
+  {
+    "title": "Incendio de Vivienda",
+    "description": "Cobertura a primer riesgo absoluto. Gastos que debe asumir el asegurado para proporcionarse una vivienda alternativa debido a la inhabitabilidad de la propia producida por un evento cubierto en la póliza. - Retiro de escombros: Cobertura a primer riesgo absoluto. Gastos de retiro de bienes afectados por un evento cubierto en la póliza. Reconstrucción a nuevo: Cobertura a prorrata. Reconstrucción y/o reparación a nuevo del edificio dañado por un evento cubierto en la póliza. Al momento de contratar la cobertura se requiere declarar el valor a nuevo. Incendio de Contenido General: Cobertura a primer riesgo absoluto. Bienes muebles, propiedad del asegurado, sus familiares, personal de servicio y huéspedes. Incluye daños por HVCT y granizo."
+  },
+  {
+    "title": "Robo y/o Hurto de Contenido General",
+    "description": "Cobertura a primer riesgo absoluto. Bienes muebles, propiedad del asegurado, sus familiares, personal de servicio y huéspedes; dentro de la vivienda asegurada. Incluye hurto perpetrado por personal doméstico. Incluye daños en el edificio ocasionados para cometer el delito hasta el 15% de la suma asegurada. Los bienes que se especifican en la cláusula \"Bienes con Valor Limitado\" pueden ser cubiertos bajo otras opciones, en la medida en que su cobertura sea aceptada por la Compañía."
+  },
+  {
+    "title": "Incendio, Robo y/o Hurto de Objetos Suntuarios",
+    "description": "Cobertura a prorrata, con valor unitario declarado. Comprende: relojes, encendedores, lapiceras y similares, instrumentos científicos de precisión o de óptica, joyas, pieles, alhajas y objetos de arte en domicilio. Se deberá suministrar la correspondiente tasación de los bienes a asegurar."
+  },
+  {
+    "title": "Todo Riesgo Electrodomésticos, Electrónicos y Notebooks en Domicilio",
+    "description": "Comprende televisores, video reproductores, video grabadores, reproductores de DVD, fax, audio, microondas, computadoras domiciliarias, proyectores, cámaras fotográficas, filmadoras, grabadores, notebooks y aparatos electrónicos domésticos en general; dentro de la vivienda asegurada. Se entenderá como \"Daños\" aquellos que sean causados por caídas, impactos u otros accidentes, quedando excluidas expresamente las reparaciones atribuibles a defectos o fallas de funcionamiento por uso o desgaste, o necesarias para mantenimiento. Esta cobertura se otorga \"Sin Franquicia\": Cobertura a primer riesgo absoluto, sin valor unitario declarado. Cobertura a prorrata, con valor unitario declarado. Los electrodomésticos, electrónicos y notebooks de hasta tres años cubiertos bajo esta modalidad serán indemnizados sin depreciación por uso."
+  },
+  {
+    "title": "Todo Riesgo (excluyendo hurto) Electrónicos y Notebooks en Mundo Entero",
+    "description": "Comprende: máquinas fotográficas, filmadoras, grabadores, notebooks y aparatos electrónicos domésticos en general, en el territorio de la República Argentina y resto del Mundo. Se entenderá como \"Daños\" aquellos que sean causados por caídas, impactos u otros accidentes, quedando excluidas expresamente las reparaciones atribuibles a defectos o fallas de funcionamiento por uso o desgaste, o necesarias para mantenimiento. Esta cobertura se otorga \"Sin Franquicia\": Cobertura a prorrata, con valor unitario declarado."
+  },
+  {
+    "title": "Responsabilidad Civil, Hechos Privados",
+    "description": "Comprende: daños a terceros causados por el asegurado, sus familiares y personal doméstico convivientes, en razón de hechos vinculados con sus vidas privadas, dentro del territorio de la República Argentina. Incluye reclamos por daños por animales domésticos, daños a personal contratado."
+  },
+  {
+    "title": "Responsabilidad Civil por incendio, rayo, explosión, descargas eléctricas y escapes de gas",
+    "description": "Daños a cosas materiales de terceras personas en las inmediaciones a causa de incendio, rayo, explosión, descargas eléctricas y escapes de gas. Se exceptúa la indemnización de daños que ocasionen muerte o lesiones (incapacidad permanente)."
+  },
+  {
+    "title": "Accidentes Personales",
+    "description": "Comprende daños traumáticos sufridos por el asegurado y personal doméstico nominado en el ejercicio de sus tareas, cuando tales daños produjeran la muerte o la incapacidad total o parcial de la persona asegurada. El asegurado estará cubierto las 24hs del día y tiene un alcance tanto nacional como internacional. El personal doméstico en desarrollo de sus tareas o trasladándose desde u hacia el lugar donde desarrolla las mismas. Se encuentran excluidas las actividades riesgosas como: Tripulación de barcos, Tripulación Aérea, etc. (Ver riesgos de aceptación restringida)."
+  },
+  {
+    "title": "Asistencia Médico-Farmacéutica",
+    "description": "Bajo esta cobertura se indemnizan los gastos que, vinculados con un accidente, deba realizar para su curación la persona asegurada. El reintegro será efectuado contra presentación de los comprobantes respectivos y una vez verificados por la auditoría médica de la Compañía. Franquicia: $200 por evento."
+  },
+  {
+    "title": "Cristales",
+    "description": "Cobertura a primer riesgo absoluto. Comprende rotura y/o rajadura de vidrios y/o espejos colocados verticalmente y fijados al edificio."
+  },
+  {
+    "title": "Jugadores de golf. Equipo",
+    "description": "Cobertura a primer riesgo absoluto. Pérdidas o daños causados por incendio, robo o hurto, que afecten al equipo del asegurado cuando se encuentre en clubes autorizados por la Asociación Argentina de Golf. La cobertura se extiende a cubrir rotura de palos ocurrida durante el desarrollo normal del juego."
+  },
+  {
+    "title": "Plus de Daños",
+    "description": "Se deberán tomar las tres coberturas en forma conjunta: Daños por agua: Cobertura a primer riesgo absoluto. Daños al edificio y/o contenido causados por rotura de cañerías o desborde de tanques. Daños estéticos: Cobertura a primer riesgo absoluto. Comprende la pérdida de coherencia estética de un bien, cuando resulte dañado por un siniestro cubierto por la póliza. Bienes refrigerados: Cobertura a primer riesgo absoluto. Comprende pérdida o deterioro de alimentos conservados en frío a consecuencia de la falta accidental de energía eléctrica por más de seis horas consecutivas."
+  },
+  {
+    "title": "Cobertura Adicional de Terremoto (Incendio y Daños)",
+    "description": "Se ha incorporado como cobertura opcional y adicional a las coberturas de Incendio de Edificio y Contenido la cobertura de Terremoto, por medio de la cual el seguro extiende las garantías de ambas coberturas de incendio, para cubrir los daños o pérdidas que pudieran sufrir los bienes asegurados causados por incendio durante un terremoto o temblor o por incendio producido a consecuencia de los mismos, mediante el pago de la prima adicional correspondiente. En caso de reclamo por daño o pérdida el asegurado deberá probar que dicho daño o pérdida ha sido causado única y exclusivamente por incendio."
+  },
+  {
+    "title": "BENEFICIOS ADICIONALES",
+    "description": "Nuestro seguro de hogar cuenta, entre otros, con los siguientes servicios adicionales: Restablecimiento, apertura y funcionamiento de cerraduras en caso de pérdida de llaves, con salvamento de personas si fuera necesario. Solución de emergencias causadas por pérdidas de agua o gas. Restablecimiento del suministro de energía eléctrica. Reposición de vidrios exteriores de la vivienda. El servicio se presta durante las 24 horas, todos los días del año."
+  },
+  {
+    "title": "DETALLE DE SERVICIOS ADICIONALES",
+    "description": "Combinado Familiar Prestación Descripción Cerrajería Perdida, extravío, robo de llaves o inutilización de cerraduras que haga imposible el acceso a la vivienda. Vidriería Rotura de vidrios, cristales de puertas y ventanas que formen parte del cerramiento de la vivienda. Electricidad Falta de energía eléctrica en vivienda producida como consecuencia de una falla o avería de las instalaciones eléctricas. Plomería Rotura de cañería, llaves y otras instalaciones fijas de agua de la vivienda. Los costos de desplazamiento del operario y mano de obra serán a cargo del prestador, los repuestos a cargo del asegurado. Gas Rotura de cañerías, llaves y otras instalaciones fijas de gas a la vista de la vivienda. Destapación Corresponde a la limpieza de las obstrucciones localizadas en el 1º tramo de cañerías en los lavatorios-piletas de cocina-lavadero o caño cloacal."
+  },
+  {
+    "title": "VARIOS",
+    "description": "Coordinación e información de prestadores. Transmisión de mensajes urgentes. Traslado de muebles. Guarda y custodia de muebles. Retorno anticipado del vehículo. Personal de vigilancia en caso de siniestro. Emergencias Código Rojo: En caso de 'Accidente' o 'Enfermedad' en categoría 'emergencia' en el ámbito de su hogar. Código Amarillo: Urgencia es toda aquella situación que no requiere la inmediatez de las emergencias médicas, pero que se puede transformar en tal para el paciente, si se la deja evolucionar de acuerdo con su historia natural."
+  },
+  {
+    "title": "SERVICIO DIFERENCIAL",
+    "description": "Nuestro principal diferencial es el servicio de Urgencias y Emergencias Médicas producidas dentro de la vivienda asegurada, prestándose las 24 hs. los 365 días sin cargo adicional. Este beneficio es para el titular de la póliza, su grupo familiar, visitas, huéspedes o invitados a una reunión o evento social que tenga lugar en el domicilio protegido, que requieran atención médica en forma inmediata, estén o no adheridos a la Prestadora Médica."
+  },
+  {
+    "title": "BENEFICIARIOS DEL SERVICIO ADICIONAL",
+    "description": "Titular de la póliza de combinado familiar. Grupo familiar primario. Visitas o huéspedes que encontrándose en el domicilio asegurado requieran de atención médica. Los invitados a una reunión o evento social que tenga lugar dentro del domicilio asegurado que requieran de atención médica de urgencia o emergencia."
+  },
+  {
+    "title": "CANTIDAD DE RIESGOS A CUBRIR",
+    "description": "Se aceptarán pólizas que amparen al menos tres riesgos independientes, siendo obligatorio el riesgo de 'Incendio de Edificio'. A efectos de este requisito: No se considerarán riesgos independientes: incendio de contenido, retiro de escombros y gastos extraordinarios. Todas las coberturas que amparen Robo serán consideradas en conjunto como un riesgo. Todas las coberturas del Plus de Daños serán consideradas en conjunto como un riesgo."
+  },
+
+  {
+    "title": "CARACTERÍSTICAS DE LAS VIVIENDAS ASEGURABLES",
+    "description": "Deberán ser viviendas construidas totalmente de material, con techos incombustibles. Deberán ser habitadas permanentemente o con porteros, serenos o caseros. Countries solo con vigilancia privada. A los efectos de la Cobertura de Granizo, la vivienda deberá contar con: Paredes exteriores construidas de mampostería, ladrillo y/u hormigón. No tener techo construido total o parcialmente de fibrocemento, cartón, plástico, vidrio o materiales similares, salvo sus tragaluces."
+  },
+  {
+    "title": "RIESGOS NO ACEPTADOS",
+    "description": "Cobertura de objetos fuera de la vivienda asegurada (excepto Todo Riesgo Electrónicos y Notebooks en Mundo Entero). Viviendas en construcción. Viviendas de construcción inferior. Viviendas de ocupación transitoria que no tengan la vivienda permanente asegurada a través de Seguro Online."
+  },
+  {
+    "title": "RIESGOS DE ACEPTACIÓN RESTRINGIDA",
+    "description": "Viviendas en comunicación con actividad comercial. Joyas, alhajas, pieles y objetos de arte serán aceptados en forma condicional, exclusivamente en domicilio y con presentación de tasación. Incendio, Robo y Daños; Electrónicos y Notebooks Mundo Entero. Accidentes Personales (actividades excluidas): personal de fabricación de armas y municiones, buceo y ocupaciones relacionadas, corredores de carreras (motores, botes, aviones, caballos, etc.), trabajadores en cemento y piedras, chofer de vehículos de transporte de caudales, construcción de túneles, deportistas profesionales, doble de riesgo (artista), personal en excavaciones, riesgos relacionados con explosivos (uso y manufactura), riesgos relacionados con energía nuclear/atómica, riesgos relacionados con manufactura de fósforos, personal de las fuerzas de seguridad, personal de la industria de la pesca, industria de los asbestos, investigador privado, mantenimiento y construcción de carreteras, mineros , personal de molinos, personal de extracción de petróleo crudo, gas natural, aceite (incluyendo perforación), personal de pistas de carreras, trabajadores del puerto, sereno (con armas), silletero, techistas, tripulación aérea, tripulación de barcos, personal de vigilancia. Sumas Aseguradas superiores a lo indicado como 'Límite de Cobertura' en el cuadro de tarifa."
+  },
+  {
+    "title": "MEDIDAS BÁSICAS DE SEGURIDAD",
+    "description": "El Asegurado se obliga y garantiza que, en todo momento, el riesgo asegurado contará con todas las medidas de seguridad que se detallan a continuación: a. Que todas las puertas de acceso al departamento o las del edificio que den a la calle, o patios o jardines accesibles desde aquella, cuenten con cerraduras tipo 'doble paleta' o 'bidimensionales'. a. Cuente con rejas de protección de hierro en todas las ventanas y puertas con paneles de vidrio, ubicadas en la planta baja y 1er. piso que den a la calle, o patios o jardines que por su parte sean accesibles desde la calle, es decir que no lo impidan muros, cercos o rejas de 1,80 m. como mínimo de altura. a. Esté edificada de medianera a medianera y no linde con un terreno baldío, obra en construcción o edificio abandonado, salvo que cuente con muros, cercos o rejas de una altura mínima de 1,80 m que impidan todo acceso que no sea por la puerta de calle del edificio. 2. El incumplimiento de cualquiera de las cargas antes mencionadas y/o la falta de alguna de las medidas de seguridad referidas precedentemente, le significará al asegurado la caducidad de sus derechos de acuerdo a las previsiones del Artículo 36 de la Ley de Seguros (Nº 17.418), quedando en consecuencia el asegurador liberado de toda responsabilidad emergente de este contrato de seguro."
+  }
+]

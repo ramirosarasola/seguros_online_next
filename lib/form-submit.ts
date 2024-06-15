@@ -1,5 +1,5 @@
 "use server";
-import { schema } from '../app/schema/form-schema';
+import { houseSchema } from '../app/schema/form-schema';
 
 export type FormState = {
   message: string;
@@ -12,7 +12,7 @@ export async function onSubmitAction(
   data: FormData
 ): Promise<FormState> {
   const formData = Object.fromEntries(data);
-  const parsed = schema.safeParse(formData);
+  const parsed = houseSchema.safeParse(formData);
 
   if (!parsed.success) {
     const fields: Record<string, string> = {};
