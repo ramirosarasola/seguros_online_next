@@ -50,7 +50,7 @@ const Dropdown = ({ text, options }: DropdownProps) => {
           <Link
             key={option.path}
             href={option.path}
-            className="block px-4 py-2 hover:bg-gray-100 text-black"
+            className="block px-4 py-2 hover:bg-gray-100 text-main_text"
           >
             {option.text}
           </Link>

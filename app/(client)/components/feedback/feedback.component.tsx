@@ -1,9 +1,9 @@
-import { CardTitleComponent } from "../card-title.component"
+import { SectionTitleComponent } from "../../../../components/ui/section-title.component";
 
 export const FeedbackComponent = () => {
   return (
     <>
-      <CardTitleComponent title="¿Qué dicen nuestros clientes?" />
+      <SectionTitleComponent title="¿Qué dicen nuestros clientes?" />
     </>
-  )
-}
+  );
+};

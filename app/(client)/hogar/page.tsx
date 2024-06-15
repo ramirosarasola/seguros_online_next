@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HouseFormQuoter } from "../components/quoter-form/house-quoter-form.component";
 import { QuoteInfo } from "../components/quotes-info/quote-info.component";
 import { quotesData } from "../components/quotes-info/data";
-import { CardTitleComponent } from "../components/card-title.component";
+import { SectionTitleComponent } from "../../../components/ui/section-title.component";
 
 const data: any = quotesData.hogar_data;
 

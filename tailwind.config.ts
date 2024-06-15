@@ -13,6 +13,7 @@ const config: Config = {
         secondary: '#FFFFFF',
         tertiary: '#e7e7e7',
         quaternary: '#707070',
+        main_text: '#444444',
         light_primary: '#92dcf1',
         success: '#38A169',
         warning: '#DD6B20',

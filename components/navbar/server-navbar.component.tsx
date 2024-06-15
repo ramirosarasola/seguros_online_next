@@ -24,9 +24,9 @@ const otrosDropdownItems = [
 
 export default function ServerNavbar() {
   return (
-    <nav className="h-24 w-full px-4 md:px-16 md:bg-secondary md:text-black flex items-center justify-between">
+    <nav className="h-24 w-full px-4 md:px-16 md:bg-secondary md:main_text flex items-center justify-between">
       <Link href="/">
-        <Image src={logo} alt="logo" width={120} className="h-auto" />
+        <Image src={logo} priority={true} alt="logo" width={120} className="h-auto" />
       </Link>
       <div className="hidden w-[60%] md:flex gap-8">
         {navItems.map((item) => (

@@ -59,7 +59,7 @@ const CarFormQuoter = () => {
               name="brand"
               data-wokan-auto="marca"
               required
-              className="h-10 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             >
               <option value="">Marca</option>
             </select>
@@ -71,7 +71,7 @@ const CarFormQuoter = () => {
               id="year"
               name="year"
               data-wokan-auto="anio"
-              className="h-10 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             >
               <option>Año</option>
             </select>
@@ -83,7 +83,7 @@ const CarFormQuoter = () => {
               id="model"
               name="model"
               data-wokan-auto="modelo"
-              className="h-10 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             >
               <option>Modelo</option>
             </select>
@@ -95,14 +95,14 @@ const CarFormQuoter = () => {
               id="version"
               name="version"
               data-wokan-auto="version"
-              className="h-10 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             >
               <option>Versión</option>
             </select>
           </label>
         <button
           data-wokan-auto-cotizar
-          className="w-52 lg:flex-1 mt-4 bg-primary uppercase font-bold text-white rounded-md py-2 mx-auto lg:items-center h-10"
+          className="w-52 lg:flex-1 mt-4 bg-primary uppercase font-bold text-white rounded-sm py-2 mx-auto lg:items-center h-12"
           onSubmit={(e) => handleSubmit}
         >
           Cotizar

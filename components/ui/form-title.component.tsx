@@ -7,8 +7,8 @@ export const FormTitle = ({
 }) => {
   return (
     <div className="space-y-1 mx-auto w-fit flex items-center flex-col">
-      <h3 className="text-primary text-xl font-semibold leading-6 text-center">{title}</h3>
-      <p className="text-gray-500 text-sm text-muted-foreground text-center">{subtitle}</p>
+      <h3 className="text-primary text-[1.5rem] font-semibold leading-6 text-center">{title}</h3>
+      <p className="text-main_text text-[1rem] text-muted-foreground text-center">{subtitle}</p>
     </div>
   );
 }

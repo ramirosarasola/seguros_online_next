@@ -1,4 +1,4 @@
-import { CardTitleComponent } from "../card-title.component";
+import { SectionTitleComponent } from "../../../../components/ui/section-title.component";
 import car_icon from "../../../../assets/001_car.png";
 import house_icon from "../../../../assets/002_house.png";
 import office_icon from "../../../../assets/003_office_building.png";
@@ -27,7 +27,7 @@ const services = [
     title: "Seguros para empresa",
     content:
       "Grandes empresas confían en nosotros porque ofrecemos un excelente servicio. ART – Seguros de Vida – Accidentes Personales - Integrales – Cauciones.",
-    link: "otros/comercio",
+    link: "comercio",
     alt: "seguros para negocios",
   },
   {
@@ -35,7 +35,7 @@ const services = [
     title: "Y mucho más...",
     content:
       "SegurosOnline.com.ar te ofrece soluciones integrales para que puedas contratar el seguro que más se ajuste a tus necesidades sin moverte de tu casa.",
-    link: "contact",
+    link: "contacto",
     alt: "contratar seguros",
   },
 ];
@@ -43,7 +43,7 @@ const services = [
 export const NuestrosSeguros = () => {
   return (
     <div className="py-10 bg-tertiary flex flex-col items-center justify-between">
-      <CardTitleComponent title="Nuestros Seguros" />
+      <SectionTitleComponent title="Nuestros Seguros" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {services.map((item, i) => {
           return (

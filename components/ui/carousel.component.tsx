@@ -35,7 +35,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
 
   return (
     <article className="max-w-screen">
-      <h2 className="text-[1.5rem] font-bold text-center">{title}</h2>
+      <h2 className="text-[2rem] font-bold text-center">{title}</h2>
       <div className="relative h-fit py-4">
         <div className="overflow-hidden w-full h-40 bg-gray-200">
           {slidesToShow.map(

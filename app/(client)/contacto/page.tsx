@@ -1,4 +1,3 @@
-import { HouseFormQuoter } from "../components/quoter-form/house-quoter-form.component";
 import { ContactForm } from "./components/contact-form";
 
 export default function ContactPage() {
@@ -11,11 +10,11 @@ export default function ContactPage() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-        <div className="flex flex-col items-center justify-center w-[30%] bg-[#2b2c30] text-secondary gap-4">
-          <p className="text-[28px]">Estamos en...</p>
+        <div className="flex flex-col items-center justify-center w-[30%] bg-[#2b2c30] gap-4">
+          <p className="text-[28px] text-secondary">Estamos en...</p>
           <div className="w-[50px] h-[2px] rounded-sm bg-primary"></div>
-          <p className="text-[18px]">Lavalle 348 5º Piso</p>
-          <p className="text-[18px]">Capital Federal - Argentina</p>
+          <p className="text-[18px] text-secondary">Lavalle 348 5º Piso</p>
+          <p className="text-[18px] text-secondary">Capital Federal - Argentina</p>
         </div>
       </section>
       <section className="flex flex-1 py-10 px-4 md:px-16">

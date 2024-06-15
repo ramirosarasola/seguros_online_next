@@ -28,12 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${varelaRound.className} min-h-screen bg-secondary`}>
+      <body className={`${poppins.className} min-h-screen bg-secondary`}>
       <header>
         <ServerNavbar />
       </header>
       <main
-        className={` flex flex-col justify-between min-h-[calc(100vh-18rem)] ${varelaRound.className} mx-auto`}
+        className={` flex flex-col justify-between min-h-[calc(100vh-18rem)] ${poppins.className} mx-auto`}
       >
         {children}
       </main>
