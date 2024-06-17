@@ -7,7 +7,7 @@ type AuthorProps = {
 
 const Author = ({ author }: any) => {
   return (
-    <div className="text-center mt-20 mb-8 p-12 relative rounded-lg bg-primary bg-opacity-80">
+    <div className="text-center mt-20 p-12 relative rounded-lg bg-primary bg-opacity-80">
       
       {/* center the image */}
       <div className="absolute left-[50%]  translate-x-[-50%] -top-[50px]">

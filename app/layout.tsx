@@ -16,9 +16,22 @@ const varelaRound = Varela_Round({
 
 // const inter = Inter({ subsets: ["latin"] });
 
+const baseUrl = "https://www.segurosonline.com.ar";
+
 export const metadata: Metadata = {
-  title: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
-  description: "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+  metadataBase: new URL(baseUrl),
+  keywords:["Seguros de Autos", "Seguros Online", "Cotización", "Cotización de Seguros"],
+  title: {
+    default: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
+    template: "%s | SegurosOnline",  
+  },
+  openGraph: {
+    description: "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+    // images: [
+      
+    // ]
+    
+  }
 };
 
 export default function RootLayout({

@@ -15,7 +15,7 @@ export default async function BlogPage() {
 
   const posts = await getAllPosts();
   return (
-    <section className="px-4 md:px-16 py-10 min-h-[calc(100vh-96px)] bg-primary">
+    <section className="px-4 md:px-16 py-10 min-h-[calc(100vh-96px)]">
       <div className="flex flex-col md:flex-row gap-12">
         <div className="md:col-span-8 col-span-1 grid gap-8">
           {posts.map((post: any, index: number) => (
