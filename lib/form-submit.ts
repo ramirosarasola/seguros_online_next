@@ -1,5 +1,5 @@
 "use server";
-import { houseSchema } from '../app/schema/form-schema';
+import { contratacionSchema } from '@/app/schema/form-schema';
 
 export type FormState = {
   message: string;
@@ -11,8 +11,8 @@ export async function onSubmitAction(
   prevState: FormState,
   data: FormData
 ): Promise<FormState> {
-  const formData = Object.fromEntries(data);
-  const parsed = houseSchema.safeParse(formData);
+  const formData = Object.fromEntries(data.entries());
+  const parsed = contratacionSchema.safeParse(formData);
 
   if (!parsed.success) {
     const fields: Record<string, string> = {};
@@ -26,12 +26,19 @@ export async function onSubmitAction(
     };
   }
 
-  if (parsed.data.email.includes("a")) {
+  // Realizar una petición
+  const response = await fetch(`http://localhost:8081/api/contratar`, {
+    method: 'POST',
+    body: JSON.stringify(parsed.data),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (!response.ok) {
     return {
-      message: "Invalid email",
+      message: "Error submitting form",
       fields: parsed.data,
     };
   }
 
-  return { message: "User registered" };
+  return { message: "Form submitted successfully" };
 }

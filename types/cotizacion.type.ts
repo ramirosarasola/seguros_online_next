@@ -1,5 +1,5 @@
 export interface Cotizacion {
-  id: number;
+  id: string;
   nombre: string;
   email: string;
   telefono: string;

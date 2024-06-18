@@ -3,6 +3,7 @@
 import { Cotizacion } from '@/types/cotizacion.type';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { ContratacionForm } from './components/contratacion-form.component';
 
 export default function ContratacionPage() {
   const pathname = usePathname();
@@ -44,18 +45,11 @@ export default function ContratacionPage() {
 
   return (
     <>
-      <h1>Contratacion Page {cotizacionId}</h1>
-      <div>
-        <p>ID: {cotizacion.id}</p>
-        <p>Nombre: {cotizacion.nombre}</p>
-        <p>Email: {cotizacion.email}</p>
-        <p>Teléfono: {cotizacion.telefono}</p>
-        <p>Código Postal: {cotizacion.codigoPostal}</p>
-        <p>Año: {cotizacion.anio}</p>
-        <p>Marca: {cotizacion.marca}</p>
-        <p>Modelo: {cotizacion.modelo}</p>
-        <p>Aseguradora: {cotizacion.aseguradora}</p>
-        <p>Cobertura Nombre: {cotizacion.coberturaNombre}</p>
+      <h1 className="text-2xl font-bold text-center mb-4 font-[Varela Round] text-primary">
+        Contratacion de seguro
+      </h1>
+      <div className="">
+        <ContratacionForm cotizacion={cotizacion} />
       </div>
     </>
   );
