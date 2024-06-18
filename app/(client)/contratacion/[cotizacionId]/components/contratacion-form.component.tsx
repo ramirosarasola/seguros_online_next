@@ -59,45 +59,81 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
 
   const formRef = useRef<HTMLFormElement>(null);
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const formData = new FormData(formRef.current!);
+      formData.set("id", cotizacion.id.toString());
+      const jsonPayload = JSON.stringify(
+        Object.fromEntries(formData.entries())
+      );
+
+      const response = await fetch("http://localhost:8081/api/contratar", {
+        method: "POST",
+        body: jsonPayload,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Error al enviar el formulario");
+      }
+      const data = await response.json();
+      console.log("Respuesta del servidor:", data);
+      // Aquí puedes manejar la respuesta del servidor según tus necesidades
+    } catch (error) {
+      console.error("Error:", error);
+      // Aquí puedes manejar los errores de la petición
+    }
+  };
+
   return (
     <Form {...form}>
       <form
         ref={formRef}
         className="space-y-4 bg-white p-8 h-fit shadow-lg"
         action={formAction}
-        onSubmit={(evt) => {
-          evt.preventDefault();
-          form.handleSubmit(async (data) => {
-            console.log("Form data:", data); // Ver payload en consola
-            const result = formAction(new FormData(formRef.current!));
-            console.log(result);
-            // Aqui puedes hacer algo con el resultado
-          })(evt);
+        onSubmit={(event) => {
+          handleSubmit(event);
+          // event.preventDefault();
+          // form.handleSubmit(async (data) => {
+          //   console.log("Form data:", data); // Ver payload en consola
+          //   const result = formAction(new FormData(formRef.current!));
+          //   console.log(result);
+          //   // Aqui puedes hacer algo con el resultado
+          // })(event);
         }}
-        
       >
         <FormTitle
           title="Seguros para Bici"
           subtitle="Contactate y te asesoramos!"
         />
         <div className="h-[60px] w-full bg-primary gap-4 flex items-center justify-start p-4">
-          <PersonIcon/>
+          <PersonIcon />
           <h6 className="text-white">{`${cotizacion.nombre}, complete sus datos`}</h6>
         </div>
         <FormField
-            control={form.control}
-            name="id"
-            render={({ field }) => (
-              <FormItem className="w-full">
-                <FormLabel>ID de su tramite</FormLabel>
-                <FormControl>
-                  <Input className="ring-1 ring-tertiary cursor-not-allowed" readOnly value={cotizacion.id.toString()} placeholder="" />
-                </FormControl>
-                {/* <FormDescription>Your first name.</FormDescription> */}
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          // control={form.control}
+          name="id"
+          render={() => (
+            <FormItem>
+              {/* <div className="w-full"> */}
+              <FormLabel>ID de su tramite</FormLabel>
+              {/* <FormControl> */}
+              <Input
+                className="ring-1 ring-tertiary cursor-not-allowed"
+                readOnly
+                value={cotizacion.id.toString()}
+                placeholder=""
+              />
+              {/* </FormControl> */}
+              {/* <FormDescription>Your first name.</FormDescription> */}
+              <FormMessage />
+            </FormItem>
+            // </div>
+          )}
+        />
+
         <div className="mb-4 flex flex-col md:flex-row gap-2">
           <FormField
             control={form.control}
@@ -208,7 +244,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         />
 
         <div className="h-[60px] w-full bg-primary gap-4  flex items-center justify-start p-4">
-          <CarIcon/>
+          <CarIcon />
           <h6 className="text-white">{`Datos de tu  ${cotizacion.marca} ${cotizacion.modelo}`}</h6>
         </div>
         <div className="mb-4 flex flex-col md:flex-row gap-2">
@@ -271,7 +307,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
           )}
         />
         <div className="h-[60px] w-full bg-primary gap-4  flex items-center justify-start p-4">
-          <PaymentIcon/>
+          <PaymentIcon />
           <h6 className="text-white">{`Metodo de Pago`}</h6>
         </div>
         <div className="flex mb-4 flex-col gap-2">
@@ -284,8 +320,10 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
                 <FormControl>
                   {/* <Input placeholder="" {...field} /> */}
                   <Select {...field}>
-                  <Option value="tarjeta_credito">Tarjeta de Credito</Option>
-                  <Option value="tarjeta_debito">Debito Cuenta Bancaria </Option>
+                    <Option value="tarjeta_credito">Tarjeta de Credito</Option>
+                    <Option value="tarjeta_debito">
+                      Debito Cuenta Bancaria{" "}
+                    </Option>
                   </Select>
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
