@@ -106,8 +106,8 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         }}
       >
         <FormTitle
-          title="Seguros para Bici"
-          subtitle="Contactate y te asesoramos!"
+          title="Contrata tu seguro de manera online y segura"
+          subtitle=""
         />
         <div className="h-[60px] w-full bg-primary gap-4 flex items-center justify-start p-4">
           <PersonIcon />
@@ -119,7 +119,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
           render={() => (
             <FormItem>
               {/* <div className="w-full"> */}
-              <FormLabel>ID de su tramite</FormLabel>
+              <div>ID de su tramite</div>
               {/* <FormControl> */}
               <Input
                 className="ring-1 ring-tertiary cursor-not-allowed"

@@ -45,9 +45,6 @@ export default function ContratacionPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold text-center mb-4 font-[Varela Round] text-primary">
-        Contratacion de seguro
-      </h1>
       <div className="">
         <ContratacionForm cotizacion={cotizacion} />
       </div>
