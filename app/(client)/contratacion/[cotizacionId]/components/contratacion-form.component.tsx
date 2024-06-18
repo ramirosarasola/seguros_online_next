@@ -94,14 +94,15 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         className="space-y-4 bg-white p-8 h-fit shadow-lg"
         action={formAction}
         onSubmit={(event) => {
-          handleSubmit(event);
-          // event.preventDefault();
-          // form.handleSubmit(async (data) => {
-          //   console.log("Form data:", data); // Ver payload en consola
-          //   const result = formAction(new FormData(formRef.current!));
-          //   console.log(result);
-          //   // Aqui puedes hacer algo con el resultado
-          // })(event);
+          // handleSubmit(event);
+          event.preventDefault();
+          form.handleSubmit(async (data) => {
+            // console.log("Form data:", data); // Ver payload en consola
+            const result = formAction(new FormData(formRef.current!));
+            if (data) {
+              handleSubmit(event);
+            }
+          })(event);
         }}
       >
         <FormTitle
