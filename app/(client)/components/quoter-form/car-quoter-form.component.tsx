@@ -101,9 +101,9 @@ const CarFormQuoter = () => {
             </select>
           </label>
         <button
+          type="submit"
           data-wokan-auto-cotizar
           className="w-52 lg:flex-1 mt-4 bg-primary uppercase font-bold text-white rounded-sm py-2 mx-auto lg:items-center h-12"
-          onSubmit={(e) => handleSubmit}
         >
           Cotizar
         </button>
