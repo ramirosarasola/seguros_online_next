@@ -25,13 +25,13 @@ const otrosDropdownItems = [
 const clientNavItems = [
   { path: "/", text: "Autos" },
   { path: "/hogar", text: "Hogar" },
-  { path: "/blog", text: "Blog" },
-  { path: "/contacto", text: "Contacto" },
   { path: "/bici", text: "Bici" },
   { path: "/caucion", text: "Caucion" },
   { path: "/art", text: "ART" },
   { path: "/comercio", text: "Comercio" },
   { path: "/garantias", text: "Garantia de Alquiler" },
+  { path: "/blog", text: "Blog" },
+  { path: "/contacto", text: "Contacto" },
 ];
 
 export default function ServerNavbar() {
