@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 
 const apiUrl = 'http://localhost:8081';
@@ -7,32 +8,145 @@ const apiUrl = 'http://localhost:8081';
 const CarFormQuoter = () => {
   const brandSelectRef = useRef<HTMLSelectElement>(null);
   const contratarUrl = `${apiUrl}/api/cotizacion`;
-  const [wokanLoaded, setWokanLoaded] = useState(false);
+  const [formData, setFormData] = useState({});
+  const [brands, setBrands] = useState([]);
+  const [years, setYears] = useState([]);
+  const [models, setModels] = useState([]);
+  const [versions, setVersions] = useState([]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
   };
 
   useEffect(() => {
-    if (!wokanLoaded) {
-      const script = document.createElement('script');
-      script.src = "//webpack.wokan.com.ar/app/v1/init.js";
-      script.async = true;
-      script.onload = () => {
-        if (typeof window.wokanInitWebpack === 'function') {
-          window.wokanInitWebpack({ sid: '1483@65e0d911de58b', mainColor: '#1570B1' });
-          setWokanLoaded(true);
-        } else {
-          console.error('wokanInitWebpack is not defined');
-          setWokanLoaded(false);
+    
+    const endpoint = "https://webpack.wokan.com.ar/api/v1/data_auto/marcas";
+    const headers = {
+      "X-Wokan-Webpack-Sid": "1483@65e0d911de58b",
+    };
+
+    fetch(endpoint, {
+      method: "GET",
+      headers: headers,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} - ${response.statusText}`);
         }
+        return response.json();
+      })
+      .then((data) => {
+        if (brands.length === 0) {
+          setBrands(data.result);
+        }
+        // console.log("Respuesta exitosa:", data);
+      })
+      .catch((error) => {
+        console.error("Error en la solicitud:", error.message);
+      });
+  }, []);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+    if (name === "brand") {
+      // Realizar la segunda solicitud para obtener los años
+      const endpoint = `https://webpack.wokan.com.ar/api/v1/data_auto/anios?filter%5Bmarca%5D=${value}`;
+      const headers = {
+        "X-Wokan-Webpack-Sid": "1483@65e0d911de58b",
       };
-      document.body.appendChild(script);
+
+      fetch(endpoint, {
+        method: "GET",
+        headers: headers,
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `Error: ${response.status} - ${response.statusText}`
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setYears(data.result);
+          // console.log("Años obtenidos:", data.result);
+        })
+        .catch((error) => {
+          console.error("Error obteniendo años:", error.message);
+        });
     }
-  }, [wokanLoaded]);
+
+    if (name === "year") {
+      // Realizar la tercera solicitud para obtener los modelos
+      const brandId = formData.brand;
+      const endpoint = `https://webpack.wokan.com.ar/api/v1/data_auto/grupos?filter%5Bmarca%5D=${brandId}&filter%5Banio%5D=${value}`;
+      const headers = {
+        "X-Wokan-Webpack-Sid": "1483@65e0d911de58b",
+      };
+
+      fetch(endpoint, {
+        method: "GET",
+        headers: headers,
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `Error: ${response.status} - ${response.statusText}`
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setModels(data.result);
+          // console.log("Modelos obtenidos:", data.result);
+        })
+        .catch((error) => {
+          console.error("Error obteniendo modelos:", error.message);
+        });
+    }
+
+    if (name === "model") {
+      // Realizar la cuarta solicitud para obtener las versiones
+      const brandId = formData.brand;
+      const year = formData.year;
+      const groupId = value;
+      const endpoint = `https://webpack.wokan.com.ar/api/v1/data_auto/modelos?filter%5Bmarca%5D=${brandId}&filter%5Banio%5D=${year}&filter%5Bgrupo%5D=${groupId}`;
+      const headers = {
+        "X-Wokan-Webpack-Sid": "1483@65e0d911de58b",
+      };
+
+      fetch(endpoint, {
+        method: "GET",
+        headers: headers,
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `Error: ${response.status} - ${response.statusText}`
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setVersions(data.result);
+          // console.log("Versiones obtenidas:", data.result);
+        })
+        .catch((error) => {
+          console.error("Error obteniendo versiones:", error.message);
+        });
+    }
+  };
 
   return (
     <>
+       <Script async src="//webpack.wokan.com.ar/app/v1/init.js" onLoad={() => {
+        wokanInitWebpack({ sid: '1483@65e0d911de58b', mainColor: '#1570B1' })
+      }} />
       <form
         id="formQuoter"
         method="post"
@@ -60,8 +174,14 @@ const CarFormQuoter = () => {
               data-wokan-auto="marca"
               required
               className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              onChange={(e: any) => handleInputChange(e)}
             >
               <option value="">Marca</option>
+              {brands.map((brand) => (
+              <option key={brand.id} value={brand.id}>
+                {brand.descripcion}
+              </option>
+            ))}
             </select>
           </label>
 
@@ -72,8 +192,14 @@ const CarFormQuoter = () => {
               name="year"
               data-wokan-auto="anio"
               className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              onChange={(e: any) => handleInputChange(e)}
             >
               <option>Año</option>
+              {years.map((year) => (
+              <option key={year.anio} value={year.anio}>
+                {year.anio}
+              </option>
+            ))}
             </select>
           </label>
 
@@ -84,8 +210,14 @@ const CarFormQuoter = () => {
               name="model"
               data-wokan-auto="modelo"
               className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              onChange={(e: any) => handleInputChange(e)}
             >
               <option>Modelo</option>
+              {models.map((model) => (
+              <option key={model.id} value={model.id}>
+                {model.descripcion}
+              </option>
+            ))}
             </select>
           </label>
 
@@ -96,8 +228,14 @@ const CarFormQuoter = () => {
               name="version"
               data-wokan-auto="version"
               className="h-12 p-2 block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              onChange={(e: any) => handleInputChange(e)}
             >
               <option>Versión</option>
+              {versions.map((version) => (
+              <option key={version.id} value={version.id}>
+                {version.descripcion}
+              </option>
+            ))}
             </select>
           </label>
         <button
