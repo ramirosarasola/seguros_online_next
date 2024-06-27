@@ -176,7 +176,7 @@ export async function getPostDetails(slug: string) {
               `,
         variables: {
           slug,
-        },  
+        },
       }),
     }
   );

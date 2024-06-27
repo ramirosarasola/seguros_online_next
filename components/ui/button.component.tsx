@@ -18,6 +18,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         quote_form:"w-full bg-primary text-secondary hover:bg-primary/90 h-12 text-[1rem]",
+        quote_form_loading:"w-full bg-white text-primary cursor-not-allowed border border-primary border-[1px]  h-12 text-[1rem]",
       },
       size: {
         full: 'w-full',

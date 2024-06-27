@@ -17,10 +17,12 @@ import {
 } from "@/components/ui/form.component";
 import { Input } from "@/components/ui/input.component";
 import { Option, Select } from "@/components/ui/select.component";
+import { Spinner } from "@/components/ui/spinner.component";
 import { onSubmitAction } from "@/lib/form-submit";
 import { Cotizacion } from "@/types/cotizacion.type";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRef } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -30,6 +32,9 @@ type ContratacionFormProps = {
 };
 
 export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
+
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const [state, formAction] = useFormState(onSubmitAction, {
     message: "",
   });
@@ -58,8 +63,21 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
   });
 
   const formRef = useRef<HTMLFormElement>(null);
+  const actualData = form.watch()
+
+  useEffect(() => {
+    if(actualData.metodo_pago === "tarjeta_credito"){
+      form.setValue("cbu", "");
+    }
+    if(actualData.metodo_pago === "tarjeta_debito"){
+      form.setValue("titular_tarjeta", "");
+      form.setValue("numero_tarjeta", "");
+      form.setValue("vencimiento_tarjeta", "");
+    }
+  },[actualData.metodo_pago])
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setIsLoading(true);
     event.preventDefault();
     try {
       const formData = new FormData(formRef.current!);
@@ -79,7 +97,12 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         throw new Error("Error al enviar el formulario");
       }
       const data = await response.json();
-      console.log("Respuesta del servidor:", data);
+      console.log(data)
+      setIsLoading(false);
+      // Redirect to success page
+      if (data) {
+        router.push("/contratacion/[contratacionId]/success");
+      }
       // Aquí puedes manejar la respuesta del servidor según tus necesidades
     } catch (error) {
       console.error("Error:", error);
@@ -175,7 +198,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="direccion"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full">
                 <FormLabel>Direccion</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
@@ -189,7 +212,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="altura"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full">
                 <FormLabel>Altura</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
@@ -203,7 +226,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="piso"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full">
                 <FormLabel>Piso</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
@@ -218,7 +241,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="depto"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full">
                 <FormLabel>Depto.</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
@@ -336,10 +359,10 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="numero_tarjeta"
             render={({ field }) => (
-              <FormItem className="flex-1">
+              <FormItem className={`flex-1 ${!(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
                 <FormLabel>Numero de Plastico</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} />
+                  <Input  placeholder="" {...field} value={field.value || ''} />
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
@@ -350,10 +373,10 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="vencimiento_tarjeta"
             render={({ field }) => (
-              <FormItem className="flex-1">
+              <FormItem className={`flex-1 ${!(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
                 <FormLabel>Vencimiento de la Tarjeta</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} />
+                  <Input placeholder="" {...field} value={field.value || ''} />
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
@@ -364,10 +387,10 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="titular_tarjeta"
             render={({ field }) => (
-              <FormItem className="flex-1">
+              <FormItem className={`flex-1 ${!(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
                 <FormLabel>Titular de la Tarjeta</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} />
+                  <Input placeholder="" {...field} value={field.value || ''} />
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
@@ -379,18 +402,22 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
           control={form.control}
           name="cbu"
           render={({ field }) => (
-            <FormItem className="flex-1">
+            <FormItem className={`flex-1 ${(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
               <FormLabel>CBU</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} />
+                <Input placeholder="" {...field} value={field.value || ''} />
               </FormControl>
               {/* <FormDescription>Tipo de casa.</FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" variant={"quote_form"}>
-          Enviar
+        <Button disabled={isLoading} type="submit" variant={`${!isLoading ? "quote_form" : "quote_form_loading"}`}>
+          {
+            isLoading
+              ? <p className="text-primary flex gap-4 justify-center ">Estamos armando tu poliza... <Spinner/></p>
+              : 'Contratar'
+          }
         </Button>
       </form>
     </Form>

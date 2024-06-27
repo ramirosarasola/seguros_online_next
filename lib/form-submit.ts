@@ -3,7 +3,7 @@ import { contratacionSchema } from '@/app/schema/form-schema';
 
 export type FormState = {
   message: string;
-  fields?: Record<string, string>;
+  fields?: Record<string, string | null | undefined>;
   issues?: string[];
 };
 

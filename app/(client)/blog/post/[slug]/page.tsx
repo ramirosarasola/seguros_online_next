@@ -1,14 +1,18 @@
-import { getAllPosts, getPostDetails } from "@/services"
-import { Author, Categories, Comments, CommentsForm, PostDetail, PostWidget } from "../../components";
+import { getAllPosts, getPostDetails } from "@/services";
+import { Author, Categories, PostDetail, PostWidget } from "../../components";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
   try {
     const response = await getPostDetails(params.slug);
     if (response?.length === 0) {
       return {
-        title: 'Post not found',
-        description: 'Post not found',
-      }
+        title: "Post not found",
+        description: "Post not found",
+      };
     } else {
       return {
         openGraph: {
@@ -16,49 +20,49 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           description: response?.[0]?.node?.excerpt,
           images: [
             {
-              url: response?.[0]?.node?.featuredImage?.url
-            }
-          ]
-        }
-      }
-   }
+              url: response?.[0]?.node?.featuredImage?.url,
+            },
+          ],
+        },
+      };
+    }
   } catch (error) {
-      console.error('Error:', error);
+    console.error("Error:", error);
   }
 }
 
-
 export async function generateStaticParams() {
-  
   try {
     const response = await getAllPosts();
 
     if (!response.ok) {
-      throw new Error('Failed to fetch posts');
+      throw new Error("Failed to fetch posts");
     }
 
     const posts = await response.json();
 
     if (!Array.isArray(posts)) {
-      throw new Error('Invalid posts data');
+      throw new Error("Invalid posts data");
     }
 
-    if(posts.length === 0) {
+    if (posts.length === 0) {
       return [];
     }
 
     return posts.map((post: any) => ({
-      slug: post.node.slug
+      slug: post.node.slug,
     }));
-
-  }catch(error) {
-    console.error('Error:', error);
+  } catch (error) {
+    console.error("Error:", error);
     return [];
   }
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await getPostDetails(params.slug);
 
   return (
@@ -72,8 +76,11 @@ export default async function PostPage({ params }: { params: { slug: string } })
         </div>
         <div className="col-span-1 md:col-span-4">
           <div className="relative md:sticky top-8">
-            <PostWidget slug={post.slug} categories={post.categories.map((category: any) => category.slug)} />
-            <Categories />
+            <PostWidget
+              slug={post.slug}
+              categories={post.categories.map((category: any) => category.slug)}
+            />
+            <Categories categories={post.categories} />
           </div>
         </div>
       </div>

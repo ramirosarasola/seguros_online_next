@@ -58,6 +58,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                       className="w-full flex items-center justify-evenly"
                     >
                       <Image
+                        loading="lazy"
                         src={slide.img}
                         alt={`Seguros para ${slide.nombre}`}
                         width={130}
