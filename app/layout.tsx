@@ -20,18 +20,24 @@ const baseUrl = "https://www.segurosonline.com.ar";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  keywords:["Seguros de Autos", "Seguros Online", "Cotización", "Cotización de Seguros"],
+  keywords: [
+    "Seguros de Autos",
+    "Seguros Online",
+    "Cotización",
+    "Cotización de Seguros",
+  ],
   title: {
-    default: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
-    template: "%s | SegurosOnline",  
+    default:
+      "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
+    template: "%s | SegurosOnline",
   },
   openGraph: {
-    description: "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+    description:
+      "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
     // images: [
-      
+
     // ]
-    
-  }
+  },
 };
 
 export default function RootLayout({
@@ -42,15 +48,15 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.className} min-h-screen bg-secondary`}>
-      <header className="bg-secondary">
-        <ServerNavbar />
-      </header>
-      <main
-        className={`pt-[96px] flex flex-col justify-between min-h-[calc(100vh-18rem)] ${poppins.className} mx-auto`}
-      >
-        {children}
-      </main>
-        <Footer/>
+        <header className="bg-secondary">
+          <ServerNavbar />
+        </header>
+        <main
+          className={`pt-[96px] flex flex-col justify-between min-h-[calc(100vh-18rem)] ${poppins.className} mx-auto`}
+        >
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
