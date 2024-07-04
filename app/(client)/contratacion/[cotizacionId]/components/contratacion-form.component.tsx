@@ -32,7 +32,6 @@ type ContratacionFormProps = {
 };
 
 export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
-
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [state, formAction] = useFormState(onSubmitAction, {
@@ -63,18 +62,18 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
   });
 
   const formRef = useRef<HTMLFormElement>(null);
-  const actualData = form.watch()
+  const actualData = form.watch();
 
   useEffect(() => {
-    if(actualData.metodo_pago === "tarjeta_credito"){
+    if (actualData.metodo_pago === "tarjeta_credito") {
       form.setValue("cbu", "");
     }
-    if(actualData.metodo_pago === "tarjeta_debito"){
+    if (actualData.metodo_pago === "tarjeta_debito") {
       form.setValue("titular_tarjeta", "");
       form.setValue("numero_tarjeta", "");
       form.setValue("vencimiento_tarjeta", "");
     }
-  },[actualData.metodo_pago])
+  }, [actualData.metodo_pago]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
@@ -97,7 +96,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         throw new Error("Error al enviar el formulario");
       }
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       setIsLoading(false);
       // Redirect to success page
       if (data) {
@@ -151,7 +150,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
                 placeholder=""
               />
               {/* </FormControl> */}
-              {/* <FormDescription>Your first name.</FormDescription> */}
+              {/* <FormDescription>Your Nombre.</FormDescription> */}
               <FormMessage />
             </FormItem>
             // </div>
@@ -172,7 +171,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
                     <Option value="pasaporte">Pasaporte</Option>
                   </Select>
                 </FormControl>
-                {/* <FormDescription>Your first name.</FormDescription> */}
+                {/* <FormDescription>Your Nombre.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -186,7 +185,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your last name.</FormDescription> */}
+                {/* <FormDescription>Your Apellido.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -359,10 +358,16 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="numero_tarjeta"
             render={({ field }) => (
-              <FormItem className={`flex-1 ${!(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
+              <FormItem
+                className={`flex-1 ${
+                  !(actualData.metodo_pago === "tarjeta_credito")
+                    ? "hidden"
+                    : ""
+                }`}
+              >
                 <FormLabel>Numero de Plastico</FormLabel>
                 <FormControl>
-                  <Input  placeholder="" {...field} value={field.value || ''} />
+                  <Input placeholder="" {...field} value={field.value || ""} />
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
@@ -373,10 +378,16 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="vencimiento_tarjeta"
             render={({ field }) => (
-              <FormItem className={`flex-1 ${!(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
+              <FormItem
+                className={`flex-1 ${
+                  !(actualData.metodo_pago === "tarjeta_credito")
+                    ? "hidden"
+                    : ""
+                }`}
+              >
                 <FormLabel>Vencimiento de la Tarjeta</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} value={field.value || ''} />
+                  <Input placeholder="" {...field} value={field.value || ""} />
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
@@ -387,10 +398,16 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             control={form.control}
             name="titular_tarjeta"
             render={({ field }) => (
-              <FormItem className={`flex-1 ${!(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
+              <FormItem
+                className={`flex-1 ${
+                  !(actualData.metodo_pago === "tarjeta_credito")
+                    ? "hidden"
+                    : ""
+                }`}
+              >
                 <FormLabel>Titular de la Tarjeta</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} value={field.value || ''} />
+                  <Input placeholder="" {...field} value={field.value || ""} />
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
@@ -402,22 +419,32 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
           control={form.control}
           name="cbu"
           render={({ field }) => (
-            <FormItem className={`flex-1 ${(actualData.metodo_pago === 'tarjeta_credito') ? 'hidden': ''}`}>
+            <FormItem
+              className={`flex-1 ${
+                actualData.metodo_pago === "tarjeta_credito" ? "hidden" : ""
+              }`}
+            >
               <FormLabel>CBU</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} value={field.value || ''} />
+                <Input placeholder="" {...field} value={field.value || ""} />
               </FormControl>
               {/* <FormDescription>Tipo de casa.</FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button disabled={isLoading} type="submit" variant={`${!isLoading ? "quote_form" : "quote_form_loading"}`}>
-          {
-            isLoading
-              ? <p className="text-primary flex gap-4 justify-center ">Estamos armando tu poliza... <Spinner/></p>
-              : 'Contratar'
-          }
+        <Button
+          disabled={isLoading}
+          type="submit"
+          variant={`${!isLoading ? "quote_form" : "quote_form_loading"}`}
+        >
+          {isLoading ? (
+            <p className="text-primary flex gap-4 justify-center ">
+              Estamos armando tu poliza... <Spinner />
+            </p>
+          ) : (
+            "Contratar"
+          )}
         </Button>
       </form>
     </Form>

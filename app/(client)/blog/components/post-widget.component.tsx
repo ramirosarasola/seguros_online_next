@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { getRecentPosts, getSimilarPosts } from "@/services";
 import moment from "moment";
 import Image from "next/image";
@@ -8,29 +8,28 @@ import { useEffect, useState } from "react";
 type PostWidgetProps = {
   categories?: string[];
   slug?: string;
-}
+};
 
 const PostWidget = ({ categories, slug }: PostWidgetProps) => {
-
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(categories, slug)
-        .then((result) => {
-          setRelatedPosts(result)
-        })
+      getSimilarPosts(categories, slug).then((result) => {
+        setRelatedPosts(result);
+      });
     } else {
-      getRecentPosts()
-        .then((result) => {
-          setRelatedPosts(result)
-        })
+      getRecentPosts().then((result) => {
+        setRelatedPosts(result);
+      });
     }
-  },[slug])
+  }, [slug]);
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">{slug ? 'Related Posts' : 'Recent Posts'}</h3>
+      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+        {slug ? "Articulos Relacionados" : "Articulos Recientes"}
+      </h3>
 
       {relatedPosts.map((post: any, index: number) => (
         <div key={index} className="flex items-center w-full mb-4">
@@ -54,7 +53,7 @@ const PostWidget = ({ categories, slug }: PostWidgetProps) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default PostWidget;

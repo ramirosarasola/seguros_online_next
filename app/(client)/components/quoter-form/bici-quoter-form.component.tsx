@@ -1,8 +1,15 @@
-'use client';
+"use client";
 import { biciSchema } from "@/app/schema/form-schema";
 import { Button } from "@/components/ui/button.component";
 import { FormTitle } from "@/components/ui/form-title.component";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form.component";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form.component";
 import { Input } from "@/components/ui/input.component";
 import { onSubmitAction } from "@/lib/form-submit";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,7 +19,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 export const BiciFormQuoter = () => {
-
   const [state, formAction] = useFormState(onSubmitAction, {
     message: "",
   });
@@ -56,11 +62,11 @@ export const BiciFormQuoter = () => {
             name="name"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>First Name</FormLabel>
+                <FormLabel>Nombre</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your first name.</FormDescription> */}
+                {/* <FormDescription>Your Nombre.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -70,11 +76,11 @@ export const BiciFormQuoter = () => {
             name="lastname"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Last Name</FormLabel>
+                <FormLabel>Apellido</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your last name.</FormDescription> */}
+                {/* <FormDescription>Your Apellido.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -174,5 +180,5 @@ export const BiciFormQuoter = () => {
         </Button>
       </form>
     </Form>
-  )
-}
+  );
+};

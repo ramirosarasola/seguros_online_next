@@ -31,7 +31,7 @@ export const AlquilerQuoterForm = () => {
       codArea: "",
       phone: "",
       contactHour: "",
-      consulta:"",
+      consulta: "",
       ...(state?.fields ?? {}),
     },
   });
@@ -40,109 +40,109 @@ export const AlquilerQuoterForm = () => {
 
   return (
     <Form {...form}>
-    <form
-      ref={formRef}
-      className="space-y-4 bg-white p-8 h-fit shadow-lg"
-      action={formAction}
-      onSubmit={(evt) => {
-        evt.preventDefault();
-        form.handleSubmit(() => {
-          formAction(new FormData(formRef.current!));
-        })(evt);
-      }}
-    >
-      <FormTitle
-        title="Garantías de Alquiler"
-        subtitle="Contactate y te asesoramos!"
-      />
-      <div className="flex gap-2">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem className="w-full">
-              <FormLabel>First Name</FormLabel>
-              <FormControl>
-                <Input placeholder="" {...field} />
-              </FormControl>
-              {/* <FormDescription>Your first name.</FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
+      <form
+        ref={formRef}
+        className="space-y-4 bg-white p-8 h-fit shadow-lg"
+        action={formAction}
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          form.handleSubmit(() => {
+            formAction(new FormData(formRef.current!));
+          })(evt);
+        }}
+      >
+        <FormTitle
+          title="Garantías de Alquiler"
+          subtitle="Contactate y te asesoramos!"
         />
+        <div className="flex gap-2">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Nombre</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                {/* <FormDescription>Your Nombre.</FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="lastname"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Apellido</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                {/* <FormDescription>Your Apellido.</FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={form.control}
-          name="lastname"
-          render={({ field }) => (
-            <FormItem className="w-full">
-              <FormLabel>Last Name</FormLabel>
-              <FormControl>
-                <Input placeholder="" {...field} />
-              </FormControl>
-              {/* <FormDescription>Your last name.</FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-      </div>
-      <FormField
-        control={form.control}
-        name="email"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>Email</FormLabel>
-            <FormControl>
-              <Input placeholder="" {...field} />
-            </FormControl>
-            {/* <FormDescription>Your email address.</FormDescription> */}
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <div className="flex gap-2">
-        <FormField
-          control={form.control}
-          name="codArea"
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Cod. Area</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
-              {/* <FormDescription>Your code area number.</FormDescription> */}
+              {/* <FormDescription>Your email address.</FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Telefono</FormLabel>
-              <FormControl>
-                <Input placeholder="" {...field} />
-              </FormControl>
-              {/* <FormDescription>Your phone.</FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="contactHour"
-          render={({ field }) => (
-            <FormItem className="flex-1">
-              <FormLabel>Hora de Contacto</FormLabel>
-              <FormControl>
-                <Input placeholder="" {...field} />
-              </FormControl>
-              {/* <FormDescription>Localidad.</FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-      </div>
+        <div className="flex gap-2">
+          <FormField
+            control={form.control}
+            name="codArea"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Cod. Area</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                {/* <FormDescription>Your code area number.</FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Telefono</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                {/* <FormDescription>Your phone.</FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="contactHour"
+            render={({ field }) => (
+              <FormItem className="flex-1">
+                <FormLabel>Hora de Contacto</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                {/* <FormDescription>Localidad.</FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={form.control}
           name="consulta"
@@ -157,11 +157,10 @@ export const AlquilerQuoterForm = () => {
             </FormItem>
           )}
         />
-      <Button type="submit" variant={"quote_form"}>
-        Enviar
-      </Button>
-    </form>
-  </Form>
-  )
-
-}
+        <Button type="submit" variant={"quote_form"}>
+          Enviar
+        </Button>
+      </form>
+    </Form>
+  );
+};

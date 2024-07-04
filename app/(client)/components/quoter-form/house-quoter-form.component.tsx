@@ -62,11 +62,11 @@ export const HouseFormQuoter = () => {
             name="name"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>First Name</FormLabel>
+                <FormLabel>Nombre</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your first name.</FormDescription> */}
+                {/* <FormDescription>Your Nombre.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -76,11 +76,11 @@ export const HouseFormQuoter = () => {
             name="lastname"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Last Name</FormLabel>
+                <FormLabel>Apellido</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your last name.</FormDescription> */}
+                {/* <FormDescription>Your Apellido.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
