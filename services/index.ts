@@ -183,3 +183,50 @@ export async function getPostDetails(slug: string) {
   const json = await response.json();
   return json.data.post;
 }
+
+export async function getPostsByCategory(categorySlug: string) {
+  const response = await fetch(
+    "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+          query GetPostsByCategory($categorySlug: String!) {
+            posts(where: {categories_some: {slug: $categorySlug}}) {
+              id
+              title
+              excerpt
+              featuredImage {
+                url
+              }
+              author {
+                name
+                bio
+                photo {
+                  url
+                }
+              }
+              createdAt
+              slug
+              content {
+                raw
+              }
+              categories {
+                name
+                slug
+              }
+            }
+          }
+        `,
+        variables: {
+          categorySlug,
+        },
+      }),
+    }
+  );
+  const json = await response.json();
+  return json.data.posts;
+}

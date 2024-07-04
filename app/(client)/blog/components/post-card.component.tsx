@@ -12,6 +12,7 @@ const PostCard = ({ post }: any) => {
           className="object-center absolute h-80 w-full object-cover shadow-lg rounded-t-lg md:rounded-lg"
           width={200}
           height={80}
+          priority
         />
       </div>
       <h1 className="transition duration-700 text-center mb-8 cursos-pointer hover:text-pink-600 text-xl md:text-3xl font-semibold">
@@ -51,7 +52,9 @@ const PostCard = ({ post }: any) => {
           <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
         </div>
       </div>
-      <p className="text-center text-lg text-gray-700 font-normal px-4 md:px-20 mb-8">{post.excerpt}</p>
+      <p className="text-center text-lg text-gray-700 font-normal px-4 md:px-20 mb-8">
+        {post.excerpt}
+      </p>
       <div className="text-center">
         <Link href={`/blog/post/${post.slug}`}>
           <button className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
