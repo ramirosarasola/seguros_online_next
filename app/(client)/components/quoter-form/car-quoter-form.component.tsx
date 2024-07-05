@@ -14,24 +14,31 @@ const CarFormQuoter = () => {
     script1.id = "wokan-script";
     script1.src = "//webpack.wokan.com.ar/app/v1/init.js";
 
-    // Agregar un evento load para ejecutar el segundo script solo cuando el primero se haya cargado
-    script1.onload = () => {
+    // Función para cargar el segundo script después de que el primero se haya cargado
+    const loadSecondScript = () => {
       const script2 = document.createElement("script");
+      script2.id = "wokan-script-2";
       script2.innerHTML = `wokanInitWebpack({ sid: '${configApi.sid}' , mainColor:'#1570B1' })`;
       document.body.appendChild(script2);
     };
 
+    // Agregar un evento load al primer script para cargar el segundo script
+    script1.onload = loadSecondScript;
+
+    // Agregar el primer script al body
     document.body.appendChild(script1);
 
-    // Cleanup de los scripts al desmontar el componente
+    // Función de limpieza al desmontar el componente
     return () => {
-      document.body.removeChild(script1);
+      if (script1) {
+        document.body.removeChild(script1);
+      }
       const script2 = document.getElementById("wokan-script-2");
       if (script2) {
         document.body.removeChild(script2);
       }
     };
-  }, []);
+  }, []); // Asegúrate de que este useEffect se ejecute solo una vez al montar/desmontar el componente
 
   const contratarUrl = `${apiUrl}/api/cotizacion`;
 
@@ -42,11 +49,11 @@ const CarFormQuoter = () => {
 
   return (
     <>
-      <Script
+      {/* <Script
         id="wokan-script"
         src="//webpack.wokan.com.ar/app/v1/init.js"
         strategy="lazyOnload"
-      />
+      /> */}
       <form
         id="formQuoter"
         method="post"
