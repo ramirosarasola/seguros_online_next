@@ -1,8 +1,7 @@
-'use client';
+"use client";
 import Link from "next/link";
-import './activeLink.css';
+import "./activeLink.css";
 import { usePathname } from "next/navigation";
-
 
 interface ActiveLinkProps {
   path: string;
@@ -10,12 +9,29 @@ interface ActiveLinkProps {
 }
 
 export const ActiveLink = ({ path, text }: ActiveLinkProps) => {
-
   const pathname = usePathname();
 
   return (
-    <Link href={path} className={` ${(pathname == path) ? 'active_link' : 'link'} ${'main_links'}`}>
-      {text}
-    </Link>
+    <>
+      {pathname != "/" ? (
+        <Link
+          href={path}
+          className={` ${
+            pathname == path ? "active_link" : "link"
+          } ${"main_links"}`}
+        >
+          {text}
+        </Link>
+      ) : (
+        <a
+          href={path}
+          className={` ${
+            pathname == path ? "active_link" : "link"
+          } ${"main_links"}`}
+        >
+          {text}
+        </a>
+      )}
+    </>
   );
 };
