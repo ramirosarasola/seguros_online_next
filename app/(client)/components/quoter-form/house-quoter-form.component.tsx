@@ -11,7 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form.component";
 import { Input } from "@/components/ui/input.component";
-import { onSubmitAction } from "@/lib/form-submit";
+import { onSubmitActionHouseQuote } from "@/lib/form-submit";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRef } from "react";
 import { useFormState } from "react-dom";
@@ -19,7 +19,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 export const HouseFormQuoter = () => {
-  const [state, formAction] = useFormState(onSubmitAction, {
+  const [state, formAction] = useFormState(onSubmitActionHouseQuote, {
     message: "",
   });
   const form = useForm<z.output<typeof houseSchema>>({
@@ -38,7 +38,6 @@ export const HouseFormQuoter = () => {
   });
 
   const formRef = useRef<HTMLFormElement>(null);
-
   return (
     <Form {...form}>
       <form
@@ -49,6 +48,7 @@ export const HouseFormQuoter = () => {
           evt.preventDefault();
           form.handleSubmit(() => {
             formAction(new FormData(formRef.current!));
+            form.reset();
           })(evt);
         }}
       >
