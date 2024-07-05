@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { BiciFormQuoter } from "../../components/quoter-form/bici-quoter-form.component";
 import { quotesData } from "../../components/quotes-info/data";
 import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
+import Script from "next/script";
+import { PageWrapper } from "../../contacto/components/page-wrapper";
 
 export const metadata: Metadata = {
   title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
@@ -34,13 +36,37 @@ export const metadata: Metadata = {
 export default function BiciPage() {
   return (
     <>
-      <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-bici-img bg-light_primary">
-        <BiciFormQuoter />
-      </section>
-      <QuoteInfo
-        data={quotesData.bici_data}
-        quoteTitle="Seguros para Bicicleta"
+      <Script
+        id="schema-bici"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Corporation",
+            name: "Seguros Online",
+            alternateName: "Cotizador de Seguros Online",
+            url: "https://www.segurosonline.com.ar/otros/bici",
+            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+54 9 11 6423-5002",
+              contactType: "sales",
+              contactOptions: "TollFree",
+              areaServed: "AR",
+              avaliableLanguage: "es",
+            },
+          }),
+        }}
       />
+      <PageWrapper>
+        <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-bici-img bg-light_primary">
+          <BiciFormQuoter />
+        </section>
+        <QuoteInfo
+          data={quotesData.bici_data}
+          quoteTitle="Seguros para Bicicleta"
+        />
+      </PageWrapper>
     </>
   );
 }

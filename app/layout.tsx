@@ -9,15 +9,9 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const varelaRound = Varela_Round({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-// const inter = Inter({ subsets: ["latin"] });
-
 const baseUrl = "https://www.segurosonline.com.ar";
 
+/*
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   keywords: [
@@ -39,6 +33,7 @@ export const metadata: Metadata = {
     // ]
   },
 };
+*/
 
 export default function RootLayout({
   children,
@@ -48,7 +43,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.className} min-h-screen bg-secondary`}>
-        <header className="bg-secondary">
+        {children}
+        {/* <header className="bg-secondary">
           <ServerNavbar />
         </header>
         <main
@@ -56,7 +52,7 @@ export default function RootLayout({
         >
           {children}
         </main>
-        <Footer />
+        <Footer /> */}
       </body>
     </html>
   );

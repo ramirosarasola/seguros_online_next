@@ -2,6 +2,8 @@ import { ComercioQuoterForm } from "../../components/quoter-form/comercio-quoter
 import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
 import { quotesData } from "../../components/quotes-info/data";
 import { Metadata } from "next";
+import Script from "next/script";
+import { PageWrapper } from "../../contacto/components/page-wrapper";
 
 export const metadata: Metadata = {
   title: "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
@@ -34,13 +36,37 @@ export const metadata: Metadata = {
 export default function ComercioPage() {
   return (
     <>
-      <section className="px-4 md:px-16 flex justify-end flex-1 py-10 min-h-[calc(100vh-96px)] bg-comercio-img bg-light_primary">
-        <ComercioQuoterForm />
-      </section>
-      <QuoteInfo
-        data={quotesData.comercio_data}
-        quoteTitle="Seguros para Comercio"
+      <Script
+        id="schema-comercio"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Corporation",
+            name: "Seguros Online",
+            alternateName: "Cotizador de Seguros Online",
+            url: "https://www.segurosonline.com.ar/otros/comercio",
+            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+54 9 11 6423-5002",
+              contactType: "sales",
+              contactOptions: "TollFree",
+              areaServed: "AR",
+              avaliableLanguage: "es",
+            },
+          }),
+        }}
       />
+      <PageWrapper>
+        <section className="px-4 md:px-16 flex justify-end flex-1 py-10 min-h-[calc(100vh-96px)] bg-comercio-img bg-light_primary">
+          <ComercioQuoterForm />
+        </section>
+        <QuoteInfo
+          data={quotesData.comercio_data}
+          quoteTitle="Seguros para Comercio"
+        />
+      </PageWrapper>
     </>
   );
 }

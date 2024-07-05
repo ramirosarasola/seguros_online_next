@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { AlquilerQuoterForm } from "../../components/quoter-form/alquiler-quoter-form.component";
 import { quotesData } from "../../components/quotes-info/data";
 import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
+import Script from "next/script";
+import { PageWrapper } from "../../contacto/components/page-wrapper";
 
 export const metadata: Metadata = {
   title: "Tu Garantía | SegurosOnline | Seguros de Caución de Alquileres",
@@ -36,13 +38,37 @@ export const metadata: Metadata = {
 export default function GarantiasPage() {
   return (
     <>
-      <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-garantia-img bg-light_primary">
-        <AlquilerQuoterForm />
-      </section>
-      <QuoteInfo
-        data={quotesData.garantias_data}
-        quoteTitle="Seguros para Garantias"
+      <Script
+        id="schema-garantias"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Corporation",
+            name: "Seguros Online",
+            alternateName: "Cotizador de Seguros Online",
+            url: "https://www.segurosonline.com.ar/otros/garantias",
+            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+54 9 11 6423-5002",
+              contactType: "sales",
+              contactOptions: "TollFree",
+              areaServed: "AR",
+              avaliableLanguage: "es",
+            },
+          }),
+        }}
       />
+      <PageWrapper>
+        <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-garantia-img bg-light_primary">
+          <AlquilerQuoterForm />
+        </section>
+        <QuoteInfo
+          data={quotesData.garantias_data}
+          quoteTitle="Seguros para Garantias"
+        />
+      </PageWrapper>
     </>
   );
 }
