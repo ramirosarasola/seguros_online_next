@@ -8,6 +8,30 @@ export const metadata: Metadata = {
   title: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
   description:
     "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+  openGraph: {
+    title:
+      "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
+    description:
+      "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+    url: "https://www.segurosonline.com.ar",
+    siteName: "SegurosOnline",
+    images: [
+      {
+        url: "https://www.segurosonline.com.ar/seguros-de-auto.jpg",
+      },
+    ],
+    locale: "es-AR",
+    type: "website",
+  },
+  twitter: {
+    title:
+      "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
+    description:
+      "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+    images: ["https://www.segurosonline.com.ar/seguros-de-auto.jpg"],
+    card: "summary_large_image",
+    creator: "@SegurosOnline",
+  },
 };
 
 export default function HomePage() {

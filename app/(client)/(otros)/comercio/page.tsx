@@ -1,15 +1,46 @@
 import { ComercioQuoterForm } from "../../components/quoter-form/comercio-quoter-form.component";
-import { QuoteInfo } from '../../components/quotes-info/quote-info.component';
-import { quotesData } from '../../components/quotes-info/data';
+import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
+import { quotesData } from "../../components/quotes-info/data";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
+  description:
+    "Cotizar seguro Integral de Comercio. Especialmente pensados para las diferentes actividades. Conocé las coberturas exclusivas para proteger tu comercio.",
+  openGraph: {
+    title:
+      "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
+    description:
+      "Cotizar seguro Integral de Comercio. Especialmente pensados para las diferentes actividades. Conocé las coberturas exclusivas para proteger tu comercio.",
+    url: "https://www.segurosonline.com.ar/comercio",
+    siteName: "SegurosOnline",
+    images: [
+      {
+        url: "https://www.segurosonline.com.ar/contratar-seguro-comercio.jpg",
+      },
+    ],
+  },
+  twitter: {
+    title:
+      "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
+    description:
+      "Cotizar seguro Integral de Comercio. Especialmente pensados para las diferentes actividades. Conocé las coberturas exclusivas para proteger tu comercio.",
+    images: ["https://www.segurosonline.com.ar/contratar-seguro-comercio.jpg"],
+    card: "summary_large_image",
+    creator: "@SegurosOnline",
+  },
+};
 
 export default function ComercioPage() {
   return (
     <>
-    <section className="px-4 md:px-16 flex justify-end flex-1 py-10 min-h-[calc(100vh-96px)] bg-comercio-img bg-light_primary">
-      <ComercioQuoterForm />
+      <section className="px-4 md:px-16 flex justify-end flex-1 py-10 min-h-[calc(100vh-96px)] bg-comercio-img bg-light_primary">
+        <ComercioQuoterForm />
       </section>
-      <QuoteInfo data={quotesData.comercio_data} quoteTitle="Seguros para Comercio"/>
+      <QuoteInfo
+        data={quotesData.comercio_data}
+        quoteTitle="Seguros para Comercio"
+      />
     </>
   );
 }

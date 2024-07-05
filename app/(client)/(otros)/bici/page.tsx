@@ -1,10 +1,34 @@
+import { Metadata } from "next";
 import { BiciFormQuoter } from "../../components/quoter-form/bici-quoter-form.component";
 import { quotesData } from "../../components/quotes-info/data";
 import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
 
-export const metadata = {
-  title: "Bici",
-  description: "Bici",
+export const metadata: Metadata = {
+  title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
+  description:
+    "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",
+  openGraph: {
+    title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
+    description:
+      "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",
+    url: "https://www.segurosonline.com.ar/bici",
+    siteName: "SegurosOnline",
+    images: [
+      {
+        url: "https://www.segurosonline.com.ar/seguro-bicicleta.jpg",
+      },
+    ],
+    locale: "es-AR",
+    type: "website",
+  },
+  twitter: {
+    title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
+    description:
+      "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",
+    images: ["https://www.segurosonline.com.ar/seguro-bicicleta.jpg"],
+    card: "summary_large_image",
+    creator: "@SegurosOnline",
+  },
 };
 
 export default function BiciPage() {
@@ -13,7 +37,10 @@ export default function BiciPage() {
       <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-bici-img bg-light_primary">
         <BiciFormQuoter />
       </section>
-      <QuoteInfo data={quotesData.bici_data} quoteTitle="Seguros para Bicicleta" />
+      <QuoteInfo
+        data={quotesData.bici_data}
+        quoteTitle="Seguros para Bicicleta"
+      />
     </>
   );
 }

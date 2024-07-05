@@ -6,9 +6,31 @@ import { quotesData } from "../components/quotes-info/data";
 const data: any = quotesData.hogar_data;
 
 export const metadata: Metadata = {
-  title: "Seguros Para Hogar | SegurosOnline | Mejoramos cualquier Presupuesto",
+  title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
   description:
-    "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+    "Cotizá tu Seguro de Hogar al mejor precio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
+  openGraph: {
+    title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
+    description:
+      "Cotizá tu Seguro de Hogar al mejorprecio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
+    url: "https://www.segurosonline.com.ar/hogar",
+    siteName: "SegurosOnline",
+    images: [
+      {
+        url: "https://www.segurosonline.com.ar/seguros-para-el-hogar.jpg",
+      },
+    ],
+    locale: "es-AR",
+    type: "website",
+  },
+  twitter: {
+    title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
+    description:
+      "Cotizá tu Seguro de Hogar al mejorprecio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
+    images: ["https://www.segurosonline.com.ar/seguros-para-el-hogar.jpg"],
+    card: "summary_large_image",
+    creator: "@SegurosOnline",
+  },
 };
 
 export default function HogarPage() {
