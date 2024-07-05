@@ -41,7 +41,7 @@ export default function ServerNavbar() {
         <Image
           src={logo}
           priority={true}
-          alt="logo"
+          alt="seguros online logo"
           width={120}
           className="h-auto"
         />
@@ -64,7 +64,7 @@ export default function ServerNavbar() {
           height={35}
           width={35}
           src={phone}
-          alt="phone"
+          alt="telefono"
           className="h-auto"
           loading="lazy"
         />

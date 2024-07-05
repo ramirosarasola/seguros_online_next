@@ -7,31 +7,54 @@ type PostDetailProps = {
 };
 
 const PostDetail = ({ post }: PostDetailProps) => {
-  const getContentFragment = (index: number, text:any, obj: any, type?: any) => {
+  const getContentFragment = (
+    index: number,
+    text: any,
+    obj: any,
+    type?: any
+  ) => {
     let modifiedText = text;
 
     if (obj) {
       if (obj.bold) {
-        modifiedText = (<b key={index}>{text}</b>);
+        modifiedText = <b key={index}>{text}</b>;
       }
 
       if (obj.italic) {
-        modifiedText = (<em key={index}>{text}</em>);
+        modifiedText = <em key={index}>{text}</em>;
       }
 
       if (obj.underline) {
-        modifiedText = (<u key={index}>{text}</u>);
+        modifiedText = <u key={index}>{text}</u>;
       }
     }
 
     switch (type) {
-      case 'heading-three':
-        return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item: any, i: number) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
-      case 'paragraph':
-        return <p key={index} className="mb-8">{modifiedText.map((item: any, i: number) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
-      case 'heading-four':
-        return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item: any, i: number) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
-      case 'image':
+      case "heading-three":
+        return (
+          <h3 key={index} className="text-xl font-semibold mb-4">
+            {modifiedText.map((item: any, i: number) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </h3>
+        );
+      case "paragraph":
+        return (
+          <p key={index} className="mb-8">
+            {modifiedText.map((item: any, i: number) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </p>
+        );
+      case "heading-four":
+        return (
+          <h4 key={index} className="text-md font-semibold mb-4">
+            {modifiedText.map((item: any, i: number) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </h4>
+        );
+      case "image":
         return (
           <Image
             key={index}
@@ -62,14 +85,14 @@ const PostDetail = ({ post }: PostDetailProps) => {
         <div className="flex items-center mb-8 w-full">
           <div className="flex items-center mb-4 md:mb-0 w-full md:w-auto mr-8">
             <Image
-              alt={post.author.name}
+              alt={"seguros online"}
               height="30"
               width="30"
               className="align-middle rounded-full w-auto h-auto"
               src={"/logo-op.webp"}
             />
             <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">
-              {post.author.name}
+              {"seguros online"}
             </p>
           </div>
           <div className="font-medium text-gray-700">
@@ -93,8 +116,10 @@ const PostDetail = ({ post }: PostDetailProps) => {
           </div>
         </div>
         <h1 className="mb-8 text-xl md:text-3xl font-semibold">{post.title}</h1>
-        {post.content.raw.children.map((typeObj: any, index:number) => {
-          const children = typeObj.children.map((item: any, itemIndex: any) => getContentFragment(itemIndex, item.text, item));
+        {post.content.raw.children.map((typeObj: any, index: number) => {
+          const children = typeObj.children.map((item: any, itemIndex: any) =>
+            getContentFragment(itemIndex, item.text, item)
+          );
 
           return getContentFragment(index, children, typeObj, typeObj.type);
         })}
