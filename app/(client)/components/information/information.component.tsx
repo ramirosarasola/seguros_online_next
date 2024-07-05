@@ -20,7 +20,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "coberturas_basicas" ? "active_tab" : ""
-              } font-bold text-gray-600 text-center `}
+              } font-bold text-gray-800 text-center `}
             >
               <Link
                 href="#coberturas_basicas"
@@ -32,7 +32,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "coberturas_adicionales" ? "active_tab" : ""
-              } font-bold text-gray-600 text-center `}
+              } font-bold text-gray-800 text-center `}
             >
               <Link
                 href="#coberturas_adicionales"
@@ -44,7 +44,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "siniestros" ? "active_tab" : ""
-              } font-bold text-gray-600 text-center `}
+              } font-bold text-gray-800 text-center `}
             >
               <Link
                 href="#siniestros"
@@ -56,7 +56,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "seguros_de_autos" ? "active_tab" : ""
-              } font-bold text-gray-600 text-center `}
+              } font-bold text-gray-800 text-center `}
             >
               <Link
                 href="#seguros_de_autos"
@@ -70,7 +70,7 @@ export const InformationComponent = () => {
                 activeTab === "mejor_seguros_para_tu_vehiculo"
                   ? "active_tab"
                   : ""
-              } font-bold text-gray-600 text-center `}
+              } font-bold text-gray-800 text-center `}
             >
               <Link
                 href="#mejor_seguros_para_tu_vehiculo"
@@ -221,7 +221,7 @@ export const InformationComponent = () => {
               denuncia en <strong>segurosOnline.com.ar</strong> nuestros
               ejecutivos de siniestros enviarán toda la información requerida
               para cada caso
-              <strong>{" "}SegurosOnline.com.ar</strong> se encarga de hacer el
+              <strong> SegurosOnline.com.ar</strong> se encarga de hacer el
               reclamo en las compañías del tercero, para que nuestro cliente no
               tenga que perder tiempo y dinero en estos trámites La compañía
               aseguradora asignará un gestor para reclamos y gestiones diversas.
@@ -236,11 +236,11 @@ export const InformationComponent = () => {
               <p className="mb-4">
                 Algunas de las compañías con las que trabajamos son:
               </p>
-                <strong>
-                  Allianz, Answer, Mapfre, Integrity, Mercantil Andina, Victoria
-                  y Meridional Seguros, Caledonia, Sura, SMG Seguros, Nación
-                  Seguros, Seguros Rivadavia, QBE Seguros
-                </strong>
+              <strong>
+                Allianz, Answer, Mapfre, Integrity, Mercantil Andina, Victoria y
+                Meridional Seguros, Caledonia, Sura, SMG Seguros, Nación
+                Seguros, Seguros Rivadavia, QBE Seguros
+              </strong>
             </div>
             <div
               className=""

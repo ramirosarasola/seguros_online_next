@@ -64,7 +64,7 @@ export default function HomePage() {
       />
 
       <PageWrapper>
-        <section className="px-4 md:px-16 flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-home-img bg-light_primary">
+        <section className="px-4 md:px-16 flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-light_primary bg-home-img">
           <CarQuoterForm />
         </section>
 
