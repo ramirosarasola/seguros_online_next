@@ -2,7 +2,7 @@ import { getAllPosts } from "@/services";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://www.segurosonline.com.ar";
+  const baseUrl = "https://seguros-online-next.vercel.app";
   const response = await getAllPosts();
 
   const blogPosts = response?.map((post: any) => {

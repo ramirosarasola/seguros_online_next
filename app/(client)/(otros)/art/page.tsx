@@ -15,11 +15,11 @@ export const metadata: Metadata = {
       "Cotiza tu seguro de ART ahora | Mejoramos tu costo actual hasta un 40% | SegurosOnline",
     description:
       "Contratar seguro ART. Cotiza online tu seguros dfe ART enlas mejores Compañias. Mejoramos cualquier presupuesta. Cotiza Ya Mismo!",
-    url: "https://www.segurosonline.com.ar/art",
+    url: "https://seguros-online-next.vercel.app/art",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/contratar-seguro-art.jpg",
+        url: "https://seguros-online-next.vercel.app/contratar-seguro-art.jpg",
       },
     ],
     locale: "es-AR",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       "Cotiza tu seguro de ART ahora | Mejoramos tu costo actual hasta un 40% | SegurosOnline",
     description:
       "Contratar seguro ART. Cotiza online tu seguros dfe ART enlas mejores Compañias. Mejoramos cualquier presupuesta. Cotiza Ya Mismo!",
-    images: ["https://www.segurosonline.com.ar/contratar-seguro-art.jpg"],
+    images: ["https://seguros-online-next.vercel.app/contratar-seguro-art.jpg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -48,8 +48,8 @@ export default function ArtPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/otros/art",
-            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            url: "https://seguros-online-next.vercel.app/otros/art",
+            logo: "https://seguros-online-next.vercel.app/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

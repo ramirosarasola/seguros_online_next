@@ -14,11 +14,11 @@ export const metadata: Metadata = {
       "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
     description:
       "Cotizar seguro Integral de Comercio. Especialmente pensados para las diferentes actividades. Conocé las coberturas exclusivas para proteger tu comercio.",
-    url: "https://www.segurosonline.com.ar/comercio",
+    url: "https://seguros-online-next.vercel.app/comercio",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/contratar-seguro-comercio.jpg",
+        url: "https://seguros-online-next.vercel.app/contratar-seguro-comercio.jpg",
       },
     ],
   },
@@ -27,7 +27,9 @@ export const metadata: Metadata = {
       "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
     description:
       "Cotizar seguro Integral de Comercio. Especialmente pensados para las diferentes actividades. Conocé las coberturas exclusivas para proteger tu comercio.",
-    images: ["https://www.segurosonline.com.ar/contratar-seguro-comercio.jpg"],
+    images: [
+      "https://seguros-online-next.vercel.app/contratar-seguro-comercio.jpg",
+    ],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -45,8 +47,8 @@ export default function ComercioPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/otros/comercio",
-            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            url: "https://seguros-online-next.vercel.app/otros/comercio",
+            logo: "https://seguros-online-next.vercel.app/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",
