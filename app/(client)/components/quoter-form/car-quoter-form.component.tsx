@@ -54,9 +54,15 @@ const CarFormQuoter = () => {
         src="//webpack.wokan.com.ar/app/v1/init.js"
         strategy="lazyOnload"
         onLoad={() => {
-          const script = document.createElement("script");
-          script.innerHTML = `wokanInitWebpack({ sid: '${"1483@65e0d911de58b"}' , mainColor:'#1570B1' })`;
-          document.body.appendChild(script);
+          // const script = document.createElement("script");
+          // script.innerHTML = `wokanInitWebpack({ sid: '${"1483@65e0d911de58b"}' , mainColor:'#1570B1' })`;
+
+          /*@ts-ignore eslint-disable-line*/
+          wokanInitWebpack({
+            sid: "1483@65e0d911de58b",
+            mainColor: "#1570B1",
+            // document.body.appendChild(script);
+          });
         }}
       />
       <form

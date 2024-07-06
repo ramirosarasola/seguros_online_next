@@ -13,7 +13,7 @@ export const ActiveLink = ({ path, text }: ActiveLinkProps) => {
 
   return (
     <>
-      {pathname != "/" ? (
+      {path != "/" ? (
         <Link
           href={path}
           className={` ${

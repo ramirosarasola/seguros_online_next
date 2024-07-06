@@ -20,7 +20,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "coberturas_basicas" ? "active_tab" : ""
-              } font-bold text-gray-800 text-center `}
+              } font-bold text-gray-800 text-justify `}
             >
               <Link
                 href="#section_container"
@@ -32,7 +32,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "coberturas_adicionales" ? "active_tab" : ""
-              } font-bold text-gray-800 text-center `}
+              } font-bold text-gray-800 text-justify `}
             >
               <Link
                 href="#section_container"
@@ -44,7 +44,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "siniestros" ? "active_tab" : ""
-              } font-bold text-gray-800 text-center `}
+              } font-bold text-gray-800 text-justify `}
             >
               <Link
                 href="#section_container"
@@ -56,7 +56,7 @@ export const InformationComponent = () => {
             <li
               className={`${
                 activeTab === "seguros_de_autos" ? "active_tab" : ""
-              } font-bold text-gray-800 text-center `}
+              } font-bold text-gray-800 text-justify `}
             >
               <Link
                 href="#section_container"
@@ -70,7 +70,7 @@ export const InformationComponent = () => {
                 activeTab === "mejor_seguros_para_tu_vehiculo"
                   ? "active_tab"
                   : ""
-              } font-bold text-gray-800 text-center `}
+              } font-bold text-gray-800 text-justify `}
             >
               <Link
                 href="#section_container"
