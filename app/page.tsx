@@ -80,7 +80,7 @@ export default function HomePage() {
         <FeedbackComponent/>
       </section> */}
 
-        <section className="px-4 md:px-16 bg-tertiary h-fit pb-10 flex flex-col items-center justify-between">
+        <section className="px-4 md:px-16 gradient-section-bg h-fit pb-10 flex flex-col items-center justify-between">
           <InformationComponent />
         </section>
       </PageWrapper>
