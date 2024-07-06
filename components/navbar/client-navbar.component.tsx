@@ -1,5 +1,9 @@
-'use client';
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+"use client";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -13,16 +17,30 @@ interface ClientNavbarProps {
 }
 
 export default function ClientNavbar({ navItems }: ClientNavbarProps) {
-
   return (
-    <Disclosure as="div" className="md:hidden bg-primary fixed top-[6rem] left-0 w-full z-50">
+    <Disclosure
+      as="div"
+      className="md:hidden bg-primary fixed top-[6rem] left-0 w-full z-50"
+    >
       {({ open }) => (
         <>
-          <DisclosureButton className="hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white absolute top-[-4rem] right-[1rem] text-primary ">
+          <DisclosureButton
+            name="navbar-button"
+            aria-label="navbar-button"
+            className="hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white absolute top-[-4rem] right-[1rem] text-primary "
+          >
             {open ? (
-              <XMarkIcon className="block h-8 w-8" color="#1570B1" aria-hidden="true" />
+              <XMarkIcon
+                className="block h-8 w-8"
+                color="#1570B1"
+                aria-hidden="true"
+              />
             ) : (
-              <Bars3Icon className="block h-8 w-8" color="#1570B1" aria-hidden="true" />
+              <Bars3Icon
+                className="block h-8 w-8"
+                color="#1570B1"
+                aria-hidden="true"
+              />
             )}
           </DisclosureButton>
           <DisclosurePanel className="md:hidden">

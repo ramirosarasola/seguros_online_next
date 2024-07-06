@@ -12,6 +12,7 @@ const Categories = ({ categories }: categoriesProps) => {
           key={index}
           href={`/blog/category/${category.slug}`}
           className="block w-full mb-3"
+          aria-label={category.slug}
         >
           <span className="cursor-pointer block pb-3 mb-3 hover:text-pink-600 text-lg">
             {category.name}
