@@ -9,7 +9,7 @@ export const PageWrapper = ({ children }: any) => {
       </header>
       <main
         className={`${
-          /*"pt-[96px]"*/ "pt-0"
+          /*"pt-[96px]"*/ "pt-[96px]"
         } flex flex-col justify-between min-h-[calc(100vh-18rem)] mx-auto`}
       >
         {children}

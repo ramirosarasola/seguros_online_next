@@ -36,7 +36,7 @@ const clientNavItems = [
 
 export default function ServerNavbar() {
   return (
-    <nav className=" h-24 w-full px-4 md:px-16 md:bg-secondary md:main_text flex items-center justify-between z-50 bg-white nav_shadow ">
+    <nav className="fixed h-24 w-full px-4 md:px-16 md:bg-secondary md:main_text flex items-center justify-between z-50 bg-white nav_shadow ">
       <Link href="/">
         <Image
           src={logo}
