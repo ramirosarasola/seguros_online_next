@@ -3,7 +3,7 @@ import { BiciFormQuoter } from "../../components/quoter-form/bici-quoter-form.co
 import { quotesData } from "../../components/quotes-info/data";
 import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
 import Script from "next/script";
-import { PageWrapper } from "../../contacto/components/page-wrapper";
+import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
   title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",

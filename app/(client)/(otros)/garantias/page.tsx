@@ -3,7 +3,7 @@ import { AlquilerQuoterForm } from "../../components/quoter-form/alquiler-quoter
 import { quotesData } from "../../components/quotes-info/data";
 import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
 import Script from "next/script";
-import { PageWrapper } from "../../contacto/components/page-wrapper";
+import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
   title: "Tu Garantía | SegurosOnline | Seguros de Caución de Alquileres",

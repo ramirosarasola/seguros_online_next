@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CaucionQuoterForm } from "../../components/quoter-form/caucion-quoter-form.component";
 import Script from "next/script";
-import { PageWrapper } from "../../contacto/components/page-wrapper";
+import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
   title: "Seguros de Caución | SegurosOnline | Aseguradores de Cauciones",

@@ -8,7 +8,9 @@ export const PageWrapper = ({ children }: any) => {
         <ServerNavbar />
       </header>
       <main
-        className={`pt-[96px] flex flex-col justify-between min-h-[calc(100vh-18rem)]mx-auto`}
+        className={`${
+          /*"pt-[96px]"*/ "pt-0"
+        } flex flex-col justify-between min-h-[calc(100vh-18rem)] mx-auto`}
       >
         {children}
       </main>

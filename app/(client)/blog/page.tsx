@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { Suspense, lazy } from "react";
 import { Categories, PostCard } from "./components";
 import Script from "next/script";
-import { PageWrapper } from "../contacto/components/page-wrapper";
+import { PageWrapper } from "../../../components/ui/page-wrapper";
 const PostWidget = lazy(() => import("./components/post-widget.component"));
 
 // Metadatos de la página

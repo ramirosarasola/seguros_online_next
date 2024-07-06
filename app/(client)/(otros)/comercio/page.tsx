@@ -3,7 +3,7 @@ import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
 import { quotesData } from "../../components/quotes-info/data";
 import { Metadata } from "next";
 import Script from "next/script";
-import { PageWrapper } from "../../contacto/components/page-wrapper";
+import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
   title: "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",

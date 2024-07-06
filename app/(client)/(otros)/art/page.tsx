@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ARTQuoterForm } from "../../components/quoter-form/art-quoter-form.component";
 import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
 import { quotesData } from "../../components/quotes-info/data";
-import { PageWrapper } from "../../contacto/components/page-wrapper";
+import { PageWrapper } from "../../../../components/ui/page-wrapper";
 import Script from "next/script";
 
 export const metadata: Metadata = {

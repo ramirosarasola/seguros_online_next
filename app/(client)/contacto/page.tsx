@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { ContactForm } from "./components/contact-form";
-import { PageWrapper } from "./components/page-wrapper";
+import { PageWrapper } from "../../../components/ui/page-wrapper";
 import Script from "next/script";
 
 export const metadata: Metadata = {

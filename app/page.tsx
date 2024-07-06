@@ -3,7 +3,7 @@ import CarQuoterForm from "./(client)/components/quoter-form/car-quoter-form.com
 import { NuestrosSeguros } from "./(client)/components/nuestros-seguros/nuestros-seguros.component";
 import { NuestrosAliados } from "./(client)/components/nuestros-aliados/nuestros-aliados.component";
 import { InformationComponent } from "./(client)/components/information/information.component";
-import { PageWrapper } from "./(client)/contacto/components/page-wrapper";
+import { PageWrapper } from "../components/ui/page-wrapper";
 import Script from "next/script";
 
 export const metadata: Metadata = {
