@@ -72,7 +72,7 @@ const CarFormQuoter = () => {
         onSubmit={handleSubmit}
         className="relative p-8 bg-white bg-opacity-70 h-fit rounded shadow-md w-full mx-auto mt-4 flex flex-col md:grid md:gap-2 md:grid-cols-1 lg:flex lg:flex-col lg:justify-between"
       >
-        <h1 className="text-2xl font-bold text-center mb-4 font-[Varela Round] text-primary">
+        <h1 className="text-xl md:text-2xl font-bold text-center mb-4 font-[Varela Round] text-primary">
           Seguros para Autos - Mejoramos cualquier presupuesto. La mejor
           cobertura por el mejor precio!
         </h1>
