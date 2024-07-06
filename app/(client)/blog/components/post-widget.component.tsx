@@ -39,7 +39,7 @@ const PostWidget = ({ categories, slug }: PostWidgetProps) => {
               height="60"
               width="60"
               className="w-auto h-auto align-middle rounded-full"
-              src={post.featuredImage.url}
+              src={post?.featuredImage?.url}
             />
           </div>
           <div className="flex-grow ml-4">

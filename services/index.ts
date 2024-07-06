@@ -181,6 +181,7 @@ export async function getPostDetails(slug: string) {
     }
   );
   const json = await response.json();
+  console.log(json.data.post);
   return json.data.post;
 }
 

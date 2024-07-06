@@ -6,29 +6,27 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  try {
-    const response = await getPostDetails(params.slug);
-    if (response?.length === 0) {
-      return {
-        title: "Post not found",
-        description: "Post not found",
-      };
-    } else {
-      return {
-        openGraph: {
-          title: response?.[0]?.node?.title,
-          description: response?.[0]?.node?.excerpt,
-          images: [
-            {
-              url: response?.[0]?.node?.featuredImage?.url,
-            },
-          ],
+  const post = await getPostDetails(params.slug);
+  return {
+    title: `Blog - ${post?.title}`,
+    description: post?.excerpt,
+    robots: "index, follow",
+    author: "Seguros Online",
+    publisher: "Seguros Online",
+    keywords: "seguros, online, cotizador, cotizacion, seguro, autos, vida",
+    openGraph: {
+      title: post?.title,
+      description: post?.excerpt,
+      type: "website",
+      siteName: "Seguros Online",
+      url: `https://www.segurosonline.com.ar/blog/post/${params.slug}`,
+      images: [
+        {
+          url: post?.featuredImage?.url,
         },
-      };
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
+      ],
+    },
+  };
 }
 
 export async function generateStaticParams() {
@@ -58,13 +56,13 @@ export async function generateStaticParams() {
   }
 }
 
+export const revalidate = 60;
 export default async function PostPage({
   params,
 }: {
   params: { slug: string };
 }) {
   const post = await getPostDetails(params.slug);
-
   return (
     <section className="mx-auto px-4 md:px-16 mb-8 py-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
