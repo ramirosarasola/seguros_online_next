@@ -12,7 +12,7 @@ export const InformationComponent = () => {
   };
 
   return (
-    <>
+    <div id="section_container" className="w-full flex flex-col items-center">
       <SectionTitleComponent title="Seguros de Autos - Cotizar Seguros de Autos" />
       <article className="flex flex-col items-start">
         <div className="flex flex-col items-start justify-between">
@@ -23,7 +23,7 @@ export const InformationComponent = () => {
               } font-bold text-gray-800 text-center `}
             >
               <Link
-                href="#coberturas_basicas"
+                href="#section_container"
                 onClick={() => handleTabClick("coberturas_basicas")}
               >
                 Coberturas Básicas
@@ -35,7 +35,7 @@ export const InformationComponent = () => {
               } font-bold text-gray-800 text-center `}
             >
               <Link
-                href="#coberturas_adicionales"
+                href="#section_container"
                 onClick={() => handleTabClick("coberturas_adicionales")}
               >
                 Coberturas Adicionales
@@ -47,7 +47,7 @@ export const InformationComponent = () => {
               } font-bold text-gray-800 text-center `}
             >
               <Link
-                href="#siniestros"
+                href="#section_container"
                 onClick={() => handleTabClick("siniestros")}
               >
                 En caso de Siniestro
@@ -59,7 +59,7 @@ export const InformationComponent = () => {
               } font-bold text-gray-800 text-center `}
             >
               <Link
-                href="#seguros_de_autos"
+                href="#section_container"
                 onClick={() => handleTabClick("seguros_de_autos")}
               >
                 Seguros de Autos
@@ -73,7 +73,7 @@ export const InformationComponent = () => {
               } font-bold text-gray-800 text-center `}
             >
               <Link
-                href="#mejor_seguros_para_tu_vehiculo"
+                href="#section_container"
                 onClick={() => handleTabClick("mejor_seguros_para_tu_vehiculo")}
               >
                 ¿Cuál es el mejor seguro de automotor?
@@ -81,9 +81,8 @@ export const InformationComponent = () => {
             </li>
           </ul>
 
-          <div className="">
+          <div>
             <div
-              className=""
               id="coberturas_basicas"
               style={{
                 display: activeTab === "coberturas_basicas" ? "block" : "none",
@@ -128,7 +127,6 @@ export const InformationComponent = () => {
               </p>
             </div>
             <div
-              className=""
               id="coberturas_adicionales"
               style={{
                 display:
@@ -208,7 +206,7 @@ export const InformationComponent = () => {
               </p>
             </div>
             <div
-              className=""
+              className="min-h-[300px]"
               id="siniestros"
               style={{ display: activeTab === "siniestros" ? "block" : "none" }}
             >
@@ -227,7 +225,7 @@ export const InformationComponent = () => {
               aseguradora asignará un gestor para reclamos y gestiones diversas.
             </div>
             <div
-              className=""
+              className="min-h-[300px]"
               id="seguros_de_autos"
               style={{
                 display: activeTab === "seguros_de_autos" ? "block" : "none",
@@ -241,9 +239,26 @@ export const InformationComponent = () => {
                 Meridional Seguros, Caledonia, Sura, SMG Seguros, Nación
                 Seguros, Seguros Rivadavia, QBE Seguros
               </strong>
+              <p className="mb-4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Repudiandae blanditiis necessitatibus iste possimus
+                exercitationem ea soluta beatae unde, vitae minima, molestias
+                doloribus, nesciunt dolor quia velit harum iure asperiores
+                quibusdam? Exercitationem fuga sequi magnam blanditiis
+                accusantium hic consequuntur voluptatem ipsa assumenda,
+                asperiores, expedita sed quibusdam? Delectus maxime unde a modi
+                quis quod repudiandae quisquam voluptatibus repellat quam natus,
+                quibusdam totam! Tempore sed praesentium illum, modi repellendus
+                dolores expedita fugit, autem deserunt ratione aliquid, incidunt
+                dicta officiis dolorum adipisci voluptate est exercitationem.
+                Animi, eaque? Inventore, veritatis ea perspiciatis fugiat quasi
+                illo. Ratione dolore debitis eius rem adipisci vitae molestias,
+                repellat ullam nihil laudantium architecto a, fuga illum iste
+                facere sunt sapiente, aut velit fugiat quisquam labore ducimus.
+                Earum possimus illo impedit.
+              </p>
             </div>
             <div
-              className=""
               id="mejor_seguros_para_tu_vehiculo"
               style={{
                 display:
@@ -341,6 +356,6 @@ export const InformationComponent = () => {
           </div>
         </div>
       </article>
-    </>
+    </div>
   );
 };
