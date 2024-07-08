@@ -1,51 +1,10 @@
 "use client";
-import configApi, { cleanupDuplicateFancyboxOverlay } from "@/lib/config";
 import Script from "next/script";
-import { useEffect, useRef } from "react";
 
 const apiUrl = "http://localhost:8081";
 
 const CarFormQuoter = () => {
-  const brandSelectRef = useRef<HTMLSelectElement>(null);
-
-  // useEffect(() => {
-  //   // Crear y agregar el primer script
-  //   const script1 = document.createElement("script");
-  //   script1.id = "wokan-script";
-  //   script1.src = "//webpack.wokan.com.ar/app/v1/init.js";
-
-  //   // Función para cargar el segundo script después de que el primero se haya cargado
-  //   const loadSecondScript = () => {
-  //     const script2 = document.createElement("script");
-  //     script2.id = "wokan-script-2";
-  //     script2.innerHTML = `wokanInitWebpack({ sid: '${configApi.sid}' , mainColor:'#1570B1' })`;
-  //     document.body.appendChild(script2);
-  //   };
-
-  //   // Agregar un evento load al primer script para cargar el segundo script
-  //   script1.onload = loadSecondScript;
-
-  //   // Agregar el primer script al body
-  //   document.body.appendChild(script1);
-
-  //   // Función de limpieza al desmontar el componente
-  //   return () => {
-  //     if (script1) {
-  //       document.body.removeChild(script1);
-  //     }
-  //     const script2 = document.getElementById("wokan-script-2");
-  //     if (script2) {
-  //       document.body.removeChild(script2);
-  //     }
-  //   };
-  // }, []); // Asegúrate de que este useEffect se ejecute solo una vez al montar/desmontar el componente
-
   const contratarUrl = `${apiUrl}/api/cotizacion`;
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    cleanupDuplicateFancyboxOverlay();
-  };
 
   return (
     <>
@@ -54,14 +13,10 @@ const CarFormQuoter = () => {
         src="//webpack.wokan.com.ar/app/v1/init.js"
         strategy="lazyOnload"
         onLoad={() => {
-          // const script = document.createElement("script");
-          // script.innerHTML = `wokanInitWebpack({ sid: '${"1483@65e0d911de58b"}' , mainColor:'#1570B1' })`;
-
           /*@ts-ignore eslint-disable-line*/
           wokanInitWebpack({
             sid: "1483@65e0d911de58b",
             mainColor: "#1570B1",
-            // document.body.appendChild(script);
           });
         }}
       />
@@ -69,7 +24,6 @@ const CarFormQuoter = () => {
         id="formQuoter"
         method="post"
         action="cotizador/"
-        onSubmit={handleSubmit}
         className="relative p-8 bg-white bg-opacity-70 h-fit rounded shadow-md w-full mx-auto mt-4 flex flex-col md:grid md:gap-2 md:grid-cols-1 lg:flex lg:flex-col lg:justify-between"
       >
         <h1 className="text-xl md:text-2xl font-bold text-center mb-4 font-[Varela Round] text-primary">
@@ -87,7 +41,6 @@ const CarFormQuoter = () => {
           <label htmlFor="brand" className="flex flex-col flex-1">
             Marca:
             <select
-              ref={brandSelectRef}
               id="brand"
               name="brand"
               data-wokan-auto="marca"
