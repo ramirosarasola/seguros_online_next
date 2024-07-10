@@ -1,5 +1,6 @@
 import { getAllPosts, getPostDetails } from "@/services";
 import { Author, Categories, PostDetail, PostWidget } from "../../components";
+import { GoBackButton } from "../../components/go-back-button.componen";
 
 export async function generateMetadata({
   params,
@@ -63,8 +64,24 @@ export default async function PostPage({
   params: { slug: string };
 }) {
   const post = await getPostDetails(params.slug);
+
+  const formatSlug = (slug: string) => {
+    // capitalize every word in the slug
+    const formattedSlug = slug.replace(/-/g, " ");
+    return formattedSlug
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return (
     <section className="mx-auto px-4 md:px-16 mb-8 py-10">
+      <div className="w-full flex justify-start items-center gap-4">
+        <GoBackButton />
+        <h1 className="text-3xl font-semibold my-8">{`${formatSlug(
+          params.slug
+        )}`}</h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="col-span-1 md:col-span-8">
           <PostDetail post={post} />
