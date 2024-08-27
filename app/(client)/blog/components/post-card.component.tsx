@@ -16,7 +16,7 @@ const PostCard = ({ post }: any) => {
         />
       </div>
       <h1 className="transition duration-700 text-center mb-8 cursos-pointer hover:text-pink-600 text-xl md:text-3xl font-semibold">
-        <Link href={`/blog/post/${post.slug}`}>{post.title}</Link>
+        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
       </h1>
 
       <div className="block md:flex text-center items-center justify-center mb-8 w-full">
@@ -56,7 +56,7 @@ const PostCard = ({ post }: any) => {
         {post.excerpt}
       </p>
       <div className="text-center">
-        <Link href={`/blog/post/${post.slug}`}>
+        <Link href={`/blog/${post.slug}`}>
           <button className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
             Continuar leyendo
           </button>

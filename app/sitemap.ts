@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogPosts = response?.map((post: any) => {
     console.log(`post.node.slug: ${post?.node?.slug}`);
     return {
-      url: `${baseUrl}/blog/post/${post?.node?.slug}`,
+      url: `${baseUrl}/blog/${post?.node?.slug}`,
       lastModified: new Date(post.node.createdAt),
     };
   });
