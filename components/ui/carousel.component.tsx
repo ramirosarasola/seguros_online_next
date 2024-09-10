@@ -1,6 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type CarouseProps = {
   data: { img: StaticImageData; nombre: string }[];
@@ -11,20 +11,16 @@ type CarouseProps = {
 const Carousel = ({ data, cantItems, title }: CarouseProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prevSlide) =>
       prevSlide === Math.ceil(data.length / cantItems) - 1 ? 0 : prevSlide + 1
     );
-  };
+  }, [data, cantItems]);
 
-
-  // Funciones para cambiar de slide cada 4 segundos
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
+    const interval = setInterval(nextSlide, 4000);
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, [nextSlide]);
 
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>

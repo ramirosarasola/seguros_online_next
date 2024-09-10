@@ -18,6 +18,7 @@
     "antd": "^5.18.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "first_next_app": "file:",
     "graphql": "^16.8.2",
     "graphql-request": "^7.0.1",
     "html-parser": "^0.11.0",
