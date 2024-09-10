@@ -1,5 +1,4 @@
 import Carousel from "@/components/ui/carousel.component";
-import { aseguradoras } from "../../../../assets/aseguradoras/index";
 import { marcas } from "../../../../assets/marcas/index";
 
 export const NuestrosAliados = () => {

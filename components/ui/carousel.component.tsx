@@ -1,9 +1,10 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 type CarouseProps = {
-  data: { img: StaticImageData; nombre: string }[];
+  data: { img: StaticImageData; nombre: string; slug: string }[];
   cantItems: number;
   title: string;
 };
@@ -48,20 +49,24 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                     index === currentSlide ? "translate-x-0" : "translate-x-0"
                   }`}
                 >
-                  {slideGroup.map((slide, idx) => (
-                    <div
-                      key={idx}
-                      className="w-full flex items-center justify-evenly"
-                    >
-                      <Image
-                        loading="lazy"
-                        src={slide.img}
-                        alt={`Seguros para ${slide.nombre}`}
-                        width={130}
-                        className="w-[90px] md:w-[130px] h-auto hover:shadow-md hover:scale-105 p-2 hover:rounded-lg hover:rotate-3 transition-transform duration-300 hover:cursor-pointer"
-                      />
-                    </div>
-                  ))}
+                  {slideGroup.map((slide, idx) => {
+                    return (
+                      <div
+                        key={idx}
+                        className="w-full flex items-center justify-evenly"
+                      >
+                        <Link href={`/${slide.slug}`}>
+                          <Image
+                            loading="lazy"
+                            src={slide.img}
+                            alt={`Seguros para ${slide.nombre}`}
+                            width={130}
+                            className="w-[90px] md:w-[130px] h-auto hover:shadow-md hover:scale-105 p-2 hover:rounded-lg hover:rotate-3 transition-transform duration-300 hover:cursor-pointer"
+                          />
+                        </Link>
+                      </div>
+                    );
+                  })}
                 </div>
               )
           )}
