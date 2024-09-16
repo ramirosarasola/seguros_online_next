@@ -279,5 +279,6 @@ export async function getBrandData(
     console.error("Error fetching data:", json.errors);
     throw new Error(json.errors[0].message || "An unknown error occurred.");
   }
-  return json.data.brands;
+  console.log(json?.data?.brands[0]);
+  return json?.data?.brands[0];
 }

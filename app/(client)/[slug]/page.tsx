@@ -4,8 +4,38 @@ import { SectionTitleComponent } from "../../../components/ui/section-title.comp
 import Image from "next/image";
 import parse from "html-react-parser"; // Importar el parser
 
-export const revalidate = 60; // Revalidate data every 1 second
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const brand = await getBrandData(params.slug, {
+    next: { revalidate: revalidate },
+  });
 
+  return {
+    title: `Seguros de auto ${brand?.title}`,
+    description: `Cotiza tu vehiculo ${brand?.title} con 30% de descuento!`,
+    robots: "index, follow",
+    author: "Seguros Online",
+    publisher: "Seguros Online",
+    keywords: "seguros, online, cotizador, cotizacion, seguro, autos, vida",
+    openGraph: {
+      title: brand?.title,
+      description: `Cotiza tu vehiculo ${brand?.title} con 30% de descuento!`,
+      type: "website",
+      siteName: "Seguros Online",
+      url: `https://seguros-online-next.vercel.app/${params.slug}`,
+      images: [
+        {
+          url: brand?.image?.url,
+        },
+      ],
+    },
+  };
+}
+
+export const revalidate = 60; // Revalidate data every 1 second
 export default async function BrandPage({
   params,
 }: {
@@ -15,11 +45,11 @@ export default async function BrandPage({
   const brandData = await getBrandData(params.slug, {
     next: { revalidate: revalidate },
   });
-  const brand = brandData[0];
+  const brand = brandData;
 
   return (
     <PageWrapper>
-      <section className="px-16 w-full h-[270px] bg-[#c3c3c3] flex items-center justify-center">
+      <section className="w-full h-[270px] bg-[#c3c3c3] flex items-center justify-center">
         <Image
           loading="lazy"
           src={brand?.image.url}
@@ -30,13 +60,17 @@ export default async function BrandPage({
         />
       </section>
 
-      <section className="px-16 w-full flex flex-col items-center justify-center">
+      <section className="px-4 py-8 md:py-16 md:px-0 w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
         <SectionTitleComponent title={"Seguros de auto " + brand?.title} />
 
-        {/* Convertir el HTML a elementos React */}
-        <div className="w-full flex flex-col gap-2">
-          {parse(brand?.content.html || "")}
-        </div>
+        <section className="w-full flex gap-16">
+          {/* Convertir el HTML a elementos React */}
+          <div className="w-full flex flex-col gap-2">
+            {parse(brand?.content.html || "")}
+          </div>
+
+          {/* <aside className="h-screen bg-red-400 w-[400px]"></aside> */}
+        </section>
       </section>
     </PageWrapper>
   );
