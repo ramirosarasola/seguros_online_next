@@ -65,7 +65,7 @@ export default async function BrandPage({
 
         <section className="w-full flex gap-16">
           {/* Convertir el HTML a elementos React */}
-          <div className="w-full flex flex-col gap-2">
+          <div className="w-full flex flex-col gap-2 md:px-16 lg:px-0">
             {parse(brand?.content.html || "")}
           </div>
 

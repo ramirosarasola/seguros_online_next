@@ -14,9 +14,9 @@ export const QuoteInfo = ({ data, quoteTitle }: QuoteInfoProps) => {
       <SectionTitleComponent title={quoteTitle} />
       {data.map((item, index) => (
         <article key={index} className="my-4 w-full">
-          <h6 className="text-lg font-bold text-quaternary mb-2">
+          <h4 className="text-lg font-bold text-quaternary mb-2">
             {item.title}
-          </h6>
+          </h4>
           <p className="text-quaternary">{item.description}</p>
         </article>
       ))}

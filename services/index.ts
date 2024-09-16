@@ -180,7 +180,7 @@ export async function getPostDetails(slug: string) {
     }
   );
   const json = await response.json();
-  console.log(json.data.post);
+  // console.log(json.data.post);
   return json.data.post;
 }
 
@@ -279,6 +279,6 @@ export async function getBrandData(
     console.error("Error fetching data:", json.errors);
     throw new Error(json.errors[0].message || "An unknown error occurred.");
   }
-  console.log(json?.data?.brands[0]);
+  // console.log(json?.data?.brands[0]);
   return json?.data?.brands[0];
 }

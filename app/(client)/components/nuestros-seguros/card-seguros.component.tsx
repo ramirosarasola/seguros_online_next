@@ -20,9 +20,9 @@ const CardSegurosComponent = ({
     <article className="h-[400px] w-full p-4 bg-white shadow-lg flex flex-col justify-start items-center relative text-center">
       <Image loading="lazy" src={icon} alt={alt} width={64} height={64} />
       <div className=" mt-10 flex flex-col items-center justify-center gap-8">
-        <h2 className="text-[20px] font-bold h-[36px] overflow-hidden">
+        <h3 className="text-[20px] font-bold h-[36px] overflow-hidden">
           {title}
-        </h2>
+        </h3>
         <p className="text-center text-[1rem] h-[120px] overflow-hidden">
           {content}
         </p>

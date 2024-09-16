@@ -29,7 +29,7 @@ export const InformationComponent = () => {
                 href="#section_container"
                 onClick={() => handleTabClick("coberturas_basicas")}
               >
-                Coberturas Básicas
+                <h3>Coberturas Básicas</h3>
               </Link>
             </li>
             <li
@@ -41,7 +41,7 @@ export const InformationComponent = () => {
                 href="#section_container"
                 onClick={() => handleTabClick("coberturas_adicionales")}
               >
-                Coberturas Adicionales
+                <h3>Coberturas Adicionales</h3>
               </Link>
             </li>
             <li
@@ -53,7 +53,7 @@ export const InformationComponent = () => {
                 href="#section_container"
                 onClick={() => handleTabClick("siniestros")}
               >
-                En caso de Siniestro
+                <h3>En caso de Siniestro</h3>
               </Link>
             </li>
             <li
@@ -65,7 +65,7 @@ export const InformationComponent = () => {
                 href="#section_container"
                 onClick={() => handleTabClick("seguros_de_autos")}
               >
-                Seguros de Autos
+                <h3>Seguros de Autos</h3>
               </Link>
             </li>
             <li
@@ -79,7 +79,7 @@ export const InformationComponent = () => {
                 href="#section_container"
                 onClick={() => handleTabClick("mejor_seguros_para_tu_vehiculo")}
               >
-                ¿Cuál es el mejor seguro de automotor?
+                <h3>¿Cuál es el mejor seguro de automotor?</h3>
               </Link>
             </li>
           </ul>
