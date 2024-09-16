@@ -1,5 +1,6 @@
-import { Poppins } from "next/font/google";
+import WhatsAppButton from "@/components/ui/whatsapp-button.component";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ export default function RootLayout({
       <body className={`${poppins.className} min-h-screen bg-secondary`}>
         {children}
         <SpeedInsights />
+        <WhatsAppButton />
       </body>
     </html>
   );
