@@ -26,7 +26,7 @@ const CarFormQuoter = () => {
         action="cotizador/"
         className="relative max-w-[1200px] p-8 bg-white bg-opacity-70 h-fit rounded shadow-md w-full mx-auto mt-4 flex flex-col md:grid md:gap-2 md:grid-cols-1 lg:flex lg:flex-col lg:justify-between"
       >
-        <h1 className="text-xl md:text-2xl font-bold text-center mb-4 font-[Varela Round] text-primary">
+        <h1 className="text-lg md:text-xl font-bold text-center mb-4 font-[Varela Round] text-primary">
           Seguros para Autos - Mejoramos cualquier presupuesto. La mejor
           cobertura por el mejor precio!
         </h1>
@@ -39,7 +39,7 @@ const CarFormQuoter = () => {
           />
 
           <label htmlFor="brand" className="flex flex-col flex-1">
-            Marca:
+            {/* Marca: */}
             <select
               id="brand"
               name="brand"
@@ -54,7 +54,7 @@ const CarFormQuoter = () => {
           </label>
 
           <label htmlFor="year" className="flex flex-col flex-1">
-            Año:
+            {/* Año: */}
             <select
               id="year"
               name="year"
@@ -66,7 +66,7 @@ const CarFormQuoter = () => {
           </label>
 
           <label htmlFor="model" className="flex flex-col flex-1">
-            Modelo:
+            {/* Modelo: */}
             <select
               id="model"
               name="model"
@@ -78,7 +78,7 @@ const CarFormQuoter = () => {
           </label>
 
           <label htmlFor="version" className="flex flex-col flex-1">
-            Versión:
+            {/* Versión: */}
             <select
               id="version"
               name="version"
