@@ -233,7 +233,10 @@ export async function getPostsByCategory(categorySlug: string) {
 
 //* Brands
 
-export async function getBrandData(slug: string) {
+export async function getBrandData(
+  slug: string,
+  p0: { next: { revalidate: number } }
+) {
   // Validación previa para asegurarse de que 'slug' está definido
   if (!slug) {
     throw new Error("El parámetro 'slug' debe estar definido.");
