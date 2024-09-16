@@ -36,7 +36,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
   }
 
   return (
-    <article className="max-w-screen">
+    <article className="max-w-[1200px] mx-auto">
       <h2 className="text-[2rem] font-bold text-center">{title}</h2>
       <div className="relative h-fit py-4">
         <div className="overflow-hidden w-full h-40 bg-gray-200">
@@ -61,7 +61,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                             src={slide.img}
                             alt={`Seguros para ${slide.nombre}`}
                             width={130}
-                            className="w-[90px] md:w-[130px] h-auto hover:shadow-md hover:scale-105 p-2 hover:rounded-lg hover:rotate-3 transition-transform duration-300 hover:cursor-pointer"
+                            className="w-[90px] md:w-[130px] h-auto hover:cursor-pointer"
                           />
                         </Link>
                       </div>

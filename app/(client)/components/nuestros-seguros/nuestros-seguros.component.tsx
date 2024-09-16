@@ -42,7 +42,7 @@ const services = [
 
 export const NuestrosSeguros = () => {
   return (
-    <div className="py-10 bg-tertiary flex flex-col items-center justify-between">
+    <div className="py-10 bg-tertiary flex flex-col items-center justify-between mx-auto max-w-[1200px]">
       <SectionTitleComponent title="Nuestros Seguros" />
       <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
         {services.map((item, i) => {

@@ -72,7 +72,7 @@ export default function HomePage() {
           <NuestrosSeguros />
         </section>
 
-        <section className="px-4 md:px-16 bg-tertiary h-fit pt-10">
+        <section className="px-4 md:px-16 bg-tertiary md:py-8 h-fit pt-10">
           <NuestrosAliados />
         </section>
 

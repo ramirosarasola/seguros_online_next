@@ -37,43 +37,45 @@ const clientNavItems = [
 export default function ServerNavbar() {
   return (
     <nav className="fixed h-24 w-full px-4 md:px-16 md:bg-secondary md:main_text flex items-center justify-between z-50 bg-white nav_shadow ">
-      <Link href="/">
-        <Image
-          src={logo}
-          priority={true}
-          alt="seguros online logo"
-          width={120}
-          className="h-auto"
-        />
-      </Link>
-      <div className="hidden w-[60%] md:flex gap-8">
-        {navItems.map((item) =>
-          item.text === "Otros" ? (
-            <Dropdown
-              key={item.path}
-              text={item.text}
-              options={otrosDropdownItems}
-            />
-          ) : (
-            <ActiveLink key={item.path} {...item} />
-          )
-        )}
-      </div>
-      <div className="hidden md:flex items-center gap-8">
-        <Image
-          height={35}
-          width={35}
-          src={phone}
-          alt="telefono"
-          className="h-auto"
-          loading="lazy"
-        />
-        <div>
-          <p>0810 345 9000</p>
-          <p>(011) 5199-8100</p>
+      <div className="h-24 w-full md:bg-secondary md:main_text flex items-center justify-between max-w-[1200px] mx-auto">
+        <Link href="/">
+          <Image
+            src={logo}
+            priority={true}
+            alt="seguros online logo"
+            width={120}
+            className="h-auto"
+          />
+        </Link>
+        <div className="hidden w-[60%] md:flex gap-8">
+          {navItems.map((item) =>
+            item.text === "Otros" ? (
+              <Dropdown
+                key={item.path}
+                text={item.text}
+                options={otrosDropdownItems}
+              />
+            ) : (
+              <ActiveLink key={item.path} {...item} />
+            )
+          )}
         </div>
+        <div className="hidden md:flex items-center gap-8">
+          <Image
+            height={35}
+            width={35}
+            src={phone}
+            alt="telefono"
+            className="h-auto"
+            loading="lazy"
+          />
+          <div>
+            <p>0810 345 9000</p>
+            <p>(011) 5199-8100</p>
+          </div>
+        </div>
+        <ClientNavbar navItems={clientNavItems} />
       </div>
-      <ClientNavbar navItems={clientNavItems} />
     </nav>
   );
 }

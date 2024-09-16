@@ -12,7 +12,10 @@ export const InformationComponent = () => {
   };
 
   return (
-    <div id="section_container" className="w-full flex flex-col items-center">
+    <div
+      id="section_container"
+      className="max-w-[1200px] mx-auto flex flex-col items-center"
+    >
       <SectionTitleComponent title="Seguros de Autos - Cotizar Seguros de Autos" />
       <article className="flex flex-col items-start">
         <div className="flex flex-col items-start justify-between">

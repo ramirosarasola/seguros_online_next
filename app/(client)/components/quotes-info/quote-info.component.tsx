@@ -10,7 +10,7 @@ export type QuoteInfoProps = {
 
 export const QuoteInfo = ({ data, quoteTitle }: QuoteInfoProps) => {
   return (
-    <section className="px-4 md:px-16 flex flex-1 justify-end py-10 w-full flex-col gap-4 items-center">
+    <section className="px-4 md:px-16 flex flex-1 justify-end py-10 w-full flex-col gap-4 items-center max-w-[1200px] mx-auto">
       <SectionTitleComponent title={quoteTitle} />
       {data.map((item, index) => (
         <article key={index} className="my-4 w-full">

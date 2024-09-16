@@ -79,7 +79,7 @@ export default function ContactPage() {
               </p>
             </div>
           </section>
-          <section className="gap-10 md:gap-0 flex flex-col md:flex-row flex-1 py-10 px-4 md:px-16">
+          <section className="gap-10 md:gap-0 flex flex-col md:flex-row flex-1 py-10 px-4 md:px-0 max-w-[1200px] mx-auto">
             {/* Contact Form Div */}
             <div className="flex flex-1 flex-col md:items-start items-center justify-start gap-10">
               <h6 className="text-[22px] md:text-center">
