@@ -2,7 +2,7 @@ import { PageWrapper } from "@/components/ui/page-wrapper";
 import { getBrandData } from "@/services";
 import parse from "html-react-parser"; // Importar el parser
 import Image from "next/image";
-import { SectionTitleComponent } from "../../../components/ui/section-title.component";
+import { SectionTitleComponent } from "@/components/ui/section-title.component";
 import QuoteBrandsAside from "./components/quote-brands-button.component";
 
 export async function generateMetadata({

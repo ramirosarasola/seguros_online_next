@@ -1,6 +1,6 @@
 "use client";
 import Script from "next/script";
-import modelsJSON from "../../../constants/brands.json";
+import modelsJSON from "../../.../../../../constants/brands.json";
 
 interface Props {
   brand: string;
