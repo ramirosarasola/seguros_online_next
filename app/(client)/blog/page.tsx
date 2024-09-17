@@ -2,10 +2,10 @@
 import { Spinner } from "@/components/ui/spinner.component";
 import { getAllPosts, getCategories } from "@/services";
 import { Metadata } from "next";
-import { Suspense, lazy } from "react";
-import { Categories, PostCard } from "./components";
 import Script from "next/script";
+import { Suspense, lazy } from "react";
 import { PageWrapper } from "../../../components/ui/page-wrapper";
+import { Categories, PostCard } from "./components";
 const PostWidget = lazy(() => import("./components/post-widget.component"));
 
 // Metadatos de la página
@@ -39,8 +39,6 @@ export const metadata: Metadata = {
     creator: "@SegurosOnline",
   },
 };
-
-// Componente de la página
 
 export const revalidate = 60;
 
@@ -76,9 +74,14 @@ export default async function BlogPage() {
         <section className="px-4 md:px-16 py-10 min-h-[calc(100vh-96px)]">
           <div className="flex flex-col md:flex-row gap-12">
             <div className="md:col-span-8 col-span-1 grid gap-8">
-              {posts.map((post: any, index: number) => (
-                <PostCard key={index} post={post.node} />
-              ))}
+              <PostCard post={posts[0].node} />
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {posts.map((post: any, index: number) => {
+                  if (index !== 0)
+                    return <PostCard key={index} post={post.node} />;
+                })}
+              </div>
             </div>
             <div className="md:col-span-4 col-span-1">
               <div className="md:sticky relative top-8">
