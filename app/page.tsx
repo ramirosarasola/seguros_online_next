@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import CarQuoterForm from "./(client)/components/quoter-form/car-quoter-form.component";
 import { NuestrosSeguros } from "./(client)/components/nuestros-seguros/nuestros-seguros.component";
-import { NuestrosAliados } from "./(client)/components/nuestros-aliados/nuestros-aliados.component";
+import { MarcasDeAutos } from "./(client)/components/nuestros-aliados/marcas-autos.component";
 import { InformationComponent } from "./(client)/components/information/information.component";
 import { PageWrapper } from "../components/ui/page-wrapper";
 import Script from "next/script";
+import { Companias } from "./(client)/components/nuestros-aliados/marcas-companias.component";
 
 export const metadata: Metadata = {
   title: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
@@ -72,8 +73,14 @@ export default function HomePage() {
           <NuestrosSeguros />
         </section>
 
+        {/* Brands */}
         <section className="px-4 md:px-16 bg-tertiary md:py-8 h-fit pt-10">
-          <NuestrosAliados />
+          <MarcasDeAutos />
+        </section>
+
+        {/* Assurances Companies */}
+        <section className="px-4 md:px-16 bg-tertiary md:py-8 h-fit pt-10">
+          <Companias />
         </section>
 
         {/* <section className="px-4 md:px-16 bg-tertiary h-fit py-10 flex flex-col items-center justify-between">

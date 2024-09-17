@@ -1,0 +1,52 @@
+{
+  "companias": [
+    {
+      "nombre": "Allianz",
+      "slug": "allianz"
+    },
+    {
+      "nombre": "ATM",
+      "slug": "atm"
+    },
+    {
+      "nombre": "BBVA",
+      "slug": "bbva"
+    },
+    {
+      "nombre": "Federación Patronal",
+      "slug": "federacion-patronal"
+    },
+    {
+      "nombre": "La Mercantil",
+      "slug": "la-mercantil"
+    },
+    {
+      "nombre": "Orbis",
+      "slug": "orbis"
+    },
+    {
+      "nombre": "Rio Uruguay",
+      "slug": "rio-uruguay"
+    },
+    {
+      "nombre": "San Cristobal",
+      "slug": "san-cristobal"
+    },
+    {
+      "nombre": "Sancor",
+      "slug": "sancor"
+    },
+    {
+      "nombre": "Sura",
+      "slug": "sura"
+    },
+    {
+      "nombre": "SMG",
+      "slug": "smg"
+    },
+    {
+      "nombre": "Zurich",
+      "slug": "zurich"
+    }
+  ]
+}

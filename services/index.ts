@@ -282,3 +282,55 @@ export async function getBrandData(
   // console.log(json?.data?.brands[0]);
   return json?.data?.brands[0];
 }
+
+//* Aseguradoras
+
+export async function getCompanyData(
+  slug: string,
+  p0: { next: { revalidate: number } }
+) {
+  // Validación previa para asegurarse de que 'slug' está definido
+  if (!slug) {
+    throw new Error("El parámetro 'slug' debe estar definido.");
+  }
+
+  const response = await fetch(
+    "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+          query MyQuery($slug: String!) {
+            companies(where: { slug: $slug }) {
+              id
+              title
+              slug
+              image {
+                url
+              }
+              content {
+                html
+              }
+            }
+          }
+        `,
+        variables: {
+          slug: slug, // Asegura que la variable 'slug' se pase correctamente
+        },
+      }),
+    }
+  );
+
+  const json = await response.json();
+
+  // Manejo de errores para solicitudes fallidas
+  if (!response.ok) {
+    console.error("Error fetching data:", json.errors);
+    throw new Error(json.errors[0].message || "An unknown error occurred.");
+  }
+  // console.log(json?.data?.companies[0]);
+  return json?.data?.companies[0];
+}
