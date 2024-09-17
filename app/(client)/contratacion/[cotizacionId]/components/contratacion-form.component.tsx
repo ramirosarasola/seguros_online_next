@@ -96,7 +96,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         throw new Error("Error al enviar el formulario");
       }
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       setIsLoading(false);
       // Redirect to success page
       if (data) {
