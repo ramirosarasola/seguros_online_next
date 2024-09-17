@@ -28,9 +28,9 @@ const brandCodes: { [key: string]: string } = {
 };
 
 export default function QuoteBrandsAside({ brand }: Props) {
-  const brandCode = brandCodes[brand.toUpperCase()];
+  const brandCode = brandCodes[brand?.toUpperCase()] || "";
   // @ts-ignore
-  const models = modelsJSON[brand.toUpperCase()];
+  const models = modelsJSON[brand?.toUpperCase()] || "";
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function QuoteBrandsAside({ brand }: Props) {
         }}
       />
       <input type="hidden" data-wokan-auto="marca" value={brandCode} />
-      {models.map((model: string, index: number) => (
+      {models?.map((model: string, index: number) => (
         <button
           key={index}
           type="submit"
