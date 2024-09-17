@@ -31,19 +31,28 @@ export default async function CategoryPage({ params }: any) {
 
   return (
     <PageWrapper>
-      <section className="mx-auto px-4 md:px-16 mb-8 py-10">
-        <GoBackButton />
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          <div className="col-span-1 md:col-span-8">
-            <h1 className="text-3xl font-semibold my-8">{`Articulos en ${formatSlug(
-              params.slug
-            )}`}</h1>
-            {posts.map((post: any) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
+      <section className="px-4 md:px-16 py-10 min-h-[calc(100vh-96px)]">
+        <div className="flex flex-col md:flex-row gap-12">
+          <div className="md:col-span-8 col-span-1 grid gap-8">
+            <div className="w-full flex justify-start items-center gap-4">
+              <GoBackButton />
+              <h1 className="text-3xl font-semibold my-8">{`${formatSlug(
+                params.slug
+              )}`}</h1>
+            </div>
+            <PostCard post={posts[0]} />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {posts.map((post: any, index: number) => {
+                if (index !== 0) return <PostCard key={index} post={post} />;
+              })}
+            </div>
           </div>
-          <div className="col-span-1 md:col-span-4">
-            <div className="relative md:sticky top-8">
+          <div className="md:col-span-4 col-span-1">
+            <div className="md:sticky relative top-8">
+              {/* <Suspense fallback={<Spinner />}>
+                  <PostWidget />
+                </Suspense> */}
               <Categories categories={categories} />
             </div>
           </div>
