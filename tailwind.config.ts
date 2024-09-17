@@ -11,6 +11,7 @@ const config: Config = {
       sm: "640px",
       md: "1014px",
       lg: "1325px",
+      xl: "1800px",
     },
     extend: {
       colors: {
