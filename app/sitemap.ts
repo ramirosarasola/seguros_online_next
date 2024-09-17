@@ -13,6 +13,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
+  // Agregar /marcas
+  // Agregar /aseguradoras
+
   return [
     {
       url: baseUrl,
