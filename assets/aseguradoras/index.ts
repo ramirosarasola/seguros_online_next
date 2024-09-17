@@ -7,7 +7,7 @@ import orbis from "./orbis-logo.png";
 import rio_uruguay from "./rio-uruguay-logo.webp";
 import san_cristobal from "./san-cristobal-logo.webp";
 import sancor from "./sancor-logo.webp";
-import sura from "./seguros-rivadavia-logo.webp";
+import seguros_rivadavia from "./seguros-rivadavia-logo.webp";
 import smg from "./smg-logo.webp";
 import zurich from "./zurich-logo.webp";
 
@@ -58,9 +58,9 @@ export const aseguradoras = [
     slug: "aseguradoras/sancor",
   },
   {
-    img: sura,
-    nombre: "Sura",
-    slug: "aseguradoras/sura",
+    img: seguros_rivadavia,
+    nombre: "Seguros Rivadavia",
+    slug: "aseguradoras/seguros-rivadavia",
   },
   {
     img: smg,
