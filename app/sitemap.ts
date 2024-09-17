@@ -1,15 +1,32 @@
-import { getAllPosts } from "@/services";
+import { getAllBrands, getAllCompanies, getAllPosts } from "@/services";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://seguros-online-next.vercel.app";
-  const response = await getAllPosts();
+  const posts = await getAllPosts();
 
-  const blogPosts = response?.map((post: any) => {
+  const brands = await getAllBrands();
+  const companies = await getAllCompanies();
+
+  const blogPosts = posts?.map((post: any) => {
     // console.log(`post.node.slug: ${post?.node?.slug}`);
     return {
       url: `${baseUrl}/blog/${post?.node?.slug}`,
       lastModified: new Date(post.node.createdAt),
+    };
+  });
+
+  const brandsPosts = brands?.map((brand: any) => {
+    return {
+      url: `${baseUrl}/${brand?.slug}`,
+      lastModified: new Date(),
+    };
+  });
+
+  const companiesPosts = companies?.map((company: any) => {
+    return {
+      url: `${baseUrl}/aseguradoras/${company?.slug}`,
+      lastModified: new Date(),
     };
   });
 
@@ -50,5 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     ...blogPosts,
+    ...brandsPosts,
+    ...companiesPosts,
   ];
 }

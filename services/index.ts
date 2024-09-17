@@ -283,6 +283,45 @@ export async function getBrandData(
   return json?.data?.brands[0];
 }
 
+export async function getAllBrands() {
+  const response = await fetch(
+    "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+          query GetAllBrands {
+            brands {
+              id
+              title
+              slug
+              image {
+                url
+              }
+              content {
+                html
+              }
+            }
+          }
+        `,
+      }),
+    }
+  );
+
+  const json = await response.json();
+
+  // Manejo de errores para solicitudes fallidas
+  if (!response.ok) {
+    console.error("Error fetching data:", json.errors);
+    throw new Error(json.errors[0].message || "An unknown error occurred.");
+  }
+
+  return json?.data?.brands || [];
+}
+
 //* Aseguradoras
 
 export async function getCompanyData(
@@ -333,4 +372,43 @@ export async function getCompanyData(
   }
   // console.log(json?.data?.companies[0]);
   return json?.data?.companies[0];
+}
+
+export async function getAllCompanies() {
+  const response = await fetch(
+    "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+          query GetAllCompanies {
+            companies {
+              id
+              title
+              slug
+              image {
+                url
+              }
+              content {
+                html
+              }
+            }
+          }
+        `,
+      }),
+    }
+  );
+
+  const json = await response.json();
+
+  // Manejo de errores para solicitudes fallidas
+  if (!response.ok) {
+    console.error("Error fetching data:", json.errors);
+    throw new Error(json.errors[0].message || "An unknown error occurred.");
+  }
+
+  return json?.data?.companies || [];
 }
