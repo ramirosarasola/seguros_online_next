@@ -1,8 +1,9 @@
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { getBrandData } from "@/services";
-import { SectionTitleComponent } from "../../../components/ui/section-title.component";
-import Image from "next/image";
 import parse from "html-react-parser"; // Importar el parser
+import Image from "next/image";
+import { SectionTitleComponent } from "../../../components/ui/section-title.component";
+import QuoteBrandsAside from "./components/quote-brands-button.component";
 
 export async function generateMetadata({
   params,
@@ -63,13 +64,16 @@ export default async function BrandPage({
       <section className="px-4 py-8 md:py-16 md:px-0 w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
         <SectionTitleComponent title={"Seguros de auto " + brand?.title} />
 
-        <section className="w-full flex gap-16">
+        <section className="w-full flex flex-col-reverse gap-16 md:flex-row">
           {/* Convertir el HTML a elementos React */}
           <div className="w-full flex flex-col gap-2 md:px-16 lg:px-0">
             {parse(brand?.content.html || "")}
           </div>
 
-          {/* <aside className="h-screen bg-red-400 w-[400px]"></aside> */}
+          <aside className="w-[500px] flex flex-col items-center justify-start gap-4">
+            {/* <h2>Cotiza tu {brand?.title}</h2> */}
+            <QuoteBrandsAside brand={brand?.title} />
+          </aside>
         </section>
       </section>
     </PageWrapper>
