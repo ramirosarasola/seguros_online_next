@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input.component";
 import { Option, Select } from "@/components/ui/select.component";
 import { Spinner } from "@/components/ui/spinner.component";
 import { onSubmitAction } from "@/lib/form-submit";
+import { formatExpirationDate } from "@/lib/utils";
 import { Cotizacion } from "@/types/cotizacion.type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -63,6 +64,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
 
   const formRef = useRef<HTMLFormElement>(null);
   const actualData = form.watch();
+  console.log(actualData);
 
   useEffect(() => {
     if (actualData.metodo_pago === "tarjeta_credito") {
@@ -73,7 +75,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
       form.setValue("numero_tarjeta", "");
       form.setValue("vencimiento_tarjeta", "");
     }
-  }, [actualData.metodo_pago]);
+  }, [actualData.metodo_pago, form]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
@@ -92,20 +94,17 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
           "Content-Type": "application/json",
         },
       });
-      if (!response.ok) {
-        throw new Error("Error al enviar el formulario");
-      }
       const data = await response.json();
-      //console.log(data);
-      setIsLoading(false);
+      console.log(data);
       // Redirect to success page
       if (data) {
-        router.push("/contratacion/[contratacionId]/success");
+        router.push("/contratacion/" + cotizacion.id + "/success");
       }
       // Aquí puedes manejar la respuesta del servidor según tus necesidades
     } catch (error) {
-      console.error("Error:", error);
-      // Aquí puedes manejar los errores de la petición
+      setIsLoading(false);
+      // ALERT ERROR
+      alert("Revise que los campos estan completos");
     }
   };
 
@@ -116,11 +115,11 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         className="space-y-4 bg-white p-8 h-fit shadow-lg"
         action={formAction}
         onSubmit={(event) => {
-          // handleSubmit(event);
           event.preventDefault();
           form.handleSubmit(async (data) => {
-            // console.log("Form data:", data); // Ver payload en consola
+            console.log("Form data:", data); // Ver payload en consola
             const result = formAction(new FormData(formRef.current!));
+            console.log("Result:", result);
             if (data) {
               handleSubmit(event);
             }
@@ -387,13 +386,24 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
               >
                 <FormLabel>Vencimiento de la Tarjeta</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} value={field.value || ""} />
+                  <Input
+                    placeholder="MM/YY"
+                    {...field}
+                    value={field.value || ""}
+                    maxLength={5} // Limita la longitud a 5 caracteres (MM/YY)
+                    onChange={(e) => {
+                      const formattedValue = formatExpirationDate(
+                        e.target.value
+                      );
+                      field.onChange(formattedValue); // Usa el valor formateado
+                    }}
+                  />
                 </FormControl>
-                {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="titular_tarjeta"
@@ -409,7 +419,6 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
                 <FormControl>
                   <Input placeholder="" {...field} value={field.value || ""} />
                 </FormControl>
-                {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -428,7 +437,6 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
               <FormControl>
                 <Input placeholder="" {...field} value={field.value || ""} />
               </FormControl>
-              {/* <FormDescription>Tipo de casa.</FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
