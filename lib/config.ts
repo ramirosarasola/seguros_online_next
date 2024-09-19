@@ -2,7 +2,7 @@ const configApi = {
   // apiUrl: 'https://segurosenlinea.com.ar:443', // -> PRODUCTION
   // sid: '48@5b05a4bfe8c69', // -> PRODUCTION
 
-  apiUrl: "https://vps-3776803-x.dattaweb.com:8080", // -> DEVELOPMENT
+  apiUrl: "https://segurosenlinea.com.ar:8080", // -> DEVELOPMENT
   sid: "1483@65e0d911de58b", // -> DEVELOPMENT
 };
 

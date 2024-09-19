@@ -28,7 +28,7 @@ export async function onSubmitAction(
 
   // Realizar una petición
   const response = await fetch(
-    `https://vps-3776803-x.dattaweb.com:8080/api/contratar`,
+    `https://segurosenlinea.com.ar:8080/api/contratar`,
     {
       method: "POST",
       body: JSON.stringify(parsed.data),
@@ -66,7 +66,7 @@ export async function onSubmitActionHouseQuote(
   }
 
   const response = await fetch(
-    "https://vps-3776803-x.dattaweb.com:8080/api/cotizacion/hogar",
+    "https://segurosenlinea.com.ar:8080/api/cotizacion/hogar",
     {
       method: "POST",
       body: JSON.stringify(parsed.data),

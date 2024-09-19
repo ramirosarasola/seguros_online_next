@@ -88,7 +88,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
       );
 
       const response = await fetch(
-        "https://vps-3776803-x.dattaweb.com:8080/api/contratar",
+        "https://segurosenlinea.com.ar:8080/api/contratar",
         {
           method: "POST",
           body: jsonPayload,

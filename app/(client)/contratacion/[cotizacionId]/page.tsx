@@ -16,7 +16,7 @@ export default function ContratacionPage() {
   const getContratacion = async (quoteId: string) => {
     try {
       const res = await fetch(
-        `https://vps-3776803-x.dattaweb.com:8080/api/retrieveData?quote=${quoteId}`
+        `https://segurosenlinea.com.ar:8080/api/retrieveData?quote=${quoteId}`
       );
       if (!res.ok) {
         throw new Error("Error fetching data");

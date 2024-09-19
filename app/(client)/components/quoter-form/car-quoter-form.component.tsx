@@ -1,7 +1,7 @@
 "use client";
 import Script from "next/script";
 
-const apiUrl = "https://vps-3776803-x.dattaweb.com:8080";
+const apiUrl = "https://segurosenlinea.com.ar:8080";
 
 const CarFormQuoter = () => {
   const contratarUrl = `${apiUrl}/api/cotizacion`;
