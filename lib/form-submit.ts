@@ -27,11 +27,14 @@ export async function onSubmitAction(
   }
 
   // Realizar una petición
-  const response = await fetch(`http://localhost:8081/api/contratar`, {
-    method: "POST",
-    body: JSON.stringify(parsed.data),
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `https://vps-3776803-x.dattaweb.com:8080/api/contratar`,
+    {
+      method: "POST",
+      body: JSON.stringify(parsed.data),
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!response.ok) {
     return {
@@ -62,11 +65,14 @@ export async function onSubmitActionHouseQuote(
     };
   }
 
-  const response = await fetch("http://localhost:8081/api/cotizacion/hogar", {
-    method: "POST",
-    body: JSON.stringify(parsed.data),
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    "https://vps-3776803-x.dattaweb.com:8080/api/cotizacion/hogar",
+    {
+      method: "POST",
+      body: JSON.stringify(parsed.data),
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!response.ok) {
     return {

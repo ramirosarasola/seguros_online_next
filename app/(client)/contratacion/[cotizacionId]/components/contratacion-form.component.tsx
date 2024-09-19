@@ -87,13 +87,16 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         Object.fromEntries(formData.entries())
       );
 
-      const response = await fetch("http://localhost:8081/api/contratar", {
-        method: "POST",
-        body: jsonPayload,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://vps-3776803-x.dattaweb.com:8080/api/contratar",
+        {
+          method: "POST",
+          body: jsonPayload,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await response.json();
       console.log(data);
       // Redirect to success page
