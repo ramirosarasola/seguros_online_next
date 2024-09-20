@@ -62,7 +62,7 @@ import { ContratacionForm } from "./components/contratacion-form.component";
 async function getCotizacion(cotizacionId: string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/retrieveData?quote=${cotizacionId}`,
+      `${process.env.BASE_URL}/api/retrieveData?quote=${cotizacionId}`,
       { cache: "no-store" } // Esto asegura que la data sea fresca en cada request (SSR)
     );
 
