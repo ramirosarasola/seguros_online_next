@@ -2,7 +2,7 @@ import { Cotizacion } from "@/types/cotizacion.type";
 import { ContratacionForm } from "./components/contratacion-form.component";
 
 // Revalidate si quisieras usar ISR (Incremental Static Regeneration)
-export const revalidate = 60;
+// export const revalidate = 60;
 
 async function getCotizacion(cotizacionId: string) {
   try {
@@ -10,6 +10,9 @@ async function getCotizacion(cotizacionId: string) {
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/retrieveData?quote=${cotizacionId}`,
       { cache: "no-store" } // Esto asegura que la data sea fresca en cada request (SSR)
     );
+
+    // Log del estado de la respuesta
+    console.log("Estado de la respuesta:", res.status);
 
     if (!res.ok) {
       throw new Error("Error fetching data");
