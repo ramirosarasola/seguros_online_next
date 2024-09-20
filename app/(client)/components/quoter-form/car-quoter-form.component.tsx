@@ -1,10 +1,21 @@
 "use client";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 const CarFormQuoter = () => {
   const contratarUrl = `${apiUrl}/api/cotizacion`;
+  const [sid, setSid] = useState<string | null>(null);
+  useEffect(() => {
+    const fetchSid = async () => {
+      const response = await fetch("/api/get-wokan-sid");
+      const data = await response.json();
+      setSid(data.sid); // Guarda el SID en el estado
+    };
+
+    fetchSid();
+  }, []);
 
   return (
     <>
@@ -15,7 +26,7 @@ const CarFormQuoter = () => {
         onLoad={() => {
           /*@ts-ignore eslint-disable-line*/
           wokanInitWebpack({
-            sid: "1483@65e0d911de58b",
+            sid: sid,
             mainColor: "#1570B1",
           });
         }}

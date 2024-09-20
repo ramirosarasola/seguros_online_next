@@ -1,6 +1,6 @@
 const configApi = {
   apiUrl: process.env.NEXT_PUBLIC_BASE_URL, // Toma la URL de entorno o usa un valor por defecto
-  sid: process.env.SID || "48@5b05a4bfe8c69", // Puedes cambiar este también a una variable de entorno si es necesario
+  sid: process.env.SID, // Puedes cambiar este también a una variable de entorno si es necesario
 };
 
 export default configApi;
