@@ -61,12 +61,11 @@ import { ContratacionForm } from "./components/contratacion-form.component";
 
 async function getCotizacion(cotizacionId: string) {
   try {
-    const res = await fetch(
-      `${process.env.BASE_URL}/api/retrieveData?quote=${cotizacionId}`,
-      { cache: "no-store" } // Esto asegura que la data sea fresca en cada request (SSR)
-    );
+    const url = `${process.env.BASE_URL}/api/retrieveData?quote=${cotizacionId}`;
+    console.log("URL de la API:", url); // Verificar si la URL está bien
 
-    // Log del estado de la respuesta
+    const res = await fetch(url, { cache: "no-store" });
+
     console.log("Estado de la respuesta:", res.status);
 
     if (!res.ok) {
@@ -74,6 +73,8 @@ async function getCotizacion(cotizacionId: string) {
     }
 
     const cotizacion: Cotizacion = await res.json();
+    console.log("Cotización obtenida:", cotizacion); // Verificar si los datos llegaron
+
     return cotizacion;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -86,6 +87,8 @@ export default async function ContratacionPage({
 }: {
   params: { cotizacionId: string };
 }) {
+  console.log("ID de cotización recibido:", params.cotizacionId); // Verificar si el ID llega correctamente
+
   const cotizacion = await getCotizacion(params.cotizacionId);
 
   if (!cotizacion) {
