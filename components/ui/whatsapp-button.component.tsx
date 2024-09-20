@@ -4,6 +4,7 @@ import Image from "next/image";
 export default function WhatsAppButton() {
   return (
     <Image
+      priority
       onClick={() => {
         window.open("https://wa.me/5491169945001", "_blank");
       }}

@@ -4,6 +4,15 @@ import parse from "html-react-parser"; // Importar el parser
 import Image from "next/image";
 import { SectionTitleComponent } from "@/components/ui/section-title.component";
 import QuoteBrandsAside from "./components/quote-brands-button.component";
+import dynamic from "next/dynamic"; // Importamos dinámicamente el componente de cliente
+
+// Cargar el componente de cliente solo en el lado del cliente
+const CotizarBanner = dynamic(
+  () => import("./components/cotizar-banner.component"),
+  {
+    ssr: false, // Esto asegura que el componente se cargue solo en el cliente
+  }
+);
 
 export async function generateMetadata({
   params,
@@ -76,6 +85,12 @@ export default async function BrandPage({
           </aside>
         </section>
       </section>
+
+      {/* Banner de cotización, se mostrará a los 3 segundos */}
+      <CotizarBanner
+        title="¡Cotiza tu auto con 30% de descuento!"
+        buttonLabel="Cotizar Ahora!"
+      />
     </PageWrapper>
   );
 }

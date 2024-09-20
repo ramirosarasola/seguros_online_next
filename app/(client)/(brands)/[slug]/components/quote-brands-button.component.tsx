@@ -52,9 +52,11 @@ export default function QuoteBrandsAside({ brand }: Props) {
           key={index}
           type="submit"
           data-wokan-auto-cotizar
-          className="bg-primary font-bold rounded-sm mx-auto lg:items-center h-10 w-full"
+          className="bg-primary font-bold rounded-sm mx-auto lg:items-center h-10 w-full cursor-pointer"
         >
-          <h3 className="text-[16px] text-white">Cotizar {model}</h3>
+          <h3 className="text-[16px] text-white cursor-pointer">
+            Cotizar {model}
+          </h3>
         </button>
       ))}
     </>

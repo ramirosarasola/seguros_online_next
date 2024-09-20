@@ -8,7 +8,7 @@ export default function QuoteCompaniesAside() {
         <Link
           href={company.slug}
           key={index}
-          className=" bg-primary text-white font-bold rounded-sm mx-auto lg:items-center h-10 w-full text-center flex justify-center items-center"
+          className=" bg-primary text-white font-bold rounded-sm mx-auto lg:items-center h-10 w-full text-center flex justify-center items-center cursor-pointer"
         >
           Cotizar {company.nombre}
         </Link>
