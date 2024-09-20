@@ -16,7 +16,7 @@ export default function ContratacionPage() {
   const getContratacion = async (quoteId: string) => {
     try {
       const res = await fetch(
-        `https://segurosenlinea.com.ar:8080/api/retrieveData?quote=${quoteId}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/retrieveData?quote=${quoteId}`
       );
       if (!res.ok) {
         throw new Error("Error fetching data");

@@ -28,7 +28,7 @@ export async function onSubmitAction(
 
   // Realizar una petición
   const response = await fetch(
-    `https://segurosenlinea.com.ar:8080/api/contratar`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/contratar`,
     {
       method: "POST",
       body: JSON.stringify(parsed.data),
@@ -66,7 +66,7 @@ export async function onSubmitActionHouseQuote(
   }
 
   const response = await fetch(
-    "https://segurosenlinea.com.ar:8080/api/cotizacion/hogar",
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/cotizacion/hogar`,
     {
       method: "POST",
       body: JSON.stringify(parsed.data),

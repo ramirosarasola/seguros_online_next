@@ -88,7 +88,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
       );
 
       const response = await fetch(
-        "https://segurosenlinea.com.ar:8080/api/contratar",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/contratar`,
         {
           method: "POST",
           body: jsonPayload,

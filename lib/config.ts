@@ -1,9 +1,6 @@
 const configApi = {
-  // apiUrl: 'https://segurosenlinea.com.ar:443', // -> PRODUCTION
-  // sid: '48@5b05a4bfe8c69', // -> PRODUCTION
-
-  apiUrl: "https://segurosenlinea.com.ar:8080", // -> DEVELOPMENT
-  sid: "1483@65e0d911de58b", // -> DEVELOPMENT
+  apiUrl: process.env.NEXT_PUBLIC_BASE_URL, // Toma la URL de entorno o usa un valor por defecto
+  sid: process.env.SID || "48@5b05a4bfe8c69", // Puedes cambiar este también a una variable de entorno si es necesario
 };
 
 export default configApi;

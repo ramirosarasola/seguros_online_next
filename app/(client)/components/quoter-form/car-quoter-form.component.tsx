@@ -1,7 +1,7 @@
 "use client";
 import Script from "next/script";
 
-const apiUrl = "https://segurosenlinea.com.ar:8080";
+const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 const CarFormQuoter = () => {
   const contratarUrl = `${apiUrl}/api/cotizacion`;
