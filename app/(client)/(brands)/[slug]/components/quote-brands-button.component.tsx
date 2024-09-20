@@ -1,7 +1,6 @@
 "use client";
 import Script from "next/script";
 import modelsJSON from "../../.../../../../constants/brands.json";
-import { useEffect, useState } from "react";
 
 interface Props {
   brand: string;
@@ -29,20 +28,9 @@ const brandCodes: { [key: string]: string } = {
 };
 
 export default function QuoteBrandsAside({ brand }: Props) {
-  const [sid, setSid] = useState<string | null>(null);
   const brandCode = brandCodes[brand?.toUpperCase()] || "";
   // @ts-ignore
   const models = modelsJSON[brand?.toUpperCase()] || "";
-
-  useEffect(() => {
-    const fetchSid = async () => {
-      const response = await fetch("/api/get-wokan-sid");
-      const data = await response.json();
-      setSid(data.sid); // Guarda el SID en el estado
-    };
-
-    fetchSid();
-  }, []);
 
   return (
     <>
@@ -51,14 +39,11 @@ export default function QuoteBrandsAside({ brand }: Props) {
         src="//webpack.wokan.com.ar/app/v1/init.js"
         strategy="lazyOnload"
         onLoad={() => {
-          if (sid) {
-            // Inicializa solo cuando el SID esté disponible
-            /*@ts-ignore eslint-disable-line*/
-            wokanInitWebpack({
-              sid: sid,
-              mainColor: "#1570B1",
-            });
-          }
+          /*@ts-ignore eslint-disable-line*/
+          wokanInitWebpack({
+            sid: process.env.NEXT_PUBLIC_WOKAN_SID,
+            mainColor: "#1570B1",
+          });
         }}
       />
       <input type="hidden" data-wokan-auto="marca" value={brandCode} />
