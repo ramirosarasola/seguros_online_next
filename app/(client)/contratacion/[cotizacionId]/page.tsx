@@ -1,14 +1,11 @@
 "use client";
+
 import { Cotizacion } from "@/types/cotizacion.type";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ContratacionForm } from "./components/contratacion-form.component";
 
-export default function ContratacionPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function ContratacionPage() {
   const pathname = usePathname();
 
   const cotizacionId = pathname?.split("/contratacion/")[1];
