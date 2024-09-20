@@ -64,7 +64,6 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
 
   const formRef = useRef<HTMLFormElement>(null);
   const actualData = form.watch();
-  console.log(actualData);
 
   useEffect(() => {
     if (actualData.metodo_pago === "tarjeta_credito") {
@@ -98,7 +97,6 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         }
       );
       const data = await response.json();
-      console.log(data);
       // Redirect to success page
       if (data) {
         router.push("/contratacion/" + cotizacion.id + "/success");
@@ -120,9 +118,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
         onSubmit={(event) => {
           event.preventDefault();
           form.handleSubmit(async (data) => {
-            console.log("Form data:", data); // Ver payload en consola
             const result = formAction(new FormData(formRef.current!));
-            console.log("Result:", result);
             if (data) {
               handleSubmit(event);
             }
