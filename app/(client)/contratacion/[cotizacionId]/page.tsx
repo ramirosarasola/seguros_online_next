@@ -53,28 +53,23 @@
 //   );
 // }
 
+import axios from "axios";
+import https from "https";
 import { Cotizacion } from "@/types/cotizacion.type";
 import { ContratacionForm } from "./components/contratacion-form.component";
 
-// Revalidate si quisieras usar ISR (Incremental Static Regeneration)
-// export const revalidate = 60;
+const agent = new https.Agent({
+  rejectUnauthorized: false,
+});
 
 async function getCotizacion(cotizacionId: string) {
   try {
     const url = `${process.env.BASE_URL}/api/retrieveData?quote=${cotizacionId}`;
-    console.log("URL de la API:", url); // Verificar si la URL está bien
+    console.log("URL de la API:", url);
 
-    const res = await fetch(url, { cache: "no-store" });
+    const response = await axios.get(url, { httpsAgent: agent });
 
-    console.log("Estado de la respuesta:", res.status);
-
-    if (!res.ok) {
-      throw new Error("Error fetching data");
-    }
-
-    const cotizacion: Cotizacion = await res.json();
-    console.log("Cotización obtenida:", cotizacion); // Verificar si los datos llegaron
-
+    const cotizacion: Cotizacion = response.data;
     return cotizacion;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -87,7 +82,7 @@ export default async function ContratacionPage({
 }: {
   params: { cotizacionId: string };
 }) {
-  console.log("ID de cotización recibido:", params.cotizacionId); // Verificar si el ID llega correctamente
+  console.log("ID de cotización recibido:", params.cotizacionId);
 
   const cotizacion = await getCotizacion(params.cotizacionId);
 
