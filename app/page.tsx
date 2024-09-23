@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/seguros-de-auto.jpg",
+        url: "https://www.segurosonline.com.ar/seguros-online-op.png",
       },
     ],
     locale: "es-AR",
