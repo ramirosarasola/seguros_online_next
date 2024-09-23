@@ -1,5 +1,6 @@
 "use client"; // Esto indica que este es un Client Component
 
+import Script from "next/script";
 import { useEffect, useState } from "react";
 
 interface BannerProps {
@@ -25,6 +26,19 @@ const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
 
   return (
     <>
+      <Script
+        id="wokan-script"
+        src="//webpack.wokan.com.ar/app/v1/init.js"
+        strategy="lazyOnload"
+        onLoad={() => {
+          /*@ts-ignore eslint-disable-line*/
+          wokanInitWebpack({
+            sid: process.env.NEXT_PUBLIC_WOKAN_SID,
+            mainColor: "#1570B1",
+          });
+        }}
+      />
+
       {/* Fondo negro con transición de opacidad controlada por el estado `visible` */}
 
       <div
@@ -47,7 +61,10 @@ const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
         </button>
         <div className="max-w-[1200px] mx-auto flex justify-between items-center">
           <h2 className="text-white text-xl font-bold">{title}</h2>
+          <input type="hidden" data-wokan-auto="marca" value={"brandCode"} />
           <button
+            type="submit"
+            data-wokan-auto-cotizar
             onClick={onButtonClick}
             className="bg-white text-black px-4 py-2 rounded-md font-semibold animate-pulse"
           >
