@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     title: "Seguros de Caño | SegurosOnline | Aseguradores de Cauciones",
     description:
       "Cotizar Seguros de Caño. Somos una práctica con una trayectoria de más de 15 años.",
-    url: "https://seguros-online-next.vercel.app/caucion",
+    url: "https://www.segurosonline.com.ar/caucion",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://seguros-online-next.vercel.app/contratar-seguro-caucion.jpg",
+        url: "https://www.segurosonline.com.ar/contratar-seguro-caucion.jpg",
       },
     ],
     locale: "es-AR",
@@ -25,9 +25,7 @@ export const metadata: Metadata = {
     title: "Seguros de Caño | SegurosOnline | Aseguradores de Cauciones",
     description:
       "Cotizar Seguros de Caño. Somos una práctica con una trayectoria de más de 15 años.",
-    images: [
-      "https://seguros-online-next.vercel.app/contratar-seguro-caucion.jpg",
-    ],
+    images: ["https://www.segurosonline.com.ar/contratar-seguro-caucion.jpg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -45,8 +43,8 @@ export default function CaucionPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://seguros-online-next.vercel.app/otros/caucion",
-            logo: "https://seguros-online-next.vercel.app/cotizador-seguros-online.jpeg",
+            url: "https://www.segurosonline.com.ar/otros/caucion",
+            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

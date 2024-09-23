@@ -21,7 +21,7 @@ export async function generateMetadata({
       description: post?.excerpt,
       type: "website",
       siteName: "Seguros Online",
-      url: `https://seguros-online-next.vercel.app/blog/${params.slug}`,
+      url: `https://www.segurosonline.com.ar/blog/${params.slug}`,
       images: [
         {
           url: post?.featuredImage?.url,

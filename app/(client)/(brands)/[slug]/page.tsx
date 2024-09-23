@@ -35,7 +35,7 @@ export async function generateMetadata({
       description: `Cotiza tu vehiculo ${brand?.title} con 30% de descuento!`,
       type: "website",
       siteName: "Seguros Online",
-      url: `https://seguros-online-next.vercel.app/${params.slug}`,
+      url: `https://www.segurosonline.com.ar/${params.slug}`,
       images: [
         {
           url: brand?.image?.url,

@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
     description:
       "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",
-    url: "https://seguros-online-next.vercel.app/bici",
+    url: "https://www.segurosonline.com.ar/bici",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://seguros-online-next.vercel.app/seguro-bicicleta.jpg",
+        url: "https://www.segurosonline.com.ar/seguro-bicicleta.jpg",
       },
     ],
     locale: "es-AR",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
     description:
       "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",
-    images: ["https://seguros-online-next.vercel.app/seguro-bicicleta.jpg"],
+    images: ["https://www.segurosonline.com.ar/seguro-bicicleta.jpg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -45,8 +45,8 @@ export default function BiciPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://seguros-online-next.vercel.app/otros/bici",
-            logo: "https://seguros-online-next.vercel.app/cotizador-seguros-online.jpeg",
+            url: "https://www.segurosonline.com.ar/otros/bici",
+            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

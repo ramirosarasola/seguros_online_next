@@ -11,7 +11,7 @@ const PostWidget = lazy(() => import("./components/post-widget.component"));
 
 // Metadatos de la página
 export const metadata: Metadata = {
-  metadataBase: new URL("https://seguros-online-next.vercel.app"),
+  metadataBase: new URL("https://www.segurosonline.com.ar"),
   title: "Seguros Online | Blog de seguros",
   description:
     "Seguros Online. Blog. Cotización. Seguro. Vida. Auto. Todo en un solo lugar.",
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     title: "Seguros Online | Blog de seguros",
     description:
       "Seguros Online. Blog. Cotización. Seguro. Vida. Auto. Todo en un solo lugar.",
-    url: "https://seguros-online-next.vercel.app/blog",
+    url: "https://www.segurosonline.com.ar/blog",
     siteName: "Seguros Online Blog",
     images: [
       {
-        url: "https://seguros-online-next.vercel.app/cotizador-seguros-online.jpeg",
+        url: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
       },
     ],
     locale: "es-AR",
@@ -33,9 +33,7 @@ export const metadata: Metadata = {
     title: "Seguros Online | Blog de seguros",
     description:
       "Seguros Online. Blog. Cotización. Seguro. Vida. Auto. Todo en un solo lugar.",
-    images: [
-      "https://seguros-online-next.vercel.app/cotizador-seguros-online.jpeg",
-    ],
+    images: ["https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -58,8 +56,8 @@ export default async function BlogPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://seguros-online-next.vercel.app/blog",
-            logo: "https://seguros-online-next.vercel.app/cotizador-seguros-online.jpeg",
+            url: "https://www.segurosonline.com.ar/blog",
+            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

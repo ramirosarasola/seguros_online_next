@@ -16,11 +16,11 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    url: "https://seguros-online-next.vercel.app",
+    url: "https://www.segurosonline.com.ar",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://seguros-online-next.vercel.app/seguros-de-auto.jpg",
+        url: "https://www.segurosonline.com.ar/seguros-de-auto.jpg",
       },
     ],
     locale: "es-AR",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    images: ["https://seguros-online-next.vercel.app/seguros-de-auto.jpg"],
+    images: ["https://www.segurosonline.com.ar/seguros-de-auto.jpg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -50,8 +50,8 @@ export default function HomePage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://seguros-online-next.vercel.app",
-            logo: "https://seguros-online-next.vercel.app/cotizador-seguros-online.webp",
+            url: "https://www.segurosonline.com.ar",
+            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.webp",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",
