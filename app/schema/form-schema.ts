@@ -226,23 +226,21 @@ export const contratacionSchema = z.object({
     })
     .max(20, {
       message: "Engine number must be at most 20 characters long.",
-    })
-    .refine((value) => isValidEngineNumber(value), {
-      message:
-        "Invalid engine number. Only alphanumeric characters are allowed.",
     }),
-  numero_chasis: z
-    .string()
-    .trim()
-    .min(1, {
-      message: "Value is required.",
-    })
-    .refine((value) => value.length === 17, {
-      message: "VIN must be exactly 17 characters long.",
-    })
-    .refine((value) => isValidVIN(value), {
-      message: "Invalid VIN.",
-    }),
+  // .refine((value) => isValidEngineNumber(value), {
+  //   message:
+  //     "Invalid engine number. Only alphanumeric characters are allowed.",
+  // })
+  numero_chasis: z.string().trim().min(1, {
+    message: "Value is required.",
+  }),
+  // .refine((value) => value.length === 17, {
+  //   message: "VIN must be exactly 17 characters long.",
+  // })
+  // .refine((value) => isValidVIN(value), {
+  //   message: "Invalid VIN.",
+  // })
+
   fecha_vigencia: z.string().trim().min(1, {
     message: "Value is required.",
   }),

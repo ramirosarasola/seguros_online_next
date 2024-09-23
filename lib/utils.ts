@@ -78,14 +78,22 @@ export const isValidCBU = (value: string) => {
 
 // Función para validar el VIN
 export const isValidVIN = (value: string) => {
-  const regex = /^[A-HJ-NPR-Z0-9]{17}$/;
-  return regex.test(value);
+  // const regex = /^[A-HJ-NPR-Z0-9]{17}$/;
+  // return regex.test(value);
+  // must not be empty
+  if (value === "") {
+    return false;
+  }
 };
 
 // Función para validar el número de motor
 export const isValidEngineNumber = (value: string) => {
-  const regex = /^[A-Za-z0-9]+$/;
-  return regex.test(value);
+  // const regex = /^[A-Za-z0-9]+$/;
+  // return regex.test(value);
+  // must not be empty
+  if (value === "") {
+    return false;
+  }
 };
 
 // Funcion para ingresar la fecha de vencimiento en formato MM/AA de la tarjeta de credito
