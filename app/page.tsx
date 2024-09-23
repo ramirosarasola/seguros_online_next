@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    images: ["https://www.segurosonline.com.ar/seguros-de-auto.jpg"],
+    images: ["https://www.segurosonline.com.ar/seguros-online-op.png"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -51,7 +51,7 @@ export default function HomePage() {
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
             url: "https://www.segurosonline.com.ar",
-            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.webp",
+            logo: "https://www.segurosonline.com.ar/seguros-online-op.png",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",
