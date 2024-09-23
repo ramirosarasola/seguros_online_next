@@ -63,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/garantias-de-alquiler`,
+      url: `${baseUrl}/garantia-de-alquiler`,
       lastModified: new Date(),
     },
     ...blogPosts,

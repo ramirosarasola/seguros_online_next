@@ -19,7 +19,7 @@ const otrosDropdownItems = [
   { path: "/seguros-de-caucion", text: "Caucion" },
   { path: "/seguros-de-art", text: "ART" },
   { path: "/seguros-para-comercio", text: "Comercio" },
-  { path: "/garantias-de-alquiler", text: "Garantia de Alquiler" },
+  { path: "/garantia-de-alquiler", text: "Garantia de Alquiler" },
 ];
 
 const clientNavItems = [
@@ -29,7 +29,7 @@ const clientNavItems = [
   { path: "/seguros-de-caucion", text: "Caucion" },
   { path: "/seguros-de-art", text: "ART" },
   { path: "/seguros-para-comercio", text: "Comercio" },
-  { path: "/garantias-de-alquiler", text: "Garantia de Alquiler" },
+  { path: "/garantia-de-alquiler", text: "Garantia de Alquiler" },
   { path: "/blog", text: "Blog" },
   { path: "/contacto", text: "Contacto" },
 ];

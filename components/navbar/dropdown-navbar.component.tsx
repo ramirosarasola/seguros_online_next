@@ -27,7 +27,7 @@ const Dropdown = ({ text, options }: DropdownProps) => {
       case "/seguros-para-comercio":
         setIsActive(true);
         break;
-      case "/garantias-de-alquiler":
+      case "/garantia-de-alquiler":
         setIsActive(true);
         break;
       default:
