@@ -58,16 +58,18 @@ import https from "https";
 import { Cotizacion } from "@/types/cotizacion.type";
 import { ContratacionForm } from "./components/contratacion-form.component";
 
-// const agent = new https.Agent({
-//   rejectUnauthorized: false,
-// });
+const agent = new https.Agent({
+  rejectUnauthorized: false,
+});
 
 async function getCotizacion(cotizacionId: string) {
   try {
     const url = `${process.env.BASE_URL}/api/retrieveData?quote=${cotizacionId}`;
     console.log("URL de la API:", url);
 
-    const response = await axios.get(url);
+    const response = await axios.get(url, {
+      httpsAgent: agent,
+    });
 
     const cotizacion: Cotizacion = response.data;
     return cotizacion;
