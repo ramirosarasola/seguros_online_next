@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Tu Garantía | SegurosOnline | Seguros de Caño de Alquileres",
     description:
       "Seguro de Caño para Alquilar. El respaldo que necesitás para mudarte. Contratá el Seguro de Caño más barato, más seguro y al mejor Precio.",
-    url: "https://www.segurosonline.com.ar/garantia",
+    url: "https://www.segurosonline.com.ar/garantias-de-alquiler",
     siteName: "SegurosOnline",
     images: [
       {
@@ -47,7 +47,7 @@ export default function GarantiasPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/otros/garantias",
+            url: "https://www.segurosonline.com.ar/garantias-de-alquiler",
             logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",

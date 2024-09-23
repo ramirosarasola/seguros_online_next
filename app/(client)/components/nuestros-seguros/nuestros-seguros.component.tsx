@@ -19,7 +19,7 @@ const services = [
     title: "Seguros para tu hogar",
     content:
       "Obtené una cotización online del mejor seguro para tu auto. Trabajamos con las mejores compañías y garantizamos los mejores precios del mercado.",
-    link: "hogar",
+    link: "seguros-para-hogar",
     alt: "seguros para el hogar",
   },
   {
@@ -27,7 +27,7 @@ const services = [
     title: "Seguros para empresa",
     content:
       "Grandes empresas confían en nosotros porque ofrecemos un excelente servicio. ART – Seguros de Vida – Accidentes Personales - Integrales – Cauciones.",
-    link: "comercio",
+    link: "seguros-para-comercio",
     alt: "seguros para negocios",
   },
   {

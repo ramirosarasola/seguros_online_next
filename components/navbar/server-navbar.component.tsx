@@ -8,28 +8,28 @@ import Dropdown from "./dropdown-navbar.component";
 
 const navItems = [
   { path: "/", text: "Autos" },
-  { path: "/hogar", text: "Hogar" },
+  { path: "/seguros-para-hogar", text: "Hogar" },
   { path: "/otros", text: "Otros" },
   { path: "/blog", text: "Blog" },
   { path: "/contacto", text: "Contacto" },
 ];
 
 const otrosDropdownItems = [
-  { path: "/bici", text: "Bici" },
-  { path: "/caucion", text: "Caucion" },
-  { path: "/art", text: "ART" },
-  { path: "/comercio", text: "Comercio" },
-  { path: "/garantias", text: "Garantia de Alquiler" },
+  { path: "/seguros-para-bici", text: "Bici" },
+  { path: "/seguros-de-caucion", text: "Caucion" },
+  { path: "/seguros-de-art", text: "ART" },
+  { path: "/seguros-para-comercio", text: "Comercio" },
+  { path: "/garantias-de-alquiler", text: "Garantia de Alquiler" },
 ];
 
 const clientNavItems = [
   { path: "/", text: "Autos" },
-  { path: "/hogar", text: "Hogar" },
-  { path: "/bici", text: "Bici" },
-  { path: "/caucion", text: "Caucion" },
-  { path: "/art", text: "ART" },
-  { path: "/comercio", text: "Comercio" },
-  { path: "/garantias", text: "Garantia de Alquiler" },
+  { path: "/seguros-para-hogar", text: "Hogar" },
+  { path: "/seguros-para-bici", text: "Bici" },
+  { path: "/seguros-de-caucion", text: "Caucion" },
+  { path: "/seguros-de-art", text: "ART" },
+  { path: "/seguros-para-comercio", text: "Comercio" },
+  { path: "/garantias-de-alquiler", text: "Garantia de Alquiler" },
   { path: "/blog", text: "Blog" },
   { path: "/contacto", text: "Contacto" },
 ];

@@ -43,27 +43,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/hogar`,
+      url: `${baseUrl}/seguros-para-hogar`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/bici`,
+      url: `${baseUrl}/seguros-para-bici`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/caucion`,
+      url: `${baseUrl}/seguros-de-caucion`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/art`,
+      url: `${baseUrl}/seguros-de-art`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/comercio`,
+      url: `${baseUrl}/seguros-para-comercio`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/garantias`,
+      url: `${baseUrl}/garantias-de-alquiler`,
       lastModified: new Date(),
     },
     ...blogPosts,

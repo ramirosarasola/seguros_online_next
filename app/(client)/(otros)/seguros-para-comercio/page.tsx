@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
     description:
       "Cotizar seguro Integral de Comercio. Especialmente pensados para las diferentes actividades. Conocé las coberturas exclusivas para proteger tu comercio.",
-    url: "https://www.segurosonline.com.ar/comercio",
+    url: "https://www.segurosonline.com.ar/seguros-para-comercio",
     siteName: "SegurosOnline",
     images: [
       {
@@ -45,7 +45,7 @@ export default function ComercioPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/otros/comercio",
+            url: "https://www.segurosonline.com.ar/seguros-para-comercio",
             logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",

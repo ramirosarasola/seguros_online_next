@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
     description:
       "Cotizá tu Seguro de Hogar al mejorprecio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
-    url: "https://www.segurosonline.com.ar/hogar",
+    url: "https://www.segurosonline.com.ar/seguros-para-hogar",
     siteName: "SegurosOnline",
     images: [
       {
@@ -47,7 +47,7 @@ export default function HogarPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/hogar",
+            url: "https://www.segurosonline.com.ar/seguros-para-hogar",
             logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",

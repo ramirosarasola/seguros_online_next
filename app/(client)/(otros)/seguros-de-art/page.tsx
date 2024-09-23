@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "Cotiza tu seguro de ART ahora | Mejoramos tu costo actual hasta un 40% | SegurosOnline",
     description:
       "Contratar seguro ART. Cotiza online tu seguros dfe ART enlas mejores Compañias. Mejoramos cualquier presupuesta. Cotiza Ya Mismo!",
-    url: "https://www.segurosonline.com.ar/art",
+    url: "https://www.segurosonline.com.ar/seguros-de-art",
     siteName: "SegurosOnline",
     images: [
       {
@@ -48,7 +48,7 @@ export default function ArtPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/otros/art",
+            url: "https://www.segurosonline.com.ar/seguros-de-art",
             logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",

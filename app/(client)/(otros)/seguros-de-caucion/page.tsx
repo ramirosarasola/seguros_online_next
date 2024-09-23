@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Seguros de Caño | SegurosOnline | Aseguradores de Cauciones",
     description:
       "Cotizar Seguros de Caño. Somos una práctica con una trayectoria de más de 15 años.",
-    url: "https://www.segurosonline.com.ar/caucion",
+    url: "https://www.segurosonline.com.ar/seguros-de-caucion",
     siteName: "SegurosOnline",
     images: [
       {
@@ -43,7 +43,7 @@ export default function CaucionPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/otros/caucion",
+            url: "https://www.segurosonline.com.ar/seguros-de-caucion",
             logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",

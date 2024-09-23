@@ -1,7 +1,7 @@
-'use client';
+"use client";
 import Link from "next/link";
 import "../active-link/activeLink.css";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface DropdownProps {
@@ -10,36 +10,37 @@ interface DropdownProps {
 }
 
 const Dropdown = ({ text, options }: DropdownProps) => {
-
   const path = usePathname();
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    switch(path) {
-      case '/bici':
+    switch (path) {
+      case "/seguros-para-bici":
         setIsActive(true);
         break;
-      case '/caucion':
+      case "/seguros-de-caucion":
         setIsActive(true);
         break;
-      case '/art':
+      case "/seguros-de-art":
         setIsActive(true);
         break;
-      case '/comercio':
+      case "/seguros-para-comercio":
         setIsActive(true);
         break;
-      case '/garantias':
+      case "/garantias-de-alquiler":
         setIsActive(true);
         break;
       default:
         setIsActive(false);
         break;
     }
-  }, [path])
+  }, [path]);
 
   return (
     <div
-      className={`relative ${"link"} h-[46px] ${isActive ? "active_otros" : ''} overflow-hidden hover:overflow-visible hover:text-white`}
+      className={`relative ${"link"} h-[46px] ${
+        isActive ? "active_otros" : ""
+      } overflow-hidden hover:overflow-visible hover:text-white`}
     >
       <button className="mt-[2px]">{text}</button>
       <div className="flex w-full h-6"></div>
