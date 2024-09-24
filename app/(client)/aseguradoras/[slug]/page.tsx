@@ -5,6 +5,7 @@ import Image from "next/image";
 import { SectionTitleComponent } from "@/components/ui/section-title.component";
 import QuoteBrandsAside from "../../(brands)/[slug]/components/quote-brands-button.component";
 import QuoteCompaniesAside from "./components/quote-companies-button.component";
+import CotizarBanner from "../../(brands)/[slug]/components/cotizar-banner.component";
 
 export async function generateMetadata({
   params,
@@ -76,6 +77,12 @@ export default async function CompanyPage({
           </aside>
         </section>
       </section>
+
+      {/* Banner de cotización, se mostrará a los 3 segundos */}
+      <CotizarBanner
+        title="¡Cotiza tu auto con 30% de descuento!"
+        buttonLabel="Cotizar Ahora!"
+      />
     </PageWrapper>
   );
 }

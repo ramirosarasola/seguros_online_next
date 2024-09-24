@@ -242,45 +242,57 @@ export async function getBrandData(
     throw new Error("El parámetro 'slug' debe estar definido.");
   }
 
-  const response = await fetch(
-    "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: `
-          query MyQuery($slug: String!) {
-            brands(where: { slug: $slug }) {
-              id
-              title
-              slug
-              image {
-                url
-              }
-              content {
-                html
+  try {
+    const response = await fetch(
+      "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `
+            query MyQuery($slug: String!) {
+              brands(where: { slug: $slug }) {
+                id
+                title
+                slug
+                image {
+                  url
+                }
+                content {
+                  html
+                }
               }
             }
-          }
-        `,
-        variables: {
-          slug: slug, // Asegura que la variable 'slug' se pase correctamente
-        },
-      }),
+          `,
+          variables: {
+            slug: slug, // Asegura que la variable 'slug' se pase correctamente
+          },
+        }),
+      }
+    );
+
+    // Manejo de errores de red (solicitudes fallidas)
+    if (!response.ok) {
+      const errorJson = await response.json();
+      console.error("Error fetching data:", errorJson.errors);
+      throw new Error(errorJson.errors[0]?.message || "Error desconocido");
     }
-  );
 
-  const json = await response.json();
+    const json = await response.json();
 
-  // Manejo de errores para solicitudes fallidas
-  if (!response.ok) {
-    console.error("Error fetching data:", json.errors);
-    throw new Error(json.errors[0].message || "An unknown error occurred.");
+    // Si no se encontró ninguna marca, retornamos null
+    if (!json?.data?.brands || json?.data?.brands.length === 0) {
+      return null;
+    }
+
+    // Retornamos la primera marca encontrada
+    return json.data.brands[0];
+  } catch (error) {
+    console.error("Error en la solicitud:", error);
+    throw new Error("No se pudo obtener los datos de la marca");
   }
-  // console.log(json?.data?.brands[0]);
-  return json?.data?.brands[0];
 }
 
 export async function getAllBrands() {

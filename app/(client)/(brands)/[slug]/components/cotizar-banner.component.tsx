@@ -9,7 +9,10 @@ interface BannerProps {
   onButtonClick?: () => void;
 }
 
+const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
+  const contratarUrl = `${apiUrl}/api/cotizacion`;
   const [visible, setVisible] = useState(false);
 
   const onButtonClick = () => {
@@ -62,6 +65,11 @@ const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
         <div className="max-w-[1200px] mx-auto flex justify-between items-center">
           <h2 className="text-white text-xl font-bold">{title}</h2>
           <input type="hidden" data-wokan-auto="marca" value={"brandCode"} />
+          <input
+            type="hidden"
+            data-wokan-auto="contratarUrl"
+            value={contratarUrl}
+          />
           <button
             type="submit"
             data-wokan-auto-cotizar

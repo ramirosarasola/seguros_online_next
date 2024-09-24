@@ -5,6 +5,7 @@ import Image from "next/image";
 import { SectionTitleComponent } from "@/components/ui/section-title.component";
 import QuoteBrandsAside from "./components/quote-brands-button.component";
 import dynamic from "next/dynamic"; // Importamos dinámicamente el componente de cliente
+import { notFound } from "next/navigation";
 
 // Cargar el componente de cliente solo en el lado del cliente
 const CotizarBanner = dynamic(
@@ -22,6 +23,11 @@ export async function generateMetadata({
   const brand = await getBrandData(params.slug, {
     next: { revalidate: revalidate },
   });
+
+  // Si no hay datos de la marca, mostramos la página 404
+  if (!brand) {
+    return notFound();
+  }
 
   return {
     title: `Seguros de auto ${brand?.title}`,
@@ -55,6 +61,7 @@ export default async function BrandPage({
   const brandData = await getBrandData(params.slug, {
     next: { revalidate: revalidate },
   });
+
   const brand = brandData;
 
   return (
