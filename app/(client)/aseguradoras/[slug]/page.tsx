@@ -66,13 +66,13 @@ export default async function CompanyPage({
       <section className="px-4 py-8 md:py-16 md:px-0 w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
         <SectionTitleComponent title={company?.title} />
 
-        <section className="w-full flex flex-col-reverse gap-16 md:flex-row">
+        <section className="w-full flex flex-col-reverse gap-16 md:flex-row md:px-16">
           {/* Convertir el HTML a elementos React */}
-          <div className="w-full flex flex-col gap-2 md:px-16 lg:px-0">
+          <div className="w-full flex flex-col gap-2 lg:px-0">
             {parse(company?.content.html || "")}
           </div>
 
-          <aside className="w-[500px] flex flex-col items-center justify-start gap-4">
+          <aside className="md:w-[500px] flex flex-col items-center justify-start gap-4">
             <QuoteCompaniesAside />
           </aside>
         </section>
