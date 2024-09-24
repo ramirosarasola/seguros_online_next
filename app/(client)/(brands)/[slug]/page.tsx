@@ -30,7 +30,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `Seguros de auto ${brand?.title}`,
+    title: `Seguro de auto ${brand?.title}`,
     description: `Cotiza tu vehiculo ${brand?.title} con 30% de descuento!`,
     robots: "index, follow",
     author: "Seguros Online",
@@ -78,7 +78,7 @@ export default async function BrandPage({
       </section>
 
       <section className="px-4 py-8 md:py-16 md:px-0 w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
-        <SectionTitleComponent title={"Seguros de auto " + brand?.title} />
+        <SectionTitleComponent title={"Seguro de auto " + brand?.title} />
 
         <section className="w-full flex flex-col-reverse gap-16 md:flex-row md:px-16">
           {/* Convertir el HTML a elementos React */}

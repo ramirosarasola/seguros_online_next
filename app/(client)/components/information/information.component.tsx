@@ -16,7 +16,7 @@ export const InformationComponent = () => {
       id="section_container"
       className="max-w-[1200px] mx-auto flex flex-col items-center"
     >
-      <SectionTitleComponent title="Seguros de Autos - Cotizar Seguros de Autos" />
+      <SectionTitleComponent title="Seguro de Auto - Cotizar Seguro de Auto" />
       <article className="flex flex-col items-start">
         <div className="flex flex-col items-start justify-between">
           <ul className="w-full flex flex-col md:flex-row justify-between items-start mb-6">
@@ -65,7 +65,7 @@ export const InformationComponent = () => {
                 href="#section_container"
                 onClick={() => handleTabClick("seguros_de_autos")}
               >
-                <h3>Seguros de Autos</h3>
+                <h3>Seguro de Auto</h3>
               </Link>
             </li>
             <li
@@ -271,7 +271,7 @@ export const InformationComponent = () => {
               }}
             >
               <p className="mb-4">
-                <strong>Seguros de autos</strong>
+                <strong>Seguro de auto</strong>
               </p>
               <p className="mb-4">
                 Si estas buscando seguros de auto confiables, llegaste al lugar
