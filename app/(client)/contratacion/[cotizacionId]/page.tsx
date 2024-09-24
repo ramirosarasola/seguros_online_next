@@ -29,11 +29,19 @@ export default async function ContratacionPage({
 }: {
   params: { cotizacionId: string };
 }) {
-  console.log("ID de cotización recibido:", params.cotizacionId);
+  // console.log("ID de cotización recibido:", params.cotizacionId);
 
   const cotizacion = await getCotizacion(params.cotizacionId);
 
-  console.log("Cotización:", cotizacion);
+  if (cotizacion?.status === "CONTRATADO") {
+    return (
+      <div>
+        <h1>La cotización ya se encuentra contratada</h1>
+      </div>
+    );
+  }
+
+  // console.log("Cotización:", cotizacion);
 
   if (!cotizacion) {
     return <div>No se encontró la cotización.</div>;

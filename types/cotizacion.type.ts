@@ -22,4 +22,5 @@ export interface Cotizacion {
   sumaAsegurada: number;
   dataAutoId: string;
   fechaHora: string;
+  status: string;
 }

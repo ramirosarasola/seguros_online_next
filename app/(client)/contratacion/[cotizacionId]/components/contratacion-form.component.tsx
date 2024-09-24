@@ -122,7 +122,7 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
       const data = await response.json();
       // Redirect to success page
       if (data) {
-        router.push("/contratacion/" + cotizacion.id + "/success");
+        router.replace("/contratacion/" + cotizacion.id + "/success");
       }
       // Aquí puedes manejar la respuesta del servidor según tus necesidades
     } catch (error) {
