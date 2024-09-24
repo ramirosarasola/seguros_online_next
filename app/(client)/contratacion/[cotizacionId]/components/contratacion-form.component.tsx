@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input.component";
 import { Option, Select } from "@/components/ui/select.component";
 import { Spinner } from "@/components/ui/spinner.component";
 import { onSubmitAction } from "@/lib/form-submit";
-import { formatExpirationDate } from "@/lib/utils";
+import { formatExpirationDate, getCardIssuer, isValidCBU } from "@/lib/utils";
 import { Cotizacion } from "@/types/cotizacion.type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -58,12 +58,35 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
       vencimiento_tarjeta: "",
       titular_tarjeta: "",
       cbu: "",
+      entidad_bancaria: "",
       ...(state?.fields ?? {}),
     },
   });
 
   const formRef = useRef<HTMLFormElement>(null);
   const actualData = form.watch();
+
+  // Función para manejar el cambio del CBU
+  const handleCBUChange = (value: string) => {
+    if (value.length === 22) {
+      const result = isValidCBU(value);
+      //@ts-ignore
+      if (result.isValid) {
+        //@ts-ignore
+        form.setValue("entidad_bancaria", result.bank || ""); // Actualiza la entidad bancaria
+      } else {
+        form.setValue("entidad_bancaria", ""); // Reset si no es válido
+      }
+    } else {
+      form.setValue("entidad_bancaria", ""); // Reset si no tiene 22 caracteres
+    }
+  };
+
+  // Función para manejar el cambio del número de tarjeta
+  const handleCardNumberChange = (value: string) => {
+    const issuer = getCardIssuer(value); // Obtiene el emisor de la tarjeta
+    form.setValue("entidad_bancaria", issuer || ""); // Actualiza el estado con el emisor o vacío si no es válido
+  };
 
   useEffect(() => {
     if (actualData.metodo_pago === "tarjeta_credito") {
@@ -365,7 +388,15 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
               >
                 <FormLabel>Numero de Plastico</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} value={field.value || ""} />
+                  <Input
+                    placeholder="Número de tarjeta"
+                    {...field}
+                    value={field.value || ""}
+                    onChange={(e) => {
+                      field.onChange(e); // Actualiza el valor en el form
+                      handleCardNumberChange(e.target.value); // Llama a la función para manejar los cambios
+                    }}
+                  />
                 </FormControl>
                 {/* <FormDescription>Tipo de casa.</FormDescription> */}
                 <FormMessage />
@@ -434,12 +465,28 @@ export const ContratacionForm = ({ cotizacion }: ContratacionFormProps) => {
             >
               <FormLabel>CBU</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} value={field.value || ""} />
+                <Input
+                  placeholder=""
+                  {...field}
+                  value={field.value || ""}
+                  onChange={(e) => {
+                    field.onChange(e); // Actualiza el valor en el form
+                    handleCBUChange(e.target.value); // Llama a la función para manejar los cambios del CBU
+                  }}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+
+        {/* Input hidden para enviar la entidad bancaria a la base de datos */}
+        <input
+          type="hidden"
+          name="entidad_bancaria"
+          value={form.watch("entidad_bancaria") || ""} // Vinculamos con el estado del form
+        />
+
         <Button
           disabled={isLoading}
           type="submit"

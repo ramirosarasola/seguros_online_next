@@ -299,10 +299,31 @@ export const contratacionSchema = z.object({
         if (value === null || value.trim() === "") {
           return true; // Si es nulo o vacío, pasa la validación
         }
-        return value.length === 22 && isValidCBU(value);
+        if (value.length !== 22) return false; // Verifica la longitud del CBU
+
+        const result = isValidCBU(value); // Invoca isValidCBU para obtener el resultado
+        //@ts-ignore
+        // alert(result.bank);
+        if (!result) return false; // Si la función devuelve false, es inválido
+        return result.isValid && result.bank !== "Entidad no identificada"; // Si devuelve un objeto, valida con la propiedad isValid
       },
       {
         message: "CBU debe tener 22 dígitos y ser válido si se proporciona.",
+      }
+    ),
+
+  entidad_bancaria: z
+    .string()
+    .nullable()
+    .refine(
+      (value) => {
+        if (value === null || value.trim() === "") {
+          return true; // Si es nulo o vacío, pasa la validación
+        }
+        return value.trim().length > 0;
+      },
+      {
+        message: "Value is required.",
       }
     ),
 });
