@@ -20,7 +20,10 @@ export const metadata: Metadata = {
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/seguros-online-og.png",
+        url: "https://www.segurosonline.com.ar/logo-op.webp", // Ruta relativa desde 'public'
+        width: 1200, // Agregar ancho
+        height: 630, // Agregar altura
+        alt: "Logo de SegurosOnline",
       },
     ],
     locale: "es-AR",
@@ -31,7 +34,7 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    images: ["https://www.segurosonline.com.ar/seguros-online-og.png"],
+    images: ["https://www.segurosonline.com.ar/logo-op.webp"], // Ruta relativa desde 'public'
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
