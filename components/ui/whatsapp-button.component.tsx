@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
       onClick={() => {
         window.open("https://wa.me/5491169945001", "_blank");
       }}
-      className="cursor-pointer fixed bottom-20 right-4 z-50"
+      className="cursor-pointer fixed bottom-3 right-10 z-50"
       src={"/whatsapp.png"}
       alt="whatsapp"
       width={50}

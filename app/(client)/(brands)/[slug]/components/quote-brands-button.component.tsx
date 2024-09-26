@@ -46,7 +46,7 @@ export default function QuoteBrandsAside({ brand }: Props) {
           });
         }}
       />
-      <input type="hidden" data-wokan-auto="marca" value={brandCode} />
+      <input type="hidden" data-wokan-auto={"marca"} value={brandCode} />
       {models?.length != 0 &&
         models?.map((model: string, index: number) => (
           <button

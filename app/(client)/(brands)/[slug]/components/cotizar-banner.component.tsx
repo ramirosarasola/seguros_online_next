@@ -1,5 +1,6 @@
 "use client"; // Esto indica que este es un Client Component
 
+import { XCircleIcon } from "@heroicons/react/24/outline";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
@@ -14,17 +15,36 @@ const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
 const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
   const contratarUrl = `${apiUrl}/api/cotizacion`;
   const [visible, setVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onButtonClick = () => {
-    setVisible(false);
+    setIsOpen(false);
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true);
+      setIsOpen(true);
     }, 3000); // Mostrar banner después de 3 segundos
 
-    return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+    const handleScroll = () => {
+      // Verifica si el usuario ha scrolleado hasta el final de la página
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight
+      ) {
+        setVisible(false); // Oculta el banner si se ha llegado al final
+      } else {
+        setVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+      window.removeEventListener("scroll", handleScroll); // Limpiar el event listener de scroll
+    };
   }, []);
 
   return (
@@ -42,26 +62,17 @@ const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
         }}
       />
 
-      {/* Fondo negro con transición de opacidad controlada por el estado `visible` */}
-
-      {/* <div
-        className={`w-screen h-screen bg-black fixed top-0 left-0 transition-opacity duration-700 ease-in-out ${
-          visible ? "opacity-80" : "opacity-0 z-[-100]"
-        }`}
-      ></div> */}
-
       {/* Banner con el botón */}
       <div
         className={`fixed bottom-0 left-0 right-0 bg-primary p-4 text-white z-50 transition-transform transform duration-700 ease-in-out ${
-          visible ? "block" : "hidden"
+          !isOpen ? "hidden" : visible && isOpen ? "block" : "hidden"
         }`}
       >
-        <button
+        {/* <button
           onClick={onButtonClick}
-          className="rounded-full absolute top-[-0.75rem] right-[1rem] p-2 h-[1.5rem] w-[1.5rem] bg-black flex items-center justify-center"
+          className="rounded-full absolute top-[0rem] right-[0rem] h-[3rem] w-[3rem] flex items-center justify-center"
         >
-          X
-        </button>
+        </button> */}
         <div className="max-w-[1200px] mx-auto flex justify-between items-center">
           <h2 className="text-white text-xl font-bold">{title}</h2>
           <input type="hidden" data-wokan-auto="marca" value={"brandCode"} />
