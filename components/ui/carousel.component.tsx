@@ -55,7 +55,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                         key={idx}
                         className="w-full flex items-center justify-evenly"
                       >
-                        <Link href={`/${slide.slug}`}>
+                        <a href={`/${slide.slug}`}>
                           <Image
                             loading="lazy"
                             src={slide.img}
@@ -63,7 +63,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                             width={130}
                             className="w-[90px] md:w-[130px] h-auto hover:cursor-pointer"
                           />
-                        </Link>
+                        </a>
                       </div>
                     );
                   })}
