@@ -15,9 +15,9 @@ const PostCard = ({ post }: any) => {
           priority
         />
       </div>
-      <h1 className="transition duration-700 text-center mb-8 cursos-pointer hover:text-[#1570B1] text-xl md:text-xl font-semibold line-clamp-2">
+      <h2 className="transition duration-700 text-center mb-8 cursos-pointer hover:text-[#1570B1] text-xl md:text-xl font-semibold line-clamp-2">
         <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-      </h1>
+      </h2>
 
       {/* PostCard Author + Calendar */}
       <div className="block md:flex text-center items-center justify-center mb-8 w-full">

@@ -7,6 +7,7 @@ import { Suspense, lazy } from "react";
 import { PageWrapper } from "../../../components/ui/page-wrapper";
 import { Categories, PostCard } from "./components";
 import Breadcrumbs from "./components/breadcrumb.component";
+import { SectionTitleComponent } from "../../../components/ui/section-title.component";
 const PostWidget = lazy(() => import("./components/post-widget.component"));
 
 // Metadatos de la página
@@ -71,6 +72,13 @@ export default async function BlogPage() {
       />
       <PageWrapper>
         <section className="px-4 md:px-16 py-10 min-h-[calc(100vh-96px)]">
+          <div className="w-full flex items-center justify-center">
+            <SectionTitleComponent title="Blog Seguros Online" heading="h1" />
+          </div>
+          {/* <h1 className="text-3xl font-semibold text-primary mb-6">
+            Blog Seguros Online
+          </h1> */}
+
           <div className="flex flex-col md:flex-row gap-12">
             <div className="md:col-span-8 col-span-1 grid gap-8">
               <PostCard post={posts[0].node} />
@@ -82,7 +90,7 @@ export default async function BlogPage() {
                 })}
               </div>
             </div>
-            <div className="md:col-span-4 col-span-1">
+            <div className="md:col-span-4 md:min-w-[400px] col-span-1">
               <div className="md:sticky relative top-8">
                 <Suspense fallback={<Spinner />}>
                   <PostWidget />

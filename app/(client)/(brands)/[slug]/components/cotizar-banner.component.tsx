@@ -44,15 +44,15 @@ const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
 
       {/* Fondo negro con transición de opacidad controlada por el estado `visible` */}
 
-      <div
+      {/* <div
         className={`w-screen h-screen bg-black fixed top-0 left-0 transition-opacity duration-700 ease-in-out ${
           visible ? "opacity-80" : "opacity-0 z-[-100]"
         }`}
-      ></div>
+      ></div> */}
 
       {/* Banner con el botón */}
       <div
-        className={`fixed bottom-20 left-0 right-0 bg-primary p-4 text-white z-50 transition-transform transform duration-700 ease-in-out ${
+        className={`fixed bottom-0 left-0 right-0 bg-primary p-4 text-white z-50 transition-transform transform duration-700 ease-in-out ${
           visible ? "block" : "hidden"
         }`}
       >

@@ -5,13 +5,17 @@ export default function QuoteCompaniesAside() {
   return (
     <>
       {companiesJSON.companias.map((company: any, index: number) => (
-        <Link
-          href={company.slug}
+        <h2
           key={index}
-          className=" bg-primary text-white font-bold rounded-sm mx-auto lg:items-center h-10 w-full text-center flex justify-center items-center cursor-pointer"
+          className=" bg-primary text-white font-bold rounded-sm mx-auto lg:items-center h-10 w-full"
         >
-          Cotizar {company.nombre}
-        </Link>
+          <Link
+            className="w-full h-full flex items-center justify-center"
+            href={company.slug}
+          >
+            Cotizar {company.nombre}
+          </Link>
+        </h2>
       ))}
     </>
   );

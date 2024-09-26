@@ -78,9 +78,12 @@ export default async function BrandPage({
       </section>
 
       <section className="px-4 py-8 md:py-16 md:px-0 w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
-        <SectionTitleComponent title={"Seguro de auto " + brand?.title} />
+        <SectionTitleComponent
+          title={"Seguro de auto " + brand?.title}
+          heading="h1"
+        />
 
-        <section className="w-full flex flex-col-reverse gap-16 md:flex-row md:px-16">
+        <section className="w-full flex flex-col-reverse gap-16 md:flex-row">
           {/* Convertir el HTML a elementos React */}
           <div className="w-full flex flex-col gap-2 lg:px-0">
             {parse(brand?.content.html || "")}

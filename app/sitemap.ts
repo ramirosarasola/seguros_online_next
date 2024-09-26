@@ -2,7 +2,7 @@ import { getAllBrands, getAllCompanies, getAllPosts } from "@/services";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://www.segurosonline.com.ar";
+  const baseUrl = "https://segurosonline.com.ar";
   const posts = await getAllPosts();
 
   const brands = await getAllBrands();

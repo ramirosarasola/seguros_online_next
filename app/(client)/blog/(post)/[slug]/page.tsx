@@ -2,6 +2,7 @@ import { getAllPosts, getPostDetails } from "@/services";
 import { Author, Categories, PostDetail, PostWidget } from "../../components";
 import { GoBackButton } from "../../components/go-back-button.componen";
 import { PageWrapper } from "@/components/ui/page-wrapper";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -65,6 +66,10 @@ export default async function PostPage({
   params: { slug: string };
 }) {
   const post = await getPostDetails(params.slug);
+
+  if (!post) {
+    return notFound();
+  }
 
   const formatSlug = (slug: string) => {
     // capitalize every word in the slug
