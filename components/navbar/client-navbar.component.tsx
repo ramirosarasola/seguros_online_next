@@ -43,8 +43,11 @@ export default function ClientNavbar({ navItems }: ClientNavbarProps) {
               />
             )}
           </DisclosureButton>
-          <DisclosurePanel className="md:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+          <DisclosurePanel
+            className="md:hidden flex flex-col justify-between h-full"
+            style={{ height: "calc(100vh - 96px)" }}
+          >
+            <div className="flex flex-col justify-center px-2 h-full gap-6">
               {navItems.map((item) => (
                 <DisclosureButton
                   key={item.path}
