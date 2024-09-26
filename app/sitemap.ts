@@ -1,4 +1,9 @@
-import { getAllBrands, getAllCompanies, getAllPosts } from "@/services";
+import {
+  getAllBrands,
+  getAllCompanies,
+  getAllPosts,
+  getCategories,
+} from "@/services";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -7,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const brands = await getAllBrands();
   const companies = await getAllCompanies();
+  const categories = await getCategories();
 
   const blogPosts = posts?.map((post: any) => {
     // console.log(`post.node.slug: ${post?.node?.slug}`);
@@ -30,8 +36,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  // Agregar /marcas
-  // Agregar /aseguradoras
+  const blogCateogories = categories?.map((category: any) => {
+    return {
+      url: `${baseUrl}/blog/category/${category?.slug}`,
+      lastModified: new Date(),
+    };
+  });
+
+  console.log(companiesPosts);
+
+  console.log(blogCateogories);
 
   return [
     {
@@ -69,5 +83,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogPosts,
     ...brandsPosts,
     ...companiesPosts,
+    ...blogCateogories,
   ];
 }
