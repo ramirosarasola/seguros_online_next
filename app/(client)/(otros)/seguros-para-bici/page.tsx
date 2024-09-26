@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
     description:
       "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",
-    url: "https://www.segurosonline.com.ar/seguros-para-bici",
+    url: "https://segurosonline.com.ar/seguros-para-bici",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/seguro-bicicleta.jpg",
+        url: "https://segurosonline.com.ar/seguro-bicicleta.jpg",
       },
     ],
     locale: "es-AR",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
     description:
       "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",
-    images: ["https://www.segurosonline.com.ar/seguro-bicicleta.jpg"],
+    images: ["https://segurosonline.com.ar/seguro-bicicleta.jpg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -45,8 +45,8 @@ export default function BiciPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/seguros-para-bici",
-            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            url: "https://segurosonline.com.ar/seguros-para-bici",
+            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

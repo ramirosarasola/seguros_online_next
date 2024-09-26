@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     title: "Tu Garantía | SegurosOnline | Seguros de Caño de Alquileres",
     description:
       "Seguro de Caño para Alquilar. El respaldo que necesitás para mudarte. Contratá el Seguro de Caño más barato, más seguro y al mejor Precio.",
-    url: "https://www.segurosonline.com.ar/garantia-de-alquiler",
+    url: "https://segurosonline.com.ar/garantia-de-alquiler",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/seguro-de-caucion-para-alquileres.jpg",
+        url: "https://segurosonline.com.ar/seguro-de-caucion-para-alquileres.jpg",
       },
     ],
     locale: "es-AR",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "Seguro de Caño para Alquilar. El respaldo que necesitás para mudarte. Contratá el Seguro de Caño más barato, más seguro y al mejor Precio.",
     images: [
-      "https://www.segurosonline.com.ar/seguro-de-caucion-para-alquileres.jpg",
+      "https://segurosonline.com.ar/seguro-de-caucion-para-alquileres.jpg",
     ],
     card: "summary_large_image",
     creator: "@SegurosOnline",
@@ -47,8 +47,8 @@ export default function GarantiasPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/garantia-de-alquiler",
-            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            url: "https://segurosonline.com.ar/garantia-de-alquiler",
+            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

@@ -16,11 +16,11 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    url: "https://www.segurosonline.com.ar",
+    url: "https://segurosonline.com.ar",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/logo-op.webp", // Ruta relativa desde 'public'
+        url: "https://segurosonline.com.ar/logo-op.webp", // Ruta relativa desde 'public'
         width: 1200, // Agregar ancho
         height: 630, // Agregar altura
         alt: "Logo de SegurosOnline",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    images: ["https://www.segurosonline.com.ar/logo-op.webp"], // Ruta relativa desde 'public'
+    images: ["https://segurosonline.com.ar/logo-op.webp"], // Ruta relativa desde 'public'
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -53,8 +53,8 @@ export default function HomePage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/",
-            logo: "https://www.segurosonline.com.ar/seguros-online-op.png",
+            url: "https://segurosonline.com.ar/",
+            logo: "https://segurosonline.com.ar/seguros-online-op.png",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

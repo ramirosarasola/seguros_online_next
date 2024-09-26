@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
     description:
       "Cotizá tu Seguro de Hogar al mejorprecio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
-    url: "https://www.segurosonline.com.ar/seguros-para-hogar",
+    url: "https://segurosonline.com.ar/seguros-para-hogar",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/seguros-para-el-hogar.jpg",
+        url: "https://segurosonline.com.ar/seguros-para-el-hogar.jpg",
       },
     ],
     locale: "es-AR",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
     description:
       "Cotizá tu Seguro de Hogar al mejorprecio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
-    images: ["https://www.segurosonline.com.ar/seguros-para-el-hogar.jpg"],
+    images: ["https://segurosonline.com.ar/seguros-para-el-hogar.jpg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },
@@ -47,8 +47,8 @@ export default function HogarPage() {
             "@type": "Corporation",
             name: "Seguros Online",
             alternateName: "Cotizador de Seguros Online",
-            url: "https://www.segurosonline.com.ar/seguros-para-hogar",
-            logo: "https://www.segurosonline.com.ar/cotizador-seguros-online.jpeg",
+            url: "https://segurosonline.com.ar/seguros-para-hogar",
+            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+54 9 11 6423-5002",

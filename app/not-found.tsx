@@ -11,11 +11,11 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    url: "https://www.segurosonline.com.ar/",
+    url: "https://segurosonline.com.ar/",
     siteName: "SegurosOnline",
     images: [
       {
-        url: "https://www.segurosonline.com.ar/seguros-online-op.png",
+        url: "https://segurosonline.com.ar/seguros-online-op.png",
       },
     ],
     locale: "es-AR",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
     description:
       "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
-    images: ["https://www.segurosonline.com.ar/seguros-online-op.png"],
+    images: ["https://segurosonline.com.ar/seguros-online-op.png"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
   },

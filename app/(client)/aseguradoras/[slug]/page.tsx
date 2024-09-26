@@ -28,7 +28,7 @@ export async function generateMetadata({
       description: `Cotiza tu vehiculo ${company?.title} con 30% de descuento!`,
       type: "website",
       siteName: "Seguros Online",
-      url: `https://www.segurosonline.com.ar/${params.slug}`,
+      url: `https://segurosonline.com.ar/${params.slug}`,
       images: [
         {
           url: company?.image?.url,

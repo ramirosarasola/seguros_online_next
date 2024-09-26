@@ -38,7 +38,7 @@ export default function ServerNavbar() {
   return (
     <nav className="fixed h-24 w-full px-4 md:px-16 md:bg-secondary md:main_text flex items-center justify-between z-50 bg-white nav_shadow ">
       <div className="h-24 w-full md:bg-secondary md:main_text flex items-center justify-between max-w-[1200px] mx-auto">
-        <Link href="/">
+        <a href="/">
           <Image
             src={logo}
             priority={true}
@@ -46,7 +46,7 @@ export default function ServerNavbar() {
             width={120}
             className="h-auto"
           />
-        </Link>
+        </a>
         <div className="hidden w-[60%] md:flex gap-8">
           {navItems.map((item) =>
             item.text === "Otros" ? (

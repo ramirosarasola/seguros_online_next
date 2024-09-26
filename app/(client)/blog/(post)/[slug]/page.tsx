@@ -22,7 +22,7 @@ export async function generateMetadata({
       description: post?.excerpt,
       type: "website",
       siteName: "Seguros Online",
-      url: `https://www.segurosonline.com.ar/blog/${params.slug}`,
+      url: `https://segurosonline.com.ar/blog/${params.slug}`,
       images: [
         {
           url: post?.featuredImage?.url,
