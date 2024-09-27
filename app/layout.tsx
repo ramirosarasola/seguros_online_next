@@ -22,7 +22,7 @@ export default function RootLayout({
         <WhatsAppButton />
         {/* <ScrollUpButton /> */}
       </body>
-      <GoogleAnalytics gaId="G-6P1PGM83XD" />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID!!} />
     </html>
   );
 }
