@@ -1,6 +1,8 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import WhatsAppButton from "@/components/ui/whatsapp-button.component";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Poppins } from "next/font/google";
+
 import "./globals.css";
 import ScrollUpButton from "@/components/ui/scroll-up.component";
 const poppins = Poppins({
@@ -20,6 +22,7 @@ export default function RootLayout({
         <WhatsAppButton />
         {/* <ScrollUpButton /> */}
       </body>
+      <GoogleAnalytics gaId="G-6P1PGM83XD" />
     </html>
   );
 }
