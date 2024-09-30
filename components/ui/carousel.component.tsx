@@ -7,6 +7,7 @@ type CarouseProps = {
   data: { img: StaticImageData; nombre: string; slug: string }[];
   cantItems: number;
   title: string;
+  background?: string;
 };
 
 const Carousel = ({ data, cantItems, title }: CarouseProps) => {
@@ -36,16 +37,16 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
   }
 
   return (
-    <article className="max-w-[1200px] mx-auto">
+    <article className="max-w-[1200px] mx-auto my-8">
       <h2 className="text-[2rem] font-bold text-center">{title}</h2>
       <div className="relative h-fit py-4">
-        <div className="overflow-hidden w-full h-40 bg-gray-200">
+        <div className="overflow-hidden w-full h-40">
           {slidesToShow.map(
             (slideGroup, index) =>
               index == currentSlide && (
                 <div
                   key={index}
-                  className={`absolute top-0 left-0 z-[40] bg-tertiary w-full h-full flex items-center transition-transform ease-in-out duration-300 ${
+                  className={`absolute top-0 left-0 z-[40] w-full h-full flex items-center transition-transform ease-in-out duration-300 ${
                     index === currentSlide ? "translate-x-0" : "translate-x-0"
                   }`}
                 >
@@ -53,7 +54,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                     return (
                       <div
                         key={idx}
-                        className="w-full flex items-center justify-evenly"
+                        className="w-full h-[140px] flex flex-col items-center justify-between"
                       >
                         <a href={`/${slide.slug}`}>
                           <Image
@@ -64,6 +65,7 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
                             className="w-[90px] md:w-[130px] h-auto hover:cursor-pointer"
                           />
                         </a>
+                        <h3 className="font-bold">{slide.nombre}</h3>
                       </div>
                     );
                   })}

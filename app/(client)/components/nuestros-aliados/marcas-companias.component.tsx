@@ -5,9 +5,10 @@ export const Companias = () => {
   return (
     <>
       <Carousel
+        background="#FFF"
         data={aseguradoras}
         cantItems={3}
-        title={"Companias de Seguros"}
+        title={"Compañías de Seguros"}
       />
     </>
   );
