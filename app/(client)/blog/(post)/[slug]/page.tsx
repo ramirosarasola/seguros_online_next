@@ -11,6 +11,10 @@ export async function generateMetadata({
 }) {
   const post = await getPostDetails(params.slug);
   return {
+    metadataBase: new URL("https://segurosonline.com.ar"),
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
     title: `Blog - ${post?.title}`,
     description: post?.excerpt,
     robots: "index, follow",

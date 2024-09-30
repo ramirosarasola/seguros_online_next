@@ -30,6 +30,10 @@ export async function generateMetadata({
   }
 
   return {
+    metadataBase: new URL("https://segurosonline.com.ar"),
+    alternates: {
+      canonical: `/${params.slug}`,
+    },
     title: `Seguro de auto ${brand?.title}`,
     description: `Cotiza tu vehiculo ${brand?.title} con 30% de descuento!`,
     robots: "index, follow",

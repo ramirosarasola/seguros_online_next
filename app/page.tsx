@@ -8,6 +8,10 @@ import Script from "next/script";
 import { Companias } from "./(client)/components/nuestros-aliados/marcas-companias.component";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
   description:
     "Cotizá seguros para autos online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",

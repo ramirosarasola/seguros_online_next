@@ -6,6 +6,10 @@ import Script from "next/script";
 import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/seguros-para-comercio",
+  },
   title: "Seguros Integral de Comercio | SegurosOnline | Seguros para Empresas",
   description:
     "Cotizar seguro Integral de Comercio. Especialmente pensados para las diferentes actividades. Conocé las coberturas exclusivas para proteger tu comercio.",

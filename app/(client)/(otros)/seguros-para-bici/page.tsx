@@ -6,6 +6,10 @@ import Script from "next/script";
 import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/seguros-para-bici",
+  },
   title: "Seguros de Bicicleta | SegurosOnline | Protegé tu Bicicleta",
   description:
     "Conoce el seguros de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas electricas.",

@@ -8,6 +8,10 @@ import Script from "next/script";
 const data: any = quotesData.hogar_data;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/seguros-para-hogar",
+  },
   title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
   description:
     "Cotizá tu Seguro de Hogar al mejor precio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",

@@ -5,6 +5,46 @@ import { Categories, PostCard } from "../../components";
 import { GoBackButton } from "../../components/go-back-button.componen";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const categories = await getCategories();
+  const category = categories.find((cat: any) => cat.slug === params.slug);
+
+  if (!category) {
+    return {};
+  }
+
+  const formattedSlug = category.name;
+
+  return {
+    metadataBase: new URL("https://segurosonline.com.ar"),
+    alternates: {
+      canonical: `/category/${params.slug}`,
+    },
+    title: `Categoría - ${formattedSlug}`,
+    description: `Explora artículos relacionados con ${formattedSlug} en Seguros Online.`,
+    robots: "index, follow",
+    author: "Seguros Online",
+    publisher: "Seguros Online",
+    keywords: `seguros, ${params.slug}, cotizaciones, seguros online`,
+    openGraph: {
+      title: `Categoría - ${formattedSlug}`,
+      description: `Explora artículos sobre ${formattedSlug} en Seguros Online.`,
+      type: "website",
+      siteName: "Seguros Online",
+      url: `https://segurosonline.com.ar/category/${params.slug}`,
+      images: [
+        {
+          url: "/default-image.jpg", // Usa una imagen por defecto o agrega una lógica para las imágenes de categorías.
+        },
+      ],
+    },
+  };
+}
+
 export async function generateStaticParams() {
   const categories = await getCategories();
   return categories.map((category: any) => ({

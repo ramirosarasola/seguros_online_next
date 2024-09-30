@@ -6,6 +6,10 @@ import Script from "next/script";
 import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/garantia-de-alquiler",
+  },
   title: "Tu Garantía | SegurosOnline | Seguros de Caución de Alquileres",
   description:
     "Seguro de Caución para Alquilar. El respaldo que necesitás para mudarte. Contratá el Seguro de Caución fácil, rápido y al mejor Precio.",

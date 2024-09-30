@@ -13,6 +13,9 @@ const PostWidget = lazy(() => import("./components/post-widget.component"));
 // Metadatos de la página
 export const metadata: Metadata = {
   metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/blog",
+  },
   title: "Seguros Online | Blog de seguros",
   description:
     "Seguros Online. Blog. Cotización. Seguro. Vida. Auto. Todo en un solo lugar.",

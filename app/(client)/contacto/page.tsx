@@ -4,6 +4,10 @@ import { PageWrapper } from "../../../components/ui/page-wrapper";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/contacto",
+  },
   title: "Cotizador de Seguros Online | SegurosOnline | Contactenos",
   description:
     "Cotizador de seguros online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",

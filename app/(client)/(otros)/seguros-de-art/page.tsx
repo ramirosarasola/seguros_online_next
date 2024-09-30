@@ -6,6 +6,10 @@ import { PageWrapper } from "../../../../components/ui/page-wrapper";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/seguros-de-art",
+  },
   title:
     "Cotiza tu seguro de ART ahora | Mejoramos tu costo actual hasta un 40% | SegurosOnline",
   description:

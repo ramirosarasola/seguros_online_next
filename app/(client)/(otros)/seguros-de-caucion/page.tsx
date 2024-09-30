@@ -4,6 +4,10 @@ import Script from "next/script";
 import { PageWrapper } from "../../../../components/ui/page-wrapper";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://segurosonline.com.ar"),
+  alternates: {
+    canonical: "/seguros-de-caucion",
+  },
   title: "Seguros de Caución | SegurosOnline | Aseguradores de Cauciones",
   description:
     "Cotizar Seguros de Caución. Somos una compañía especializada en seguros de Caución con una trayectoria de más de 15 años.",

@@ -17,6 +17,10 @@ export async function generateMetadata({
   });
 
   return {
+    metadataBase: new URL("https://segurosonline.com.ar"),
+    alternates: {
+      canonical: `/aseguradoras/${params.slug}`,
+    },
     title: `Aseguradora ${company?.title} - SegurosOnline`,
     description: `Cotiza tu vehiculo en ${company?.title} con 30% de descuento!`,
     robots: "index, follow",
@@ -28,7 +32,7 @@ export async function generateMetadata({
       description: `Cotiza tu vehiculo ${company?.title} con 30% de descuento!`,
       type: "website",
       siteName: "Seguros Online",
-      url: `https://segurosonline.com.ar/${params.slug}`,
+      url: `https://segurosonline.com.ar/aseguradoras/${params.slug}`,
       images: [
         {
           url: company?.image?.url,
