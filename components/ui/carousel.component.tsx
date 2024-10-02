@@ -1,6 +1,5 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 type CarouseProps = {
@@ -13,11 +12,24 @@ type CarouseProps = {
 const Carousel = ({ data, cantItems, title }: CarouseProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const [itemsPerSlide, setItemsPerSlide] = useState(cantItems);
+
+  // If is mobile just show 1 slide
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setItemsPerSlide(1);
+    } else {
+      setItemsPerSlide(cantItems);
+    }
+  }, [cantItems]);
+
   const nextSlide = useCallback(() => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === Math.ceil(data.length / cantItems) - 1 ? 0 : prevSlide + 1
+      prevSlide === Math.ceil(data.length / itemsPerSlide) - 1
+        ? 0
+        : prevSlide + 1
     );
-  }, [data, cantItems]);
+  }, [data, itemsPerSlide]);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 4000);
@@ -26,14 +38,16 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
 
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? Math.ceil(data.length / cantItems) - 1 : prevSlide - 1
+      prevSlide === 0
+        ? Math.ceil(data.length / itemsPerSlide) - 1
+        : prevSlide - 1
     );
   };
 
-  // Agrupar los elementos en grupos de cantItems
+  // Agrupar los elementos en grupos de itemsPerSlide
   const slidesToShow = [];
-  for (let i = 0; i < data.length; i += cantItems) {
-    slidesToShow.push(data.slice(i, i + cantItems));
+  for (let i = 0; i < data.length; i += itemsPerSlide) {
+    slidesToShow.push(data.slice(i, i + itemsPerSlide));
   }
 
   return (

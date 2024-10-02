@@ -81,7 +81,7 @@ export default function HomePage() {
         </section>
 
         {/* Brands */}
-        <section className="px-4 md:px-16 bg-tertiary md:py-8 h-fit pt-10">
+        <section className="px-4 md:px-16 bg-tertiary md:py-8 h-fit">
           <MarcasDeAutos />
         </section>
         {/* <section className="px-4 md:px-16 bg-tertiary h-fit py-10 flex flex-col items-center justify-between">
@@ -93,7 +93,7 @@ export default function HomePage() {
         </section>
 
         {/* Assurances Companies */}
-        <section className="px-4 md:px-16 bg-white md:py-8 h-fit pt-10">
+        <section className="px-4 md:px-16 bg-white md:py-8 h-fit">
           <Companias />
         </section>
       </PageWrapper>
