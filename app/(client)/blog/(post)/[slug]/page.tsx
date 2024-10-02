@@ -3,6 +3,7 @@ import { Author, Categories, PostDetail, PostWidget } from "../../components";
 import { GoBackButton } from "../../components/go-back-button.componen";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { notFound } from "next/navigation";
+import CotizarBanner from "@/app/(client)/(brands)/[slug]/components/cotizar-banner.component";
 
 export async function generateMetadata({
   params,
@@ -113,6 +114,11 @@ export default async function PostPage({
           </div>
         </div>
       </section>
+      <CotizarBanner
+        title="Cotiza tu seguro con un 30% de descuento!"
+        buttonLabel="Cotizar ahora!"
+        redirect={true}
+      />
     </PageWrapper>
   );
 }

@@ -1,24 +1,34 @@
 "use client"; // Esto indica que este es un Client Component
 
-import { XCircleIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
 interface BannerProps {
   title: string;
   buttonLabel: string;
+  redirect?: boolean;
   onButtonClick?: () => void;
 }
 
 const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
+const CotizarBanner = ({
+  title,
+  buttonLabel,
+  redirect = false,
+}: BannerProps) => {
   const contratarUrl = `${apiUrl}/api/cotizacion`;
   const [visible, setVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const onButtonClick = () => {
     setIsOpen(false);
+  };
+
+  const navigateHome = () => {
+    router.push("/");
   };
 
   useEffect(() => {
@@ -75,20 +85,35 @@ const CotizarBanner = ({ title, buttonLabel }: BannerProps) => {
         </button> */}
         <div className="max-w-[1200px] mx-auto flex justify-between items-center">
           <h2 className="text-white text-xl font-bold">{title}</h2>
-          <input type="hidden" data-wokan-auto="marca" value={"brandCode"} />
-          <input
-            type="hidden"
-            data-wokan-auto="contratarUrl"
-            value={contratarUrl}
-          />
-          <button
-            type="submit"
-            data-wokan-auto-cotizar
-            onClick={onButtonClick}
-            className="bg-white text-black px-4 py-2 rounded-md font-semibold animate-pulse"
-          >
-            {buttonLabel}
-          </button>
+          {!redirect ? (
+            <>
+              <input
+                type="hidden"
+                data-wokan-auto="marca"
+                value={"brandCode"}
+              />
+              <input
+                type="hidden"
+                data-wokan-auto="contratarUrl"
+                value={contratarUrl}
+              />
+              <button
+                type="submit"
+                data-wokan-auto-cotizar
+                onClick={onButtonClick}
+                className="bg-white text-black px-4 py-2 rounded-md font-semibold animate-pulse"
+              >
+                {buttonLabel}
+              </button>
+            </>
+          ) : (
+            <a
+              href={"/"}
+              className="bg-white text-black px-4 py-2 rounded-md font-semibold animate-pulse"
+            >
+              {buttonLabel}
+            </a>
+          )}
         </div>
       </div>
     </>
