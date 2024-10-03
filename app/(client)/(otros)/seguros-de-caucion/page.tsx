@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { CaucionQuoterForm } from "../../components/quoter-form/caucion-quoter-form.component";
 import Script from "next/script";
 import { PageWrapper } from "../../../../components/ui/page-wrapper";
+import { QuoteInfo } from "../../components/quotes-info/quote-info.component";
+import { quotesData } from "../../components/quotes-info/data";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://segurosonline.com.ar"),
@@ -64,6 +66,10 @@ export default function CaucionPage() {
         <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-caucion-img bg-light_primary">
           <CaucionQuoterForm />
         </section>
+        <QuoteInfo
+          data={quotesData.caucion_data}
+          quoteTitle="Seguros de Caucion"
+        />
       </PageWrapper>
     </>
   );
