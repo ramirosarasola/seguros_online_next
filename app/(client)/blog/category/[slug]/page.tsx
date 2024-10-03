@@ -22,7 +22,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://segurosonline.com.ar"),
     alternates: {
-      canonical: `/category/${params.slug}`,
+      canonical: `blog/category/${params.slug}`,
     },
     title: `Categoría - ${formattedSlug}`,
     description: `Explora artículos relacionados con ${formattedSlug} en Seguros Online.`,
@@ -35,7 +35,7 @@ export async function generateMetadata({
       description: `Explora artículos sobre ${formattedSlug} en Seguros Online.`,
       type: "website",
       siteName: "Seguros Online",
-      url: `https://segurosonline.com.ar/category/${params.slug}`,
+      url: `https://segurosonline.com.ar/blog/category/${params.slug}`,
       images: [
         {
           url: "/default-image.jpg", // Usa una imagen por defecto o agrega una lógica para las imágenes de categorías.
