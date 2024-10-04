@@ -13,56 +13,66 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Redirecciones dinámicas para 'tag' y 'category'
+      // Redirecciones dinámicas para 'tag y tag/[slug]'
+      {
+        source: '/blog/tag/',
+        destination: '/blog',
+        permanent: true,
+      },
       {
         source: '/blog/tag/:slug*',
         destination: '/blog',
         permanent: true,
       },
+
+      // Redirecciones dinámicas para 'category/noticias y category/noticias/[slug]'
+
       {
-        source: '/blog/category/:slug*',
+        source: '/blog/category/noticias',
         destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/category/noticias/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
+      // seguros para hogar
+      {
+        source: '/blog/category/seguros-de-hogar',
+        destination: '/seguros-para-hogar',
+        permanent: true,
+      },
+      // seguros para bici
+      {
+        source: '/blog/category/seguros-de-bici',
+        destination: '/seguros-para-bici',
         permanent: true,
       },
       // Redirecciones estáticas para rutas específicas
       {
         source: '/blog/seguros-baratos',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/cotizar-seguro-auto',
-        destination: '/cotizar-seguro-auto',
+        destination: '/blog/seguro-coche-barato',
         permanent: true,
       },
       {
         source: '/blog/buscador-de-seguros',
-        destination: '/buscador-de-seguros',
+        destination: '/blog',
         permanent: true,
       },
       {
         source: '/blog/calculador-de-seguros',
-        destination: '/calculador-de-seguros',
+        destination: '/blog',
         permanent: true,
       },
       {
         source: '/blog/comparador-de-seguros-de-coche',
-        destination: '/comparador-de-seguros-de-coche',
-        permanent: true,
-      },
-      {
-        source: '/blog/seguro-de-art-con-swiss-medical',
-        destination: '/seguro-de-art-swiss-medical',
+        destination: '/blog',
         permanent: true,
       },
       {
         source: '/images/pdf_afip.pdf',
         destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/blog/seguro-de-auto-neuquen-proteccion-completa-en-el-camino',
-        destination: '/blog',
         permanent: true,
       },
       {
@@ -78,11 +88,6 @@ const nextConfig = {
       {
         source: '/blog/conociendo-san-cristobal-seguros-una-opcion-confiable-en-segurosonline-com-ar',
         destination: '/blog/san-cristobal-seguros',
-        permanent: true,
-      },
-      {
-        source: '/blog/seguro-coche-barato',
-        destination: '/blog',
         permanent: true,
       },
       {
