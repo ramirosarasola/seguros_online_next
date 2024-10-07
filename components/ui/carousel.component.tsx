@@ -55,50 +55,39 @@ const Carousel = ({ data, cantItems, title }: CarouseProps) => {
       <h2 className="text-[2rem] font-bold text-center">{title}</h2>
       <div className="relative h-fit py-4">
         <div className="overflow-hidden w-full h-40">
-          {slidesToShow.map(
-            (slideGroup, index) =>
-              index == currentSlide && (
-                <div
-                  key={index}
-                  className={`absolute top-0 left-0 z-[40] w-full h-full flex items-center transition-transform ease-in-out duration-300 ${
-                    index === currentSlide ? "translate-x-0" : "translate-x-0"
-                  }`}
-                >
-                  {slideGroup.map((slide, idx) => {
-                    return (
-                      <div
-                        key={idx}
-                        className="w-full h-[140px] flex flex-col items-center justify-between"
-                      >
-                        <a href={`/${slide.slug}`}>
-                          <Image
-                            loading="lazy"
-                            src={slide.img}
-                            alt={`Seguros para ${slide.nombre}`}
-                            width={130}
-                            className="w-[90px] md:w-[130px] h-auto hover:cursor-pointer"
-                          />
-                        </a>
-                        <h3 className="font-bold">{slide.nombre}</h3>
-                      </div>
-                    );
-                  })}
-                </div>
-              )
-          )}
+          {slidesToShow.map((slideGroup, index) => (
+            <div
+              key={index}
+              className={`absolute top-0 left-0 z-[40] w-full h-full flex items-center transition-transform ease-in-out duration-300 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                visibility: index === currentSlide ? "visible" : "hidden",
+                position: index === currentSlide ? "relative" : "absolute",
+              }}
+            >
+              {slideGroup.map((slide, idx) => {
+                return (
+                  <div
+                    key={idx}
+                    className="w-full h-[140px] flex flex-col items-center justify-between"
+                  >
+                    <a href={`/${slide.slug}`}>
+                      <Image
+                        loading="lazy"
+                        src={slide.img}
+                        alt={`Seguros para ${slide.nombre}`}
+                        width={130}
+                        className="w-[90px] md:w-[130px] h-auto hover:cursor-pointer"
+                      />
+                    </a>
+                    <h3 className="font-bold">{slide.nombre}</h3>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
-        {/* <button
-          className="absolute z-50 top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-primary text-white rounded-l focus:outline-none"
-          onClick={prevSlide}
-        >
-          Prev
-        </button>
-        <button
-          className="absolute z-50 top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-primary text-white rounded-r focus:outline-none"
-          onClick={nextSlide}
-        >
-          Next
-        </button> */}
       </div>
     </article>
   );
