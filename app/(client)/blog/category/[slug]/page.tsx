@@ -1,5 +1,8 @@
-import { getPostsByCategory, getCategories } from "@/services";
-import { Spinner } from "@/components/ui/spinner.component";
+import {
+  getPostsByCategory,
+  getCategories,
+  getCategoryBySlug,
+} from "@/services";
 import { notFound } from "next/navigation";
 import { Categories, PostCard } from "../../components";
 import { GoBackButton } from "../../components/go-back-button.componen";
@@ -10,9 +13,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const categories = await getCategories();
-  const category = categories.find((cat: any) => cat.slug === params.slug);
-
+  const category = await getCategoryBySlug(params.slug);
   if (!category) {
     return {};
   }

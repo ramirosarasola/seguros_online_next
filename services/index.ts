@@ -137,6 +137,34 @@ export async function getCategories() {
   return json.data.categories;
 }
 
+export async function getCategoryBySlug(slug: string) {
+  const response = await fetch(
+    "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+            query MyQuery($slug: String!) {
+                category(where: {slug: $slug}) {
+                  name
+                  slug
+                }
+              }
+              `,
+        variables: {
+          slug,
+        },
+      }),
+    }
+  );
+
+  const json = await response.json();
+  return json.data.category;
+}
+
 export async function getPostDetails(slug: string) {
   const response = await fetch(
     "https://sa-east-1.cdn.hygraph.com/content/clxfkfm4a01ma07w8iz2zyew4/master",

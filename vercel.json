@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.segurosonline.com.ar"
+        }
+      ],
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.segurosonline.com.ar"
+        }
+      ],
+      "destination": "https://segurosonline.com.ar/:path*",
+      "permanent": true
+    }
+  ]
+}
