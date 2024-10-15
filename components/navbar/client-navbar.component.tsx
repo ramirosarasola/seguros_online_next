@@ -47,7 +47,7 @@ export default function ClientNavbar({ navItems }: ClientNavbarProps) {
             className="md:hidden flex flex-col justify-between h-full"
             style={{ height: "calc(100vh - 96px)" }}
           >
-            <div className="flex flex-col justify-center px-2 h-full gap-6">
+            <div className="flex flex-col justify-start px-2 h-fit gap-2">
               {navItems.map((item) => (
                 <DisclosureButton
                   key={item.path}

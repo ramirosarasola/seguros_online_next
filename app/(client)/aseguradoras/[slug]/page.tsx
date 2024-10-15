@@ -56,7 +56,10 @@ export default async function CompanyPage({
 
   return (
     <PageWrapper>
-      <section className="w-full h-[270px] bg-[#c3c3c3] flex items-center justify-center">
+      <section
+        id="aseguradoras"
+        className="w-full h-[270px] bg-[#c3c3c3] flex items-center justify-center"
+      >
         <Image
           loading="lazy"
           src={company?.image.url}
@@ -70,7 +73,7 @@ export default async function CompanyPage({
       <section className="px-4 py-8 md:py-16 md:px-0 w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
         <SectionTitleComponent title={company?.title} heading="h1" />
 
-        <section className="w-full flex flex-col-reverse gap-16 md:flex-row">
+        <section className="w-full flex flex-col gap-16 md:flex-row">
           {/* Convertir el HTML a elementos React */}
           <div className="w-full flex flex-col gap-2 lg:px-0">
             {parse(company?.content.html || "")}

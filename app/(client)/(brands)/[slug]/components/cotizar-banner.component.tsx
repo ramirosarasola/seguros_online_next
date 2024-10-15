@@ -74,7 +74,7 @@ const CotizarBanner = ({
 
       {/* Banner con el botón */}
       <div
-        className={`fixed bottom-0 left-0 right-0 bg-primary p-4 text-white z-50 transition-transform transform duration-700 ease-in-out ${
+        className={`fixed bottom-0 left-0 right-0 bg-primary p-4 text-white z-40 transition-transform transform duration-700 ease-in-out ${
           !isOpen ? "hidden" : visible && isOpen ? "block" : "hidden"
         }`}
       >
