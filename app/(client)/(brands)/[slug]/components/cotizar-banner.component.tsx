@@ -90,7 +90,7 @@ const CotizarBanner = ({
               <input
                 type="hidden"
                 data-wokan-auto="marca"
-                value={"brandCode"}
+                // value={brandCode}
               />
               <input
                 type="hidden"

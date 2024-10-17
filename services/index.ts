@@ -387,6 +387,7 @@ export async function getCompanyData(
               id
               title
               slug
+              metaDescription
               image {
                 url
               }
