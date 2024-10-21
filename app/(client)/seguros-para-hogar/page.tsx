@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
     description:
-      "Cotizá tu Seguro de Hogar al mejorprecio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
+      "Cotizá tu Seguro de Hogar al mejor precio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
     url: "https://segurosonline.com.ar/seguros-para-hogar",
     siteName: "SegurosOnline",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Seguros de Hogar | SegurosOnline | Seguros para la Casa",
     description:
-      "Cotizá tu Seguro de Hogar al mejorprecio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
+      "Cotizá tu Seguro de Hogar al mejor precio. Protegé tu casa con las coberturas de incendio, robo, electrodomésticos y más. ¡Cotizá ahora!",
     images: ["https://segurosonline.com.ar/seguros-para-el-hogar.jpg"],
     card: "summary_large_image",
     creator: "@SegurosOnline",
