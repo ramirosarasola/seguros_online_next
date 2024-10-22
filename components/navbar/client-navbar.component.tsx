@@ -6,8 +6,6 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-// import { useEffect, useState } from "react";
-// import { aseguradoras } from "../../assets/aseguradoras/index";
 
 interface NavItem {
   path: string;
