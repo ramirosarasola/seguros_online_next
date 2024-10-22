@@ -32,7 +32,7 @@ const clientNavItems = [
   { path: "/garantia-de-alquiler/", text: "Garantia de Alquiler" },
   { path: "/blog/", text: "Blog" },
   { path: "/contacto/", text: "Contacto" },
-  { path: "/aseguradoras/atm/", text: "Aseguradoras" },
+  // { path: "/aseguradoras/atm/", text: "Aseguradoras" },
 ];
 
 export default function ServerNavbar() {
