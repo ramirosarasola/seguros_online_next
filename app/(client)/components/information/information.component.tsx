@@ -22,7 +22,9 @@ export const InformationComponent = () => {
           <ul className="w-full flex flex-col md:flex-row justify-between items-start mb-6">
             <li
               className={`${
-                activeTab === "coberturas_basicas" ? "active_tab" : ""
+                activeTab === "coberturas_basicas"
+                  ? "active_tab"
+                  : "no_active_tab"
               } font-bold text-gray-800 text-left `}
             >
               <Link
@@ -34,7 +36,9 @@ export const InformationComponent = () => {
             </li>
             <li
               className={`${
-                activeTab === "coberturas_adicionales" ? "active_tab" : ""
+                activeTab === "coberturas_adicionales"
+                  ? "active_tab"
+                  : "no_active_tab"
               } font-bold text-gray-800 text-left `}
             >
               <Link
@@ -46,7 +50,7 @@ export const InformationComponent = () => {
             </li>
             <li
               className={`${
-                activeTab === "siniestros" ? "active_tab" : ""
+                activeTab === "siniestros" ? "active_tab" : "no_active_tab"
               } font-bold text-gray-800 text-left `}
             >
               <Link
@@ -58,7 +62,9 @@ export const InformationComponent = () => {
             </li>
             <li
               className={`${
-                activeTab === "seguros_de_autos" ? "active_tab" : ""
+                activeTab === "seguros_de_autos"
+                  ? "active_tab"
+                  : "no_active_tab"
               } font-bold text-gray-800 text-left `}
             >
               <Link
@@ -72,7 +78,7 @@ export const InformationComponent = () => {
               className={`${
                 activeTab === "mejor_seguros_para_tu_vehiculo"
                   ? "active_tab"
-                  : ""
+                  : "no_active_tab"
               } font-bold text-gray-800 text-left `}
             >
               <Link
@@ -242,24 +248,6 @@ export const InformationComponent = () => {
                 Meridional Seguros, Caledonia, Sura, SMG Seguros, Nación
                 Seguros, Seguros Rivadavia, QBE Seguros
               </strong>
-              <p className="mb-4">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Repudiandae blanditiis necessitatibus iste possimus
-                exercitationem ea soluta beatae unde, vitae minima, molestias
-                doloribus, nesciunt dolor quia velit harum iure asperiores
-                quibusdam? Exercitationem fuga sequi magnam blanditiis
-                accusantium hic consequuntur voluptatem ipsa assumenda,
-                asperiores, expedita sed quibusdam? Delectus maxime unde a modi
-                quis quod repudiandae quisquam voluptatibus repellat quam natus,
-                quibusdam totam! Tempore sed praesentium illum, modi repellendus
-                dolores expedita fugit, autem deserunt ratione aliquid, incidunt
-                dicta officiis dolorum adipisci voluptate est exercitationem.
-                Animi, eaque? Inventore, veritatis ea perspiciatis fugiat quasi
-                illo. Ratione dolore debitis eius rem adipisci vitae molestias,
-                repellat ullam nihil laudantium architecto a, fuga illum iste
-                facere sunt sapiente, aut velit fugiat quisquam labore ducimus.
-                Earum possimus illo impedit.
-              </p>
             </div>
             <div
               id="mejor_seguros_para_tu_vehiculo"
