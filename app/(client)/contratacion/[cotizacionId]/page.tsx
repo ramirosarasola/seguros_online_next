@@ -10,7 +10,7 @@ const agent = new https.Agent({
 async function getCotizacion(cotizacionId: string) {
   try {
     const url = `${process.env.BASE_URL}/api/retrieveData?quote=${cotizacionId}`;
-    console.log("URL de la API:", url);
+    // console.log("URL de la API:", url);
 
     const response = await axios.get(url, {
       httpsAgent: agent,

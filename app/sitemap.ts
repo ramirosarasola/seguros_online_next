@@ -43,9 +43,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  console.log(companiesPosts);
+  // console.log(companiesPosts);
 
-  console.log(blogCateogories);
+  // console.log(blogCateogories);
 
   return [
     {

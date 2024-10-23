@@ -16,7 +16,7 @@ export async function generateMetadata({
     next: { revalidate: revalidate },
   });
 
-  console.log(company);
+  // console.log(company);
 
   return {
     metadataBase: new URL("https://segurosonline.com.ar"),

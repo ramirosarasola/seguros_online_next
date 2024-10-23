@@ -147,13 +147,13 @@ export default function ClientNavbar({ navItems }: ClientNavbarProps) {
                               key={aseguradora.id}
                             >
                               <span className="text-white">- </span>
-                              <Link
+                              <a
                                 key={aseguradora.id}
                                 href={aseguradora.path}
                                 className="block px-4 py-2 text-white hover:bg-[#1570B1]/20 hover:text-white"
                               >
                                 {aseguradora.name}
-                              </Link>
+                              </a>
                             </li>
                           ))}
                         </ul>
