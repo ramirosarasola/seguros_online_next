@@ -24,10 +24,10 @@ export default function RootLayout({
   return (
     <html lang="es-AR">
       <body className={`${poppins.className} min-h-screen bg-secondary`}>
-        {children}
         <SpeedInsights />
         <WhatsAppButton />
         <Metrics />
+        {children}
         {/* <ScrollUpButton /> */}
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID!!} />
