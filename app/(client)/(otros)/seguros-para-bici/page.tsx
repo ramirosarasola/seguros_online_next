@@ -43,7 +43,7 @@ const jsonLd = {
   serviceType: "Seguro de Bicicleta",
   name: "Seguros de Bicicleta | SegurosOnline",
   description:
-    "Conoce el seguro de bicicleta que tenemos para vos, podes asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas eléctricas.",
+    "Conoce el seguro de bicicleta que tenemos para vos, podés asegurar bicicletas plegables, mountain bike, bicicletas playeras y bicicletas eléctricas.",
   url: "https://segurosonline.com.ar/seguros-para-bici",
   image: "https://segurosonline.com.ar/seguro-bicicleta.jpg",
   provider: {
@@ -57,10 +57,15 @@ const jsonLd = {
     "@type": "Offer",
     url: "https://segurosonline.com.ar/seguros-para-bici",
     priceCurrency: "ARS",
-    price: "Consultá para conocer el mejor precio",
+    price: "Consultá para conocer el mejor precio", // Ajusta este valor a un precio representativo
     itemOffered: {
       "@type": "Product",
       name: "Seguro de Bicicleta",
+    },
+    availability: "https://schema.org/InStock", // Define la disponibilidad
+    eligibleRegion: {
+      "@type": "Place",
+      name: "Argentina", // Asegúrate de que esto sea correcto
     },
   },
 };

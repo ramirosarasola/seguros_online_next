@@ -57,10 +57,15 @@ const jsonLd = {
     "@type": "Offer",
     url: "https://segurosonline.com.ar/seguros-de-caucion",
     priceCurrency: "ARS",
-    price: "Consultá para conocer el mejor precio",
+    price: "Consultá para conocer el mejor precio", // Considera usar un número específico
     itemOffered: {
       "@type": "Product",
       name: "Seguro de Caución",
+    },
+    availability: "https://schema.org/InStock", // Indica la disponibilidad del producto
+    eligibleRegion: {
+      "@type": "Place",
+      name: "Argentina", // Asegúrate de que esto sea correcto
     },
   },
 };

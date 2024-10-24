@@ -5,6 +5,7 @@ import { PageWrapper } from "@/components/ui/page-wrapper";
 import { notFound } from "next/navigation";
 import CotizarBanner from "@/app/(client)/(brands)/[slug]/components/cotizar-banner.component";
 import Script from "next/script";
+import { url } from "inspector";
 
 export async function generateMetadata({
   params,
@@ -95,6 +96,7 @@ export default async function PostPage({
     image: post.featuredImage?.url, // Asegúrate de que esto sea la URL de la imagen destacada
     author: {
       "@type": "Person",
+      url: "https://segurosonline.com.ar.contacto",
       name: post.author?.name || "Seguros Online", // Cambia esto si tienes el nombre del autor
     },
     publisher: {

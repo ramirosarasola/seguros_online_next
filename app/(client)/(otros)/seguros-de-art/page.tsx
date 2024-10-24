@@ -46,7 +46,7 @@ const jsonLd = {
   serviceType: "Seguro ART",
   name: "Cotiza tu seguro de ART ahora | SegurosOnline",
   description:
-    "Contratar seguro ART. Cotiza online tu seguro de ART en las mejores Compañías. Mejoramos cualquier presupuesto. Cotiza Ya Mismo!",
+    "Contratar seguro ART. Cotiza online tu seguro de ART en las mejores Compañías. Mejoramos cualquier presupuesto. Cotiza ya mismo!",
   url: "https://segurosonline.com.ar/seguros-de-art",
   image: "https://segurosonline.com.ar/contratar-seguro-art.jpg",
   provider: {
@@ -60,10 +60,15 @@ const jsonLd = {
     "@type": "Offer",
     url: "https://segurosonline.com.ar/seguros-de-art",
     priceCurrency: "ARS",
-    price: "Consultá para conocer el mejor precio",
+    price: "Consultá para conocer el mejor precio", // Considera usar un número específico
     itemOffered: {
       "@type": "Product",
       name: "Seguro ART",
+    },
+    availability: "https://schema.org/InStock", // Define la disponibilidad
+    eligibleRegion: {
+      "@type": "Place",
+      name: "Argentina", // Asegúrate de que esto sea correcto
     },
   },
 };

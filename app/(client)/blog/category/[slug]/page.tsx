@@ -8,6 +8,7 @@ import { Categories, PostCard } from "../../components";
 import { GoBackButton } from "../../components/go-back-button.componen";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import Script from "next/script";
+import { url } from "inspector";
 
 export async function generateMetadata({
   params,
@@ -89,6 +90,7 @@ export default async function CategoryPage({ params }: any) {
         datePublished: post.date, // Fecha de publicación
         author: {
           "@type": "Person",
+          url: "https://segurosonline.com.ar/",
           name: post.author?.name || "Seguros Online", // Cambia esto si tienes el nombre del autor
         },
       },
