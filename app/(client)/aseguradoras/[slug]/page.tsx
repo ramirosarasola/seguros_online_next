@@ -81,6 +81,7 @@ export default async function CompanyPage({
       telephone: "+54 9 11 6994 5001",
       contactType: "customer service",
     },
+    telephone: "+54 9 11 6994 5001",
     // sameAs: [
     //   "https://www.facebook.com/SegurosOnline",
     //   "https://twitter.com/SegurosOnline",

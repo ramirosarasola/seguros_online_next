@@ -86,6 +86,16 @@ export default async function BrandPage({
     },
     areaServed: "AR",
     availableLanguage: "es",
+    offers: {
+      "@type": "Offer",
+      url: `https://segurosonline.com.ar/${params.slug}`,
+      priceCurrency: "ARS",
+      price: "Consultá para conocer el mejor precio",
+      itemOffered: {
+        "@type": "Service",
+        name: "Seguro de Automóvil",
+      },
+    },
   };
 
   return (
