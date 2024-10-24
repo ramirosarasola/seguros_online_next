@@ -72,30 +72,20 @@ export default async function BrandPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Seguro de Vehículo",
-    name: "Cotiza tu Seguro de Vehículo | SegurosOnline",
-    description: `Obtén el mejor seguro para tu vehículo. Compara precios y contrata con las mejores compañías.`,
+    serviceType: "Seguro de Automóvil",
+    name: "Cotiza tu Seguro de Automóvil | SegurosOnline",
+    description:
+      "Obtén el mejor seguro para tu automóvil. Compara precios y contrata con las mejores compañías.",
     url: `https://segurosonline.com.ar/${params.slug}`,
-    image: "https://segurosonline.com.ar/seguro-vehiculo.jpg", // Imagen representativa del servicio
+    image: "https://segurosonline.com.ar/seguro-automovil.jpg",
     provider: {
       "@type": "Organization",
       name: "SegurosOnline",
       url: "https://segurosonline.com.ar",
-      logo: "https://segurosonline.com.ar/logo.png", // Asegúrate de que esta URL sea correcta
+      logo: "https://segurosonline.com.ar/logo.png",
     },
-    areaServed: "AR", // Área de servicio, en este caso Argentina
-    offers: {
-      "@type": "Offer",
-      url: `https://segurosonline.com.ar/${params.slug}`,
-      priceCurrency: "ARS",
-      price: "Consultá para conocer el mejor precio", // O ajusta para incluir un rango de precios si es posible
-      itemOffered: {
-        "@type": "Product",
-        name: "Seguro de Vehículo",
-        description:
-          "Asegura tu vehículo con las mejores coberturas disponibles.",
-      },
-    },
+    areaServed: "AR",
+    availableLanguage: "es",
   };
 
   return (

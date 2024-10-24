@@ -76,6 +76,11 @@ export default async function CompanyPage({
       addressLocality: "Buenos Aires", // Ajusta según sea necesario
       addressCountry: "Argentina",
     },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+54 9 11 6994 5001",
+      contactType: "customer service",
+    },
     // sameAs: [
     //   "https://www.facebook.com/SegurosOnline",
     //   "https://twitter.com/SegurosOnline",
