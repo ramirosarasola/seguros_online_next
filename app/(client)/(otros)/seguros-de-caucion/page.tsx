@@ -37,30 +37,41 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Seguro de Caución",
+  name: "Seguros de Caución | SegurosOnline",
+  description:
+    "Cotizar Seguros de Caución. Somos una compañía especializada en seguros de Caución con una trayectoria de más de 15 años.",
+  url: "https://segurosonline.com.ar/seguros-de-caucion",
+  image: "https://segurosonline.com.ar/contratar-seguro-caucion.jpg",
+  provider: {
+    "@type": "Organization",
+    name: "SegurosOnline",
+    url: "https://segurosonline.com.ar",
+    logo: "https://segurosonline.com.ar/logo.png", // Ajusta esta URL según sea necesario
+  },
+  areaServed: "AR",
+  offers: {
+    "@type": "Offer",
+    url: "https://segurosonline.com.ar/seguros-de-caucion",
+    priceCurrency: "ARS",
+    price: "Consultá para conocer el mejor precio",
+    itemOffered: {
+      "@type": "Product",
+      name: "Seguro de Caución",
+    },
+  },
+};
+
 export default function CaucionPage() {
   return (
     <>
       <Script
-        id="schema-caucion"
+        id="schema-org"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Corporation",
-            name: "Seguros Online",
-            alternateName: "Cotizador de Seguros Online",
-            url: "https://segurosonline.com.ar/seguros-de-caucion",
-            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+54 9 11 6423-5002",
-              contactType: "sales",
-              contactOptions: "TollFree",
-              areaServed: "AR",
-              avaliableLanguage: "es",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageWrapper>
         <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-caucion-img bg-light_primary">

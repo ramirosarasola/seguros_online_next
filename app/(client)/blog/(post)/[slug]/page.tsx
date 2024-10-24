@@ -4,6 +4,7 @@ import { GoBackButton } from "../../components/go-back-button.componen";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { notFound } from "next/navigation";
 import CotizarBanner from "@/app/(client)/(brands)/[slug]/components/cotizar-banner.component";
+import Script from "next/script";
 
 export async function generateMetadata({
   params,
@@ -85,8 +86,41 @@ export default async function PostPage({
       .join(" ");
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    url: `https://segurosonline.com.ar/blog/${params.slug}`,
+    image: post.featuredImage?.url, // Asegúrate de que esto sea la URL de la imagen destacada
+    author: {
+      "@type": "Person",
+      name: post.author?.name || "Seguros Online", // Cambia esto si tienes el nombre del autor
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Seguros Online",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://segurosonline.com.ar/logo.png", // Cambia esto a la URL del logo de tu empresa
+      },
+    },
+    datePublished: post.date, // Asegúrate de que esto sea la fecha correcta
+    dateModified: post.modifiedDate || post.date, // Usa la fecha modificada si está disponible
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://segurosonline.com.ar/blog/${params.slug}`,
+    },
+  };
+
   return (
     <PageWrapper>
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <section className="mx-auto px-4 md:px-16 mb-8 py-10">
         <div className="w-full flex justify-start items-center gap-4">
           <GoBackButton />

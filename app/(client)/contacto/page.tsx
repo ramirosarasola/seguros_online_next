@@ -35,30 +35,46 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Cotizador de Seguros Online | SegurosOnline | Contáctenos",
+  description:
+    "Cotizador de seguros online. Mejorá tu póliza actual ahorrando hasta un 30% sin perder beneficios. Trabajamos con todas las aseguradoras, Cotizá Ya!",
+  url: "https://segurosonline.com.ar/contacto",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "0810 345 9000",
+      contactType: "customer service",
+      areaServed: "AR",
+      availableLanguage: ["es"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "(011) 5199-8100",
+      contactType: "customer service",
+      areaServed: "AR",
+      availableLanguage: ["es"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "(011) 15 6463-5002",
+      contactType: "customer service",
+      areaServed: "AR",
+      availableLanguage: ["es"],
+    },
+  ],
+  email: "administracion@segurosonline.com.ar",
+};
+
 export default function ContactPage() {
   return (
     <>
       <Script
-        id="schema-contacto"
+        id="schema-org"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Corporation",
-            name: "Seguros Online",
-            alternateName: "Cotizador de Seguros Online",
-            url: "https://segurosonline.com.ar/contacto",
-            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+54 9 11 6423-5002",
-              contactType: "sales",
-              contactOptions: "TollFree",
-              areaServed: "AR",
-              avaliableLanguage: "es",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <PageWrapper>

@@ -6,6 +6,7 @@ import { SectionTitleComponent } from "@/components/ui/section-title.component";
 import QuoteBrandsAside from "../../(brands)/[slug]/components/quote-brands-button.component";
 import QuoteCompaniesAside from "./components/quote-companies-button.component";
 import CotizarBanner from "../../(brands)/[slug]/components/cotizar-banner.component";
+import Script from "next/script";
 
 export async function generateMetadata({
   params,
@@ -15,8 +16,6 @@ export async function generateMetadata({
   const company = await getCompanyData(params.slug, {
     next: { revalidate: revalidate },
   });
-
-  // console.log(company);
 
   return {
     metadataBase: new URL("https://segurosonline.com.ar"),
@@ -60,8 +59,36 @@ export default async function CompanyPage({
   });
   const company = companyData;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "InsuranceAgency",
+    name: company?.title || "Seguros Online",
+    url: `https://segurosonline.com.ar/aseguradoras/${params.slug}`,
+    description:
+      company?.metaDescription ||
+      `Cotiza tu vehiculo en ${company?.title} con 30% de descuento!`,
+    logo:
+      company?.image?.url || "https://segurosonline.com.ar/default-logo.jpg",
+    image:
+      company?.image?.url || "https://segurosonline.com.ar/default-image.jpg",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Buenos Aires", // Ajusta según sea necesario
+      addressCountry: "Argentina",
+    },
+    // sameAs: [
+    //   "https://www.facebook.com/SegurosOnline",
+    //   "https://twitter.com/SegurosOnline",
+    // ],
+  };
+
   return (
     <PageWrapper>
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section
         id="aseguradoras"
         className="w-full h-[270px] bg-[#c3c3c3] flex items-center justify-center"

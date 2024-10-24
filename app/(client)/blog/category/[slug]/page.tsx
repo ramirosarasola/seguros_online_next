@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { Categories, PostCard } from "../../components";
 import { GoBackButton } from "../../components/go-back-button.componen";
 import { PageWrapper } from "@/components/ui/page-wrapper";
+import Script from "next/script";
 
 export async function generateMetadata({
   params,
@@ -70,8 +71,37 @@ export default async function CategoryPage({ params }: any) {
       .join(" ");
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Seguros sobre ${formatSlug(params.slug)}`,
+    description: `Lista de Seguros relacionados con ${formatSlug(
+      params.slug
+    )} en Seguros Online.`,
+    itemListElement: posts.map((post: any, index: number) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "BlogPosting",
+        headline: post.title,
+        url: `https://segurosonline.com.ar/blog/${post.slug}`, // Asegúrate de que `post.slug` esté disponible
+        image: post.featuredImage?.url, // URL de la imagen destacada
+        datePublished: post.date, // Fecha de publicación
+        author: {
+          "@type": "Person",
+          name: post.author?.name || "Seguros Online", // Cambia esto si tienes el nombre del autor
+        },
+      },
+    })),
+  };
+
   return (
     <PageWrapper>
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="px-4 md:px-16 py-10 min-h-[calc(100vh-96px)]">
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:col-span-8 col-span-1 grid gap-8">

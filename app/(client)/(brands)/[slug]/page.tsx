@@ -6,6 +6,7 @@ import { SectionTitleComponent } from "@/components/ui/section-title.component";
 import QuoteBrandsAside from "./components/quote-brands-button.component";
 import dynamic from "next/dynamic"; // Importamos dinámicamente el componente de cliente
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 // Cargar el componente de cliente solo en el lado del cliente
 const CotizarBanner = dynamic(
@@ -68,8 +69,34 @@ export default async function BrandPage({
 
   const brand = brandData;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    name: brand?.title || "Seguros Online",
+    url: `https://segurosonline.com.ar/${params.slug}`,
+    description: `Cotiza tu vehiculo ${brand?.title} con 30% de descuento!`,
+    image:
+      brand?.image?.url || "https://segurosonline.com.ar/default-image.jpg",
+    brand: {
+      "@type": "Brand",
+      name: brand?.title || "Marca Desconocida",
+    },
+    offers: {
+      "@type": "Offer",
+      url: `https://segurosonline.com.ar/${params.slug}`,
+      priceCurrency: "ARS",
+      price: "Consultá para conocer el mejor precio",
+    },
+  };
+
   return (
     <PageWrapper>
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <section className="w-full h-[270px] bg-[#c3c3c3] flex items-center justify-center">
         <Image
           loading="lazy"

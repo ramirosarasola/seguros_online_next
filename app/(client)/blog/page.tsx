@@ -48,39 +48,40 @@ export const revalidate = 60;
 export default async function BlogPage() {
   const posts = await getAllPosts();
   const categories = await getCategories();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Seguros Online | Blog de seguros",
+    url: "https://segurosonline.com.ar/blog",
+    description:
+      "Seguros Online. Blog. Cotización. Seguro. Vida. Auto. Todo en un solo lugar.",
+    publisher: {
+      "@type": "Organization",
+      name: "Seguros Online",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://segurosonline.com.ar/logo.png", // Cambia esto a la URL del logo de tu empresa
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://segurosonline.com.ar/blog",
+    },
+  };
+
   return (
     <>
       <Script
-        id="schema-blog"
-        // strategy=""
+        id="schema-org"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Corporation",
-            name: "Seguros Online",
-            alternateName: "Cotizador de Seguros Online",
-            url: "https://segurosonline.com.ar/blog",
-            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+54 9 11 6423-5002",
-              contactType: "sales",
-              contactOptions: "TollFree",
-              areaServed: "AR",
-              avaliableLanguage: "es",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageWrapper>
         <section className="px-4 md:px-16 py-10 min-h-[calc(100vh-96px)]">
           <div className="w-full flex items-center justify-center">
             <SectionTitleComponent title="Blog Seguros Online" heading="h1" />
           </div>
-          {/* <h1 className="text-3xl font-semibold text-primary mb-6">
-            Blog Seguros Online
-          </h1> */}
 
           <div className="flex flex-col md:flex-row gap-12">
             <div className="md:col-span-8 col-span-1 grid gap-8">

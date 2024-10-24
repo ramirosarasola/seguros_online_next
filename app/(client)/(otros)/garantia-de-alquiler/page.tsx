@@ -39,30 +39,41 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Seguro de Caución para Alquilar",
+  name: "Tu Garantía | SegurosOnline | Seguros de Caución de Alquileres",
+  description:
+    "Seguro de Caución para Alquilar. El respaldo que necesitás para mudarte. Contratá el Seguro de Caución fácil, rápido y al mejor Precio.",
+  url: "https://segurosonline.com.ar/garantia-de-alquiler",
+  image: "https://segurosonline.com.ar/seguro-de-caucion-para-alquileres.jpg",
+  provider: {
+    "@type": "Organization",
+    name: "SegurosOnline",
+    url: "https://segurosonline.com.ar",
+    logo: "https://segurosonline.com.ar/logo.png", // Ajusta esta URL según sea necesario
+  },
+  areaServed: "AR",
+  offers: {
+    "@type": "Offer",
+    url: "https://segurosonline.com.ar/garantia-de-alquiler",
+    priceCurrency: "ARS",
+    price: "Consultá para conocer el mejor precio",
+    itemOffered: {
+      "@type": "Product",
+      name: "Seguro de Caución para Alquilar",
+    },
+  },
+};
+
 export default function GarantiasPage() {
   return (
     <>
       <Script
-        id="schema-garantias"
+        id="schema-org"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Corporation",
-            name: "Seguros Online",
-            alternateName: "Cotizador de Seguros Online",
-            url: "https://segurosonline.com.ar/garantia-de-alquiler",
-            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+54 9 11 6423-5002",
-              contactType: "sales",
-              contactOptions: "TollFree",
-              areaServed: "AR",
-              avaliableLanguage: "es",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageWrapper>
         <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-garantia-img bg-light_primary">

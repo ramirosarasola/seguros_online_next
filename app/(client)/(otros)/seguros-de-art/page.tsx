@@ -40,30 +40,41 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Seguro ART",
+  name: "Cotiza tu seguro de ART ahora | SegurosOnline",
+  description:
+    "Contratar seguro ART. Cotiza online tu seguro de ART en las mejores Compañías. Mejoramos cualquier presupuesto. Cotiza Ya Mismo!",
+  url: "https://segurosonline.com.ar/seguros-de-art",
+  image: "https://segurosonline.com.ar/contratar-seguro-art.jpg",
+  provider: {
+    "@type": "Organization",
+    name: "SegurosOnline",
+    url: "https://segurosonline.com.ar",
+    logo: "https://segurosonline.com.ar/logo.png", // Ajusta esta URL según sea necesario
+  },
+  areaServed: "AR",
+  offers: {
+    "@type": "Offer",
+    url: "https://segurosonline.com.ar/seguros-de-art",
+    priceCurrency: "ARS",
+    price: "Consultá para conocer el mejor precio",
+    itemOffered: {
+      "@type": "Product",
+      name: "Seguro ART",
+    },
+  },
+};
+
 export default function ArtPage() {
   return (
     <>
       <Script
-        id="schema-art"
+        id="schema-org"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Corporation",
-            name: "Seguros Online",
-            alternateName: "Cotizador de Seguros Online",
-            url: "https://segurosonline.com.ar/seguros-de-art",
-            logo: "https://segurosonline.com.ar/cotizador-seguros-online.jpeg",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+54 9 11 6423-5002",
-              contactType: "sales",
-              contactOptions: "TollFree",
-              areaServed: "AR",
-              avaliableLanguage: "es",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageWrapper>
         <section className="px-4 md:px-16 justify-end flex flex-1 py-10 min-h-[calc(100vh-96px)] bg-art-img bg-light_primary">

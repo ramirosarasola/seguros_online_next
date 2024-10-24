@@ -10,7 +10,7 @@ import { Companias } from "./(client)/components/nuestros-aliados/marcas-compani
 export const metadata: Metadata = {
   metadataBase: new URL("https://segurosonline.com.ar"),
   alternates: {
-    canonical: "/",
+    canonical: "https://segurosonline.com.ar/",
   },
   title: "Seguros Para Autos | SegurosOnline | Mejoramos cualquier Presupuesto",
   description:
@@ -44,31 +44,32 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Seguros Online",
+  alternateName: "Cotizador de Seguros Online",
+  description:
+    "Cotizá seguros para autos y otros seguros en línea. Encuentra el mejor seguro automotor y más.",
+  url: "https://segurosonline.com.ar/",
+  logo: "https://segurosonline.com.ar/seguros-online-op.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+54 9 11 6994-5001",
+    contactType: "sales",
+    contactOption: "TollFree",
+    areaServed: "AR",
+    availableLanguage: "es",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
       <Script
         id="schema-org"
-        // strategy=""
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Corporation",
-            name: "Seguros Online",
-            alternateName: "Cotizador de Seguros Online",
-            url: "https://segurosonline.com.ar/",
-            logo: "https://segurosonline.com.ar/seguros-online-op.png",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+54 9 11 6423-5002",
-              contactType: "sales",
-              contactOptions: "TollFree",
-              areaServed: "AR",
-              avaliableLanguage: "es",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <PageWrapper>
@@ -84,9 +85,6 @@ export default function HomePage() {
         <section className="px-4 md:px-16 bg-tertiary md:py-8 h-fit">
           <MarcasDeAutos />
         </section>
-        {/* <section className="px-4 md:px-16 bg-tertiary h-fit py-10 flex flex-col items-center justify-between">
-        <FeedbackComponent/>
-      </section> */}
 
         <section className="px-4 md:px-16 gradient-section-bg h-fit pb-10 flex flex-col items-center justify-between">
           <InformationComponent />
